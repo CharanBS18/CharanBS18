@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="100%" stop-color="#18181b" />
+    </linearGradient>
+    <linearGradient id="bar-ts" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#4ade80" />
+    </linearGradient>
+    <linearGradient id="bar-js" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#a7f3d0" />
+    </linearGradient>
+    <linearGradient id="bar-py" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <linearGradient id="bar-html" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#6ee7b7" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    <![CDATA[
+    @keyframes load-bar {
+      from { width: 0; }
+    }
+    .fill-bar {
+      animation: load-bar 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+    }
+    ]]>
+  </style>
+
+  <!-- Frame -->
+  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(74,222,128,0.08));" />
+  
+  <text x="25" y="30" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold">// LANGUAGE PROFILE</text>
+  <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
+
+  <g transform="translate(25, 50)" font-family="monospace" font-size="12" fill="#e2e8f0">
+    <!-- TS -->
+    <text x="0" y="15">TypeScript</text>
+    <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
+    <rect class="fill-bar" x="110" y="5" width="212" height="10" rx="5" fill="url(#bar-ts)" />
+    <text x="375" y="15" fill="#4ade80" font-weight="bold">85%</text>
+
+    <!-- JS (React/Next) -->
+    <g transform="translate(0, 32)">
+      <text x="0" y="15">React/JS</text>
+      <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
+      <rect class="fill-bar" x="110" y="5" width="195" height="10" rx="5" fill="url(#bar-js)" />
+      <text x="375" y="15" fill="#a7f3d0" font-weight="bold">78%</text>
+    </g>
+
+    <!-- Python -->
+    <g transform="translate(0, 64)">
+      <text x="0" y="15">Python</text>
+      <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
+      <rect class="fill-bar" x="110" y="5" width="175" height="10" rx="5" fill="url(#bar-py)" />
+      <text x="375" y="15" fill="#34d399" font-weight="bold">70%</text>
+    </g>
+
+    <!-- HTML/CSS -->
+    <g transform="translate(0, 96)">
+      <text x="0" y="15">UI/CSS/HTML</text>
+      <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
+      <rect class="fill-bar" x="110" y="5" width="187" height="10" rx="5" fill="url(#bar-html)" />
+      <text x="375" y="15" fill="#6ee7b7" font-weight="bold">75%</text>
+    </g>
+  </g>
+</svg>

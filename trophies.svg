@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="100%" stop-color="#18181b" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    <![CDATA[
+    @keyframes cell-pop {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .trophy-anim { animation: cell-pop 0.5s ease-out forwards; opacity: 0; }
+    ]]>
+  </style>
+
+  <!-- Frame -->
+  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(74,222,128,0.1));" />
+  
+  <text x="25" y="30" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM TROPHIES</text>
+  <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
+
+  <!-- Cell 1 -->
+  <g transform="translate(20, 52)">
+    <g class="trophy-anim" style="animation-delay: 0.2s; transform-origin: 60px 57px;">
+      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#22c55e" stroke-width="1.2" stroke-opacity="0.4" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#22c55e" stroke-width="1.5" />
+      
+      <!-- Trophy Icon -->
+      <path d="M 60 20 L 75 35 H 85 V 50 H 60 H 35 V 35 H 45 Z M 57 50 V 68 H 50 V 74 H 70 V 68 H 63 V 50 Z" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #22c55e);" />
+      <text x="60" y="92" fill="#22c55e" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CODE WARRIOR</text>
+      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
+    </g>
+  </g>
+
+  <!-- Cell 2 -->
+  <g transform="translate(165, 52)">
+    <g class="trophy-anim" style="animation-delay: 0.4s; transform-origin: 60px 57px;">
+      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#4ade80" stroke-width="1.2" stroke-opacity="0.4" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#4ade80" stroke-width="1.5" />
+      
+      <path d="M 50 25 H 70 L 75 42 L 60 52 L 45 42 Z M 60 52 V 68 H 50 V 74 H 70 V 68 H 60 Z" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #4ade80);" />
+      <text x="60" y="92" fill="#4ade80" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">PR CHAMPION</text>
+      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">S-RANK</text>
+    </g>
+  </g>
+
+  <!-- Cell 3 -->
+  <g transform="translate(310, 52)">
+    <g class="trophy-anim" style="animation-delay: 0.6s; transform-origin: 60px 57px;">
+      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#a7f3d0" stroke-width="1.2" stroke-opacity="0.4" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#a7f3d0" stroke-width="1.5" />
+      
+      <circle cx="60" cy="40" r="16" fill="none" stroke="#a7f3d0" stroke-width="2" style="filter: drop-shadow(0 0 3px #a7f3d0);" />
+      <path d="M 54 40 H 66 M 60 34 V 46" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round" />
+      <text x="60" y="92" fill="#a7f3d0" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">BUG HUNTER</text>
+      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
+    </g>
+  </g>
+</svg>
