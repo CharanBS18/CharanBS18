@@ -112,7 +112,6 @@
       <p><b>&gt; STATUS:</b> Brewing spell-check algorithms</p>
       <p><b>&gt; OBJECTIVE:</b> Building lightweight, pixel-perfect layout nodes</p>
       <p><b>&gt; INGREDIENTS:</b> <code>TailwindCSS</code> <code>Next.js</code> <code>Pillow</code></p>
-      
       <!-- Custom Lab Mascot (Sticker Pumpkin + Cat GIF) -->
       <p align="center" style="margin-top: 15px; margin-bottom: 0;">
         <img src="halloween/animations/pumpkin_black_cat_custom.gif" width="80" alt="Lab Mascot Pumpkin Cat" title="Lab Mascot Pumpkin & Cat">
