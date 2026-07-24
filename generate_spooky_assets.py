@@ -344,10 +344,8 @@ def generate_svgs():
   </defs>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;family=Creepster&amp;display=swap');
-    
     .title-text {
-      font-family: 'Creepster', cursive;
+      font-family: 'Creepster', 'Luminari', 'Chiller', 'Impact', 'Arial Black', sans-serif;
       font-size: 58px;
       fill: #ff7518;
       letter-spacing: 4px;
@@ -355,7 +353,7 @@ def generate_svgs():
     }
     
     .body-text {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 18px;
       fill: #f8f9fa;
       opacity: 0.9;
@@ -726,7 +724,6 @@ def generate_svgs():
     for filename, (title, color, icon_file) in headers.items():
         header_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 60" width="400" height="60" fill="none">
   <defs>
-    <import url('https://fonts.googleapis.com/css2?family=Creepster&amp;display=swap');
     <filter id="h-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
@@ -735,7 +732,14 @@ def generate_svgs():
       </feMerge>
     </filter>
   </defs>
-  <text x="70" y="42" fill="{color}" font-family="'Creepster', cursive" font-size="28" letter-spacing="2" filter="url(#h-glow)">{title}</text>
+  <style>
+    .header-text {{
+      font-family: 'Creepster', 'Luminari', 'Chiller', 'Impact', 'Arial Black', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }}
+  </style>
+  <text x="70" y="42" fill="{color}" class="header-text" filter="url(#h-glow)">{title}</text>
   <path d="M 10 15 L 20 15 M 10 15 L 10 45 L 20 45" stroke="{color}" stroke-width="2"/>
   <circle cx="20" cy="15" r="3" fill="{color}"/>
   <circle cx="20" cy="45" r="3" fill="{color}"/>
