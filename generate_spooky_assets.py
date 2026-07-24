@@ -925,11 +925,11 @@ def generate_readme():
     </td>
     <!-- Bio Monospace Details -->
     <td valign="top" style="border: 0px; padding: 20px; width: 60%; font-family: monospace; color: #f8f9fa;">
-      <div style="float: right; margin-left: 10px; transform: rotate(-5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">
-        <img src="halloween/stickers/sticker_12.png" width="90" alt="Mascot Cat">
+      <div style="float: right; margin-left: 10px; transform: rotate(-5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));" title="The Warlock at the Spooky House (Sticker 12)">
+        <img src="halloween/stickers/sticker_12.png" width="95" alt="Warlock Haunted House">
       </div>
-      <div style="float: left; margin-right: 10px; transform: rotate(5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">
-        <img src="halloween/stickers/sticker_1.png" width="90" alt="Mascot Pumpkin">
+      <div style="float: left; margin-right: 10px; transform: rotate(5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));" title="Friendly Warlock with familiar cat (Sticker 11)">
+        <img src="halloween/stickers/sticker_11.png" width="90" alt="Warlock with Cat">
       </div>
       <h3 style="color: #ff7518; margin-top: 0;">&gt; COFFIN_NODE.conf</h3>
       <p><b>&gt; IDENTITY:</b> Charan BS / @{username}</p>
@@ -953,7 +953,9 @@ def generate_readme():
 
 <!-- Potion bottle skills grids -->
 <p align="center">
-  <img src="halloween/stickers/sticker_19.png" width="90" style="transform: rotate(6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); vertical-align: middle; margin-right: 15px;" alt="Potion Brew">
+  <!-- Potion Drinking Warlock (Sticker 17) -->
+  <img src="halloween/stickers/sticker_17.png" width="95" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); vertical-align: middle; margin-right: 15px;" alt="Potion Drinker" title="Warlock drinking from potion bottle (Sticker 17)">
+  
   <img src="halloween/skills/potion_react.svg" width="85" alt="React">
   <img src="halloween/skills/potion_ts.svg" width="85" alt="TypeScript">
   <img src="halloween/skills/potion_node.svg" width="85" alt="Node.js">
@@ -962,7 +964,9 @@ def generate_readme():
   <img src="halloween/skills/potion_k8s.svg" width="85" alt="Kubernetes">
   <img src="halloween/skills/potion_rust.svg" width="85" alt="Rust">
   <img src="halloween/skills/potion_go.svg" width="85" alt="Go">
-  <img src="halloween/stickers/sticker_3.png" width="90" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); vertical-align: middle; margin-left: 15px;" alt="Vampire Potion">
+  
+  <!-- Spell Casting Warlock (Sticker 14) -->
+  <img src="halloween/stickers/sticker_14.png" width="95" style="transform: rotate(6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); vertical-align: middle; margin-left: 15px;" alt="Spell Caster" title="Warlock casting magic spell (Sticker 14)">
 </p>
 
 <!-- Spell cards details -->
@@ -991,11 +995,13 @@ def generate_readme():
     </td>
     <!-- Status Text -->
     <td valign="top" style="border: 0px; padding: 20px; width: 55%; font-family: monospace; color: #f8f9fa; line-height: 1.6;">
-      <div style="float: right; transform: rotate(4deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); margin-left: 10px;">
-        <img src="halloween/stickers/sticker_15.png" width="85" alt="Lantern Wizard">
+      <!-- Warlock exploring with a lantern (Sticker 13) -->
+      <div style="float: right; transform: rotate(4deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); margin-left: 10px;" title="Warlock exploring with lantern (Sticker 13)">
+        <img src="halloween/stickers/sticker_13.png" width="90" alt="Lantern Explorer">
       </div>
-      <div style="float: left; transform: rotate(-5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.45)); margin-right: 10px;">
-        <img src="halloween/stickers/sticker_6.png" width="80" alt="Mummy Mascot">
+      <!-- Frankenstein's Monster Lab Creation (Sticker 6) -->
+      <div style="float: left; transform: rotate(-5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.45)); margin-right: 10px;" title="Lab Creation Frankenstein (Sticker 6)">
+        <img src="halloween/stickers/sticker_6.png" width="85" alt="Frankenstein Creation">
       </div>
       <h3 style="color: #ff7518; margin-top: 0; clear: both;">&gt; ACTIVE_EXPERIMENT.bin</h3>
       <p><b>&gt; STATUS:</b> Brewing spell-check algorithms</p>
@@ -1019,13 +1025,15 @@ def generate_readme():
     <td valign="top" style="border: 0px; width: 50%; padding: 15px; text-align: center;">
       <img src="halloween/projects/spellbook_spellcaster.svg" width="100%" alt="spellcaster-compiler Book">
       <br>
-      <img src="halloween/stickers/sticker_11.png" width="110" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Broom Fly">
+      <!-- Warlock riding broomstick (Sticker 10) -->
+      <img src="halloween/stickers/sticker_10.png" width="115" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Warlock Broom Ride" title="Warlock riding broom (Sticker 10)">
     </td>
     <!-- Project 2 Spellbook Card -->
     <td valign="top" style="border: 0px; width: 50%; padding: 15px; text-align: center;">
       <img src="halloween/projects/spellbook_cauldron.svg" width="100%" alt="cauldron-db Book">
       <br>
-      <img src="halloween/stickers/sticker_4.png" width="110" style="transform: rotate(6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Witch Broom">
+      <!-- Witch riding broomstick (Sticker 3) -->
+      <img src="halloween/stickers/sticker_3.png" width="115" style="transform: rotate(6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Witch Broom Ride" title="Witch riding broom (Sticker 3)">
     </td>
   </tr>
 </table>
@@ -1039,14 +1047,15 @@ def generate_readme():
 <h2 align="center">🏆 ANCIENT RELICS</h2>
 
 <p align="center">
-  <img src="halloween/stickers/sticker_16.png" width="95" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); vertical-align: middle; margin-right: 15px;" alt="Cast Magic">
+  <!-- Warlock surrounded by pumpkins / trophies (Sticker 16) -->
+  <img src="halloween/stickers/sticker_16.png" width="100" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); vertical-align: middle; margin-right: 25px;" alt="Pumpkin Relics" title="Warlock and jack-o'-lanterns trophy display (Sticker 16)">
+  
   <img src="halloween/badges/relic_orb.svg" width="90" alt="Crystal Orb">
   <img src="halloween/badges/relic_skull.svg" width="90" alt="Skull Trophy">
   <img src="halloween/badges/relic_crown.svg" width="90" alt="Ancient Crown">
   <img src="halloween/badges/relic_candle.svg" width="90" alt="Haunted Candle">
   <img src="halloween/badges/relic_staff.svg" width="90" alt="Magic Staff">
   <img src="halloween/badges/relic_pumpkin.svg" width="90" alt="Golden Pumpkin">
-  <img src="halloween/stickers/sticker_13.png" width="95" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); vertical-align: middle; margin-left: 15px;" alt="Magic Cat">
 </p>
 
 <p align="center">
@@ -1063,7 +1072,8 @@ def generate_readme():
     <td align="center" valign="middle" style="border: 0px; padding: 10px;">
       <img src="halloween/stats/rpg_card.svg" alt="Mage Character Card" width="440">
       <br>
-      <img src="halloween/stickers/sticker_17.png" width="100" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Run Ghost">
+      <!-- Warlock running away from ghost (Sticker 15) -->
+      <img src="halloween/stickers/sticker_15.png" width="105" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Running from Ghost" title="Warlock running from ghost (Sticker 15)">
     </td>
     <!-- Commits and languages grids -->
     <td align="center" valign="middle" style="border: 0px; padding: 10px;">
@@ -1072,7 +1082,8 @@ def generate_readme():
         <img src="halloween/animations/pumpkin_glow.gif" alt="Glowing Pumpkin" width="65" style="position: absolute; top: -25px; left: -25px;">
       </div>
       <br>
-      <img src="halloween/stickers/sticker_18.png" width="100" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Float Pumpkins">
+      <!-- Werewolf howling at the moon (Sticker 7) -->
+      <img src="halloween/stickers/sticker_7.png" width="105" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Howling Werewolf" title="Werewolf howling at moon (Sticker 7)">
     </td>
   </tr>
 </table>
@@ -1107,13 +1118,13 @@ def generate_readme():
   The many spectral forms and familiars conjured inside this Halloween code capsule:
 </p>
 <p align="center" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; max-width: 900px; margin: 20px auto;">
-  <img src="halloween/stickers/sticker_2.png" width="105" style="transform: rotate(-4deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Ghost Familiar">
-  <img src="halloween/stickers/sticker_5.png" width="105" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Skeleton Familiar">
-  <img src="halloween/stickers/sticker_7.png" width="105" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Frankenstein Familiar">
-  <img src="halloween/stickers/sticker_8.png" width="105" style="transform: rotate(3deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Werewolf Familiar">
-  <img src="halloween/stickers/sticker_9.png" width="105" style="transform: rotate(-3deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Zombie Familiar">
-  <img src="halloween/stickers/sticker_10.png" width="105" style="transform: rotate(4deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Pumpkin Candy Familiar">
-  <img src="halloween/stickers/sticker_14.png" width="105" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Castle Wizard Familiar">
+  <img src="halloween/stickers/sticker_1.png" width="105" style="transform: rotate(-4deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Ghost Sticker" title="Floating ghost (Sticker 1)">
+  <img src="halloween/stickers/sticker_2.png" width="105" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Vampire Sticker" title="Vampire warlock (Sticker 2)">
+  <img src="halloween/stickers/sticker_4.png" width="105" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Skeleton Sticker" title="Spooky skeleton (Sticker 4)">
+  <img src="halloween/stickers/sticker_5.png" width="105" style="transform: rotate(3deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Mummy Sticker" title="Bandage mummy (Sticker 5)">
+  <img src="halloween/stickers/sticker_8.png" width="105" style="transform: rotate(-3deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Zombie Sticker" title="Green zombie (Sticker 8)">
+  <img src="halloween/stickers/sticker_9.png" width="105" style="transform: rotate(4deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Trick or Treat Sticker" title="Trick-or-treat candy bucket (Sticker 9)">
+  <img src="halloween/stickers/sticker_19.png" width="105" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Pumpkin Warlock Sticker" title="Warlock with jack-o'-lantern (Sticker 19)">
 </p>
 
 <p align="center">
@@ -1125,10 +1136,15 @@ def generate_readme():
 <h2 align="center">📮 RAVEN MAIL</h2>
 
 <p align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
-  <img src="halloween/stickers/sticker_20.png" width="105" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin-right: 20px;" alt="Happy Halloween">
+  <!-- Waving Warlock with speech bubble (Sticker 18) -->
+  <img src="halloween/stickers/sticker_18.png" width="105" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin-right: 15px;" alt="Happy Halloween Mascot" title="Waving Happy Halloween! (Sticker 18)">
+  
   <a href="mailto:{email}" style="display: inline-block; background-color: #240046; color: #ff7518; border: 2px solid #ff7518; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: monospace; height: fit-content; align-self: center;">
     📧 SEND RAVEN SUMMONS
   </a>
+  
+  <!-- Warlock with familiar cat and bats (Sticker 20) -->
+  <img src="halloween/stickers/sticker_20.png" width="105" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin-left: 15px;" alt="Summons Mascot" title="Warlock with familiar cat (Sticker 20)">
 </p>
 
 <!-- Spooky Forest Footer -->
