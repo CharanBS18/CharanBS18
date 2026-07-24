@@ -182,7 +182,7 @@
   <!-- Contribution Graveyard Arch frame -->
   <img src="halloween/stats/graveyard_frame.svg" alt="Graveyard Frame" width="100%" style="display: block;">
 </p>
-<p align="center" style="margin-top: -150px; padding-bottom: 50px; width: 100%;">
+<p align="center" style="margin-top: -125px; padding-bottom: 50px; width: 100%;">
   <!-- Contribution grid snake game (offset behind columns) -->
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CharanBS18/CharanBS18/output/github-contribution-grid-snake.svg?v=2">

@@ -656,6 +656,17 @@ def generate_svgs():
     </linearGradient>
   </defs>
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&amp;display=swap');
+    .graveyard-title {
+      font-family: 'Creepster', cursive;
+      font-size: 28px;
+      fill: #ff7518;
+      letter-spacing: 4px;
+      filter: drop-shadow(0 0 8px #ff7518);
+    }
+  </style>
+
   <!-- Left Column -->
   <g transform="translate(10, 10)">
     <rect width="40" height="180" rx="4" fill="url(#column-grad)" stroke="#ff7518" stroke-width="2"/>
@@ -678,7 +689,7 @@ def generate_svgs():
   <path d="M 50 40 C 200 15, 650 15, 800 40" fill="none" stroke="#ff7518" stroke-width="4"/>
   <path d="M 50 50 C 200 25, 650 25, 800 50" fill="none" stroke="#5a189a" stroke-width="1.5" stroke-dasharray="4 4"/>
   
-  <text x="425" y="32" fill="#ff7518" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle" letter-spacing="3">🪦 THE ANCIENT GRAVEYARD 🪦</text>
+  <text class="graveyard-title" x="425" y="48" text-anchor="middle">🪦 THE ANCIENT GRAVEYARD 🪦</text>
 
   <!-- Bottom vines -->
   <path d="M 50 185 C 200 195, 650 195, 800 185" fill="none" stroke="#7fff00" stroke-width="2"/>
@@ -1071,7 +1082,7 @@ def generate_readme():
   <!-- Contribution Graveyard Arch frame -->
   <img src="halloween/stats/graveyard_frame.svg" alt="Graveyard Frame" width="100%" style="display: block;">
 </p>
-<p align="center" style="margin-top: -150px; padding-bottom: 50px; width: 100%;">
+<p align="center" style="margin-top: -125px; padding-bottom: 50px; width: 100%;">
   <!-- Contribution grid snake game (offset behind columns) -->
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/{username}/{username}/output/github-contribution-grid-snake.svg?v=2">
