@@ -941,10 +941,13 @@ def generate_readme():
   <tr style="border: 0px;">
     <!-- Profile Frame -->
     <td align="center" valign="middle" style="border: 0px; padding: 10px; width: 40%;">
-      <div style="position: relative; display: inline-block;">
-        <img src="halloween/frames/profile_frame.svg" alt="Tombstone Frame" width="240" style="z-index: 1;">
-        <!-- Floating typing ghost animation -->
-        <img src="halloween/animations/floating_ghost.gif" alt="Animated Ghost" width="80" style="position: absolute; bottom: 10px; right: -10px; z-index: 2;">
+      <div style="position: relative; display: inline-block; width: 240px; height: 280px;">
+        <!-- Spooky Avatar Image (positioned inside the frame) -->
+        <img src="halloween/spooky_avatar.png" alt="Spooky Avatar" width="160" style="position: absolute; top: 90px; left: 40px; border-radius: 50%; border: 3px solid #ff7518; z-index: 1;">
+        <!-- Tombstone Frame overlay -->
+        <img src="halloween/frames/profile_frame.svg" alt="Tombstone Frame" width="240" style="position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none;">
+        <!-- Floating ghost animation -->
+        <img src="halloween/animations/floating_ghost.gif" alt="Animated Ghost" width="80" style="position: absolute; bottom: -5px; right: -5px; z-index: 3;">
       </div>
     </td>
     <!-- Bio Monospace Details -->
