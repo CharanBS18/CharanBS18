@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 600" width="1280" height="600">
+  <defs>
+    <radialGradient id="sky-back" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#240046" />
+      <stop offset="50%" stop-color="#120124" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </radialGradient>
+    <radialGradient id="glow-lamp" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7518" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rgb-neon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff7518" />
+      <stop offset="33%" stop-color="#39ff14" />
+      <stop offset="66%" stop-color="#5a189a" />
+      <stop offset="100%" stop-color="#ff7518" />
+    </linearGradient>
+    <filter id="m-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes keys-glow {
+      0%, 100% { stroke: #ff7518; filter: drop-shadow(0 0 2px #ff7518); }
+      50% { stroke: #39ff14; filter: drop-shadow(0 0 8px #39ff14); }
+    }
+    @keyframes window-ghost {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+      50% { transform: translate(5px, -10px) scale(1.05); opacity: 0.4; }
+    }
+    @keyframes leaves-fall {
+      0% { transform: translate(0, -100px) rotate(0deg); opacity: 0; }
+      50% { opacity: 0.8; }
+      100% { transform: translate(-80px, 600px) rotate(360deg); opacity: 0; }
+    }
+    .neon-border { animation: keys-glow 4s infinite; }
+    .window-ghost-anim { animation: window-ghost 6s ease-in-out infinite; }
+    .falling-leaf { animation: leaves-fall 10s linear infinite; }
+  </style>
+
+  <!-- Backdrop -->
+  <rect width="1280" height="600" rx="16" fill="url(#sky-back)"/>
+
+  <!-- Twinkling Stars -->
+  <g fill="#ffd166">
+    <circle cx="150" cy="70" r="1.5" opacity="0.8"/>
+    <circle cx="380" cy="110" r="2" opacity="0.6"/>
+    <circle cx="650" cy="80" r="1" opacity="0.4"/>
+    <circle cx="890" cy="60" r="1.5" opacity="0.9"/>
+  </g>
+
+  <!-- Large Crescent Moon outside the window -->
+  <g transform="translate(150, 80)">
+    <circle cx="60" cy="60" r="90" fill="#ffd166" filter="url(#m-glow)"/>
+    <circle cx="20" cy="60" r="90" fill="#120124" />
+  </g>
+
+  <!-- Haunted Tree outside the window -->
+  <path d="M 0 600 L 0 350 C 30 330, 50 280, 70 240 C 90 220, 110 230, 130 190 M 70 240 C 50 210, 20 230, 10 200" fill="none" stroke="#0d1117" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 130 190 C 140 180, 160 190, 170 170 C 180 150, 170 120, 160 100" fill="none" stroke="#0d1117" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Window Frame Silhouette -->
+  <rect x="50" y="40" width="300" height="420" rx="150" fill="none" stroke="#0d1117" stroke-width="12"/>
+  <line x1="200" y1="40" x2="200" y2="460" stroke="#0d1117" stroke-width="8"/>
+  <line x1="50" y1="230" x2="350" y2="230" stroke="#0d1117" stroke-width="8"/>
+
+  <!-- Floating ghost outside the window -->
+  <path class="window-ghost-anim" d="M 120 180 C 120 160, 140 160, 140 180 C 140 195, 135 190, 130 200 C 125 190, 120 195, 120 180 Z" fill="#f8f9fa" opacity="0.3"/>
+
+  <!-- Falling leaves decorations -->
+  <path class="falling-leaf" d="M 300 0 C 290 20, 310 40, 300 60 L 295 55" fill="#e85d04" style="animation-delay: 0s;"/>
+  <path class="falling-leaf" d="M 700 0 C 690 30, 710 50, 700 80 L 695 75" fill="#ff7518" style="animation-delay: 3s;"/>
+  <path class="falling-leaf" d="M 1000 0 C 990 20, 1010 40, 1000 60 L 995 55" fill="#5a189a" style="animation-delay: 6s;"/>
+
+  <!-- Programmer Desk surface -->
+  <rect x="0" y="480" width="1280" height="120" fill="#0d1117" stroke="#240046" stroke-width="3"/>
+  <rect x="50" y="480" width="1180" height="8" fill="#1c1c1c"/>
+
+  <!-- Dual Monitor Setup -->
+  <!-- Monitor 1 (Left): VS Code -->
+  <g transform="translate(420, 160)">
+    <rect width="380" height="240" rx="8" fill="#1c1c1c" stroke="#240046" stroke-width="3"/>
+    <rect x="10" y="10" width="360" height="220" rx="4" fill="#0d1117"/>
+    <!-- VS Code Sidebar -->
+    <rect x="10" y="10" width="30" height="220" fill="#120124"/>
+    <circle cx="25" cy="25" r="3" fill="#ff7518"/>
+    <circle cx="25" cy="40" r="3" fill="#39ff14"/>
+    <!-- VS Code Code Lines -->
+    <g transform="translate(55, 25)" stroke-width="3" stroke-linecap="round">
+      <line x1="0" y1="5" x2="60" y2="5" stroke="#5a189a"/>
+      <line x1="70" y1="5" x2="150" y2="5" stroke="#39ff14"/>
+      <line x1="20" y1="20" x2="120" y2="20" stroke="#ff7518"/>
+      <line x1="40" y1="35" x2="100" y2="35" stroke="#ffd166"/>
+      <line x1="20" y1="50" x2="180" y2="50" stroke="#39ff14"/>
+      <line x1="0" y1="65" x2="40" y2="65" stroke="#5a189a"/>
+    </g>
+    <!-- Stand -->
+    <rect x="165" y="240" width="50" height="60" fill="#1c1c1c"/>
+    <ellipse cx="190" cy="300" rx="60" ry="10" fill="#1c1c1c"/>
+  </g>
+
+  <!-- Monitor 2 (Right): GitHub Window -->
+  <g transform="translate(840, 180)">
+    <rect width="360" height="220" rx="8" fill="#1c1c1c" stroke="#240046" stroke-width="3"/>
+    <rect x="10" y="10" width="340" height="200" rx="4" fill="#0d1117"/>
+    <!-- GitHub Contribution Grid mockup -->
+    <g transform="translate(30, 40)" fill="#1c1c1c">
+      <!-- Labeled rows and squares -->
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#39ff14"/>
+      <rect x="16" y="0" width="12" height="12" rx="2" fill="#240046"/>
+      <rect x="32" y="0" width="12" height="12" rx="2" fill="#ff7518"/>
+      <rect x="48" y="0" width="12" height="12" rx="2" fill="#39ff14"/>
+      
+      <rect x="0" y="16" width="12" height="12" rx="2" fill="#ff7518"/>
+      <rect x="16" y="16" width="12" height="12" rx="2" fill="#39ff14"/>
+      <rect x="32" y="16" width="12" height="12" rx="2" fill="#240046"/>
+      <rect x="48" y="16" width="12" height="12" rx="2" fill="#ff7518"/>
+      
+      <rect x="0" y="32" width="12" height="12" rx="2" fill="#240046"/>
+      <rect x="16" y="32" width="12" height="12" rx="2" fill="#ff7518"/>
+      <rect x="32" y="32" width="12" height="12" rx="2" fill="#39ff14"/>
+      <rect x="48" y="32" width="12" height="12" rx="2" fill="#39ff14"/>
+    </g>
+    <!-- Raven sitting on right monitor -->
+    <path d="M 330 0 C 330 -10, 320 -20, 315 -25 C 310 -25, 305 -15, 308 0 C 300 5, 305 15, 310 15 C 315 15, 325 5, 330 0" fill="#0d1117" stroke="#120124" stroke-width="1.5"/>
+    <polygon points="302,-2 296,-5 304,3" fill="#ff7518"/> <!-- Beak -->
+    <!-- Stand -->
+    <rect x="155" y="220" width="50" height="60" fill="#1c1c1c"/>
+    <ellipse cx="180" cy="280" rx="50" ry="10" fill="#1c1c1c"/>
+  </g>
+
+  <!-- Pumpkin Lamp on Desk -->
+  <g transform="translate(1070, 360)">
+    <circle cx="60" cy="70" r="100" fill="url(#glow-lamp)"/>
+    <ellipse cx="60" cy="90" rx="45" ry="35" fill="#ff7518" stroke="#1c1c1c" stroke-width="3"/>
+    <ellipse cx="60" cy="90" rx="28" ry="35" fill="#e85d04" stroke="#1c1c1c" stroke-width="1.5"/>
+    <!-- Stem -->
+    <path d="M 60 55 C 58 45, 52 40, 50 40 L 55 55" stroke="#1c1c1c" stroke-width="4" fill="none"/>
+    <!-- Glowing face -->
+    <polygon points="40,80 50,75 45,86" fill="#ffd166"/>
+    <polygon points="80,80 70,75 75,86" fill="#ffd166"/>
+    <path d="M 38 100 Q 60 115 82 100 Z" fill="#ffd166"/>
+  </g>
+
+  <!-- Stacked Spellbooks & Candles L -->
+  <g transform="translate(420, 420)">
+    <!-- Book 1 (purple) -->
+    <rect x="0" y="30" width="110" height="20" rx="3" fill="#5a189a" stroke="#0d1117" stroke-width="2"/>
+    <line x1="10" y1="30" x2="10" y2="50" stroke="#ffd166" stroke-width="2"/>
+    <!-- Book 2 (red) -->
+    <rect x="10" y="12" width="90" height="18" rx="3" fill="#8b0000" stroke="#0d1117" stroke-width="2"/>
+    <line x1="20" y1="12" x2="20" y2="30" stroke="#ffd166" stroke-width="2"/>
+    <!-- Wax Candle on book -->
+    <rect x="40" y="-12" width="16" height="24" fill="#ffd166" stroke="#0d1117" stroke-width="2"/>
+    <path d="M 40 -12 Q 44 2, 46 -12" fill="#ffd166"/> <!-- Melted wax -->
+    <line x1="48" y1="-12" x2="48" y2="-18" stroke="#0d1117" stroke-width="2"/>
+    <!-- Flame -->
+    <path d="M 48 -18 C 45 -22, 45 -28, 48 -32 C 51 -28, 51 -22, 48 -18 Z" fill="#ff7518"/>
+  </g>
+
+  <!-- RGB Mechanical Keyboard (Center Desk) -->
+  <g transform="translate(520, 460)">
+    <rect class="neon-border" width="240" height="25" rx="5" fill="#1c1c1c" stroke="url(#rgb-neon)" stroke-width="3"/>
+    <!-- Row of keys -->
+    <path d="M 10 7 H 230" stroke="#ffd166" stroke-dasharray="6 3" stroke-width="2"/>
+    <path d="M 8 16 H 232" stroke="#39ff14" stroke-dasharray="10 4" stroke-width="2"/>
+  </g>
+
+  <!-- Coffee Mug with Ghost Steam R -->
+  <g transform="translate(790, 435)">
+    <rect width="25" height="30" rx="4" fill="#240046" stroke="#f8f9fa" stroke-width="2"/>
+    <path d="M 25 6 C 30 6, 32 10, 32 15 C 32 20, 30 24, 25 24" fill="none" stroke="#f8f9fa" stroke-width="2"/>
+    <!-- Ghost Steam -->
+    <path d="M 12 -5 Q 8 -15, 12 -25 Q 18 -15, 15 -5" fill="#f8f9fa" opacity="0.6"/>
+  </g>
+
+  <!-- Witch Hat resting on desk -->
+  <g transform="translate(360, 420)">
+    <ellipse cx="40" cy="50" rx="45" ry="12" fill="#240046" stroke="#0d1117" stroke-width="2"/>
+    <polygon points="10,48 40,10 70,48" fill="#5a189a" stroke="#0d1117" stroke-width="2"/>
+    <ellipse cx="40" cy="46" rx="18" ry="4" fill="#ff7518"/>
+  </g>
+
+  <!-- Spider Web in L corner -->
+  <path d="M 0 0 L 120 0 M 0 0 L 0 120 M 0 0 L 85 85" stroke="#240046" stroke-width="1.5"/>
+  <path d="M 30 0 Q 30 30, 0 30 M 60 0 Q 60 60, 0 60 M 90 0 Q 90 90, 0 90" stroke="#240046" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+</svg>

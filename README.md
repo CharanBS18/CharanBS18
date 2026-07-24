@@ -1,7 +1,7 @@
-<h1 align="center">🔮 GRIMOIRE ACCESS NODE // CHARANBS18 🔮</h1>
+<h1 align="center">🔮 THE GRIMOIRE ACCESS NODE // CHARANBS18 🔮</h1>
 
 <p align="center">
-  <img alt="Premium Spooky Halloween Banner" src="halloween/banner.svg" width="100%">
+  <img alt="Premium Spooky Halloween Workspace Hero" src="halloween/banner/hero.svg" width="100%">
 </p>
 
 <!-- Spooky Decorative Panel -->
@@ -9,22 +9,17 @@
   <img src="halloween/dividers/webs.svg" width="100%">
 </p>
 
-<!-- Bio Section -->
-<a id="about-me"></a>
-<p align="center">
-  <img src="halloween/headers/about.svg" width="380">
-</p>
+<!-- Story Section 1: The Legend -->
+<a id="legend"></a>
+<h2 align="center">📜 THE LEGEND</h2>
 
 <table align="center" border="0" cellpadding="15" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto; background-color: #0d1117;">
   <tr style="border: 0px;">
-    <!-- Profile Frame -->
+    <!-- Profile Frame with spooky avatar overlay -->
     <td align="center" valign="middle" style="border: 0px; padding: 10px; width: 40%;">
       <div style="position: relative; display: inline-block; width: 240px; height: 280px;">
-        <!-- Spooky Avatar Image (positioned inside the frame) -->
         <img src="halloween/spooky_avatar.png" alt="Spooky Avatar" width="160" style="position: absolute; top: 90px; left: 40px; border-radius: 50%; border: 3px solid #ff7518; z-index: 1;">
-        <!-- Tombstone Frame overlay -->
         <img src="halloween/frames/profile_frame.svg" alt="Tombstone Frame" width="240" style="position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none;">
-        <!-- Floating ghost animation -->
         <img src="halloween/animations/floating_ghost.gif" alt="Animated Ghost" width="80" style="position: absolute; bottom: -5px; right: -5px; z-index: 3;">
       </div>
     </td>
@@ -33,7 +28,7 @@
       <h3 style="color: #ff7518; margin-top: 0;">&gt; COFFIN_NODE.conf</h3>
       <p><b>&gt; IDENTITY:</b> Charan BS / @CharanBS18</p>
       <p><b>&gt; ACCESS_PORT:</b> <a href="mailto:charan201204@gmail.com" style="color: #39ff14;">charan201204@gmail.com</a></p>
-      <p><b>&gt; ALIGNMENT:</b> <code style="color: #ffd166;">Chaotic Creative Developer</code></p>
+      <p><b>&gt; ALIGNMENT:</b> <code style="color: #ffd166;">Frontend Wizard [Level 99]</code></p>
       <hr style="border: 1px solid #240046; opacity: 0.8; margin: 15px 0;">
       <p style="line-height: 1.6; color: #f8f9fa;">
         Welcome, mortal visitor, to the spectral repository node. I craft responsive, high-performance web structures using midnight potions, green slime, and dark-mode coding rituals. I believe in clean code, robust architectures, and pixel-perfect design craftsmanship.
@@ -43,118 +38,76 @@
 </table>
 
 <p align="center">
-  <img src="halloween/dividers/vines.svg" width="100%">
+  <img src="halloween/dividers/gothic_arches.svg" width="100%">
 </p>
 
-<!-- Tech Stack Section -->
-<a id="tech-stack"></a>
+<!-- Story Section 2: Potion Ingredients (Skills) -->
+<a id="potion-ingredients"></a>
+<h2 align="center">🧪 POTION INGREDIENTS</h2>
+
+<!-- Potion bottle skills grids -->
 <p align="center">
-  <img src="halloween/headers/skills.svg" width="380">
+  <img src="halloween/skills/potion_react.svg" width="85" alt="React">
+  <img src="halloween/skills/potion_ts.svg" width="85" alt="TypeScript">
+  <img src="halloween/skills/potion_node.svg" width="85" alt="Node.js">
+  <img src="halloween/skills/potion_python.svg" width="85" alt="Python">
+  <img src="halloween/skills/potion_docker.svg" width="85" alt="Docker">
+  <img src="halloween/skills/potion_k8s.svg" width="85" alt="Kubernetes">
+  <img src="halloween/skills/potion_rust.svg" width="85" alt="Rust">
+  <img src="halloween/skills/potion_go.svg" width="85" alt="Go">
 </p>
 
-<p align="center">
-  <img src="halloween/icons/html.svg" width="75" alt="HTML">
-  <img src="halloween/icons/css.svg" width="75" alt="CSS">
-  <img src="halloween/icons/js.svg" width="75" alt="JS">
-  <img src="halloween/icons/python.svg" width="75" alt="Python">
-  <img src="halloween/icons/react.svg" width="75" alt="React">
-  <img src="halloween/icons/node.svg" width="75" alt="Node.js">
-  <img src="halloween/icons/docker.svg" width="75" alt="Docker">
-  <img src="halloween/icons/git.svg" width="75" alt="Git">
-  <img src="halloween/icons/github.svg" width="75" alt="GitHub">
-</p>
-
-<!-- Cauldron and witch hat animation -->
-<p align="center">
-  <img src="halloween/animations/magic_particles.gif" width="75" alt="Bubbling Potion Particle">
-  <img src="halloween/animations/floating_witch_hat.gif" width="75" alt="Floating Witch Hat">
-  <img src="halloween/animations/candle_flicker.gif" width="55" alt="Flickering Candle">
-</p>
-
-<p align="center">
-  <img src="halloween/dividers/skulls.svg" width="100%">
-</p>
-
-<!-- Stats Section -->
-<a id="stats"></a>
-<p align="center">
-  <img src="halloween/headers/stats.svg" width="380">
-</p>
-
+<!-- Spell cards details -->
 <table align="center" border="0" cellpadding="10" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto;">
   <tr style="border: 0px;">
-    <td align="center" valign="middle" style="border: 0px;">
-      <!-- Stats image with custom frame styling -->
-      <div style="position: relative; display: inline-block;">
-        <img src="stats.svg" alt="Stats Summary" width="420" style="border: 2px solid #5a189a; border-radius: 8px;">
-        <img src="halloween/animations/pumpkin_glow.gif" alt="Glowing Pumpkin" width="60" style="position: absolute; top: -25px; left: -25px;">
-      </div>
+    <td style="border: 0px;"><img src="halloween/skills/spell_react.svg" width="100"></td>
+    <td style="border: 0px;"><img src="halloween/skills/spell_ts.svg" width="100"></td>
+    <td style="border: 0px;"><img src="halloween/skills/spell_node.svg" width="100"></td>
+    <td style="border: 0px;"><img src="halloween/skills/spell_python.svg" width="100"></td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="halloween/dividers/magic_circle.svg" width="100%">
+</p>
+
+<!-- Story Section 3: Haunted Laboratory (Current Work) -->
+<a id="haunted-laboratory"></a>
+<h2 align="center">🕯 HAUNTED LABORATORY</h2>
+
+<table align="center" border="0" cellpadding="15" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto; background-color: #0d1117;">
+  <tr style="border: 0px;">
+    <!-- Terminal GIF -->
+    <td align="center" valign="middle" style="border: 0px; padding: 10px; width: 45%;">
+      <img src="halloween/terminal/terminal.gif" alt="Haunted Terminal typing" width="100%" style="max-width: 360px;">
     </td>
-    <td align="center" valign="middle" style="border: 0px;">
-      <!-- Languages summary -->
-      <div style="position: relative; display: inline-block;">
-        <img src="langs.svg" alt="Languages Summary" width="420" style="border: 2px solid #39ff14; border-radius: 8px;">
-        <img src="halloween/animations/twinkling_stars.gif" alt="Twinkling Stars" width="60" style="position: absolute; bottom: -25px; right: -25px;">
-      </div>
+    <!-- Status Text -->
+    <td valign="top" style="border: 0px; padding: 20px; width: 55%; font-family: monospace; color: #f8f9fa; line-height: 1.6;">
+      <h3 style="color: #ff7518; margin-top: 0;">&gt; ACTIVE_EXPERIMENT.bin</h3>
+      <p><b>&gt; STATUS:</b> Brewing spell-check algorithms</p>
+      <p><b>&gt; OBJECTIVE:</b> Building lightweight, pixel-perfect layout nodes</p>
+      <p><b>&gt; INGREDIENTS:</b> <code>TailwindCSS</code> <code>Next.js</code> <code>Pillow</code></p>
     </td>
   </tr>
 </table>
 
-<p align="center" style="margin-top: 20px;">
-  <!-- Coffin trophies summary -->
-  <img src="trophies.svg" alt="Spooky Trophies" width="100%" style="max-width: 860px; border: 2px solid #ff7518; border-radius: 8px;">
-</p>
-
 <p align="center">
-  <img src="halloween/dividers/moon_stars.svg" width="100%">
+  <img src="halloween/dividers/vines.svg" width="100%">
 </p>
 
-<!-- Contribution Graph Section -->
-<a id="contributions"></a>
-<h3 align="center" style="font-family: monospace; color: #ff7518;">🎃 CONTRIBUTION SPIDER GRID 🎃</h3>
-
-<p align="center">
-  <!-- Contribution grid snake -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CharanBS18/CharanBS18/output/github-contribution-grid-snake.svg?v=2">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CharanBS18/CharanBS18/output/github-contribution-grid-snake-light.svg?v=2">
-    <img alt="GitHub Snake Game" src="https://raw.githubusercontent.com/CharanBS18/CharanBS18/output/github-contribution-grid-snake.svg?v=2" width="100%">
-  </picture>
-</p>
-
-<p align="center">
-  <img src="halloween/dividers/bats.svg" width="100%">
-</p>
-
-<!-- Featured Projects Section -->
-<a id="projects"></a>
-<p align="center">
-  <img src="halloween/headers/projects.svg" width="380">
-</p>
+<!-- Story Section 4: Spellbook (Projects) -->
+<a id="spellbook"></a>
+<h2 align="center">📖 SPELLBOOK</h2>
 
 <table align="center" border="0" cellpadding="15" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto; width: 100%; max-width: 900px;">
   <tr style="border: 0px;">
-    <!-- Project 1 Card -->
+    <!-- Project 1 Spellbook Card -->
     <td valign="top" style="border: 0px; width: 50%; padding: 15px;">
-      <div style="background-color: #0d1117; border: 2px solid #5a189a; border-radius: 8px; padding: 20px; font-family: monospace; min-height: 180px;">
-        <h4 style="color: #ff7518; margin-top: 0;">🔮 spellcaster-compiler</h4>
-        <p style="color: #f8f9fa; font-size: 13px;">A high-performance JS/TS AST analyzer that compiles spooky commands into clean, reactive pipelines. Supports custom plugin extensions.</p>
-        <div style="margin-top: 15px;">
-          <span style="border: 1px solid #7fff00; color: #7fff00; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin-right: 5px;">TypeScript</span>
-          <span style="border: 1px solid #ff7518; color: #ff7518; padding: 2px 6px; border-radius: 4px; font-size: 10px;">AST</span>
-        </div>
-      </div>
+      <img src="halloween/projects/spellbook_spellcaster.svg" width="100%" alt="spellcaster-compiler Book">
     </td>
-    <!-- Project 2 Card -->
+    <!-- Project 2 Spellbook Card -->
     <td valign="top" style="border: 0px; width: 50%; padding: 15px;">
-      <div style="background-color: #0d1117; border: 2px solid #39ff14; border-radius: 8px; padding: 20px; font-family: monospace; min-height: 180px;">
-        <h4 style="color: #ff7518; margin-top: 0;">💀 cauldron-db</h4>
-        <p style="color: #f8f9fa; font-size: 13px;">Lightweight NoSQL key-value cache layer written in Python. Uses custom memory compression algorithms to store potion recipes efficiently.</p>
-        <div style="margin-top: 15px;">
-          <span style="border: 1px solid #ff7518; color: #ff7518; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin-right: 5px;">Python</span>
-          <span style="border: 1px solid #ffd166; color: #ffd166; padding: 2px 6px; border-radius: 4px; font-size: 10px;">Database</span>
-        </div>
-      </div>
+      <img src="halloween/projects/spellbook_cauldron.svg" width="100%" alt="cauldron-db Book">
     </td>
   </tr>
 </table>
@@ -163,23 +116,81 @@
   <img src="halloween/dividers/webs.svg" width="100%">
 </p>
 
-<!-- Summon / Contact Section -->
-<a id="contact"></a>
+<!-- Story Section 5: Ancient Relics (Achievements) -->
+<a id="ancient-relics"></a>
+<h2 align="center">🏆 ANCIENT RELICS</h2>
+
 <p align="center">
-  <img src="halloween/headers/contact.svg" width="380">
+  <img src="halloween/badges/relic_orb.svg" width="90" alt="Crystal Orb">
+  <img src="halloween/badges/relic_skull.svg" width="90" alt="Skull Trophy">
+  <img src="halloween/badges/relic_crown.svg" width="90" alt="Ancient Crown">
+  <img src="halloween/badges/relic_candle.svg" width="90" alt="Haunted Candle">
+  <img src="halloween/badges/relic_staff.svg" width="90" alt="Magic Staff">
+  <img src="halloween/badges/relic_pumpkin.svg" width="90" alt="Golden Pumpkin">
 </p>
 
+<p align="center">
+  <img src="halloween/dividers/gothic_arches.svg" width="100%">
+</p>
+
+<!-- Story Section 6: Moonlit Activity (Stats & Contributions) -->
+<a id="moonlit-activity"></a>
+<h2 align="center">🌙 MOONLIT ACTIVITY</h2>
+
+<table align="center" border="0" cellpadding="10" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto;">
+  <tr style="border: 0px;">
+    <!-- Character RPG Status Card -->
+    <td align="center" valign="middle" style="border: 0px; padding: 10px;">
+      <img src="halloween/stats/rpg_card.svg" alt="Mage Character Card" width="440">
+    </td>
+    <!-- Commits and languages grids -->
+    <td align="center" valign="middle" style="border: 0px; padding: 10px;">
+      <div style="position: relative; display: inline-block;">
+        <img src="stats.svg" alt="Stats Summary" width="400" style="border: 2px solid #ff7518; border-radius: 8px;">
+        <img src="halloween/animations/pumpkin_glow.gif" alt="Glowing Pumpkin" width="65" style="position: absolute; top: -25px; left: -25px;">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<!-- Graveyard Wrapped Contribution Graph -->
+<p align="center" style="margin-top: 40px; position: relative; max-width: 860px; margin-left: auto; margin-right: auto;">
+  <!-- Contribution Graveyard Arch frame -->
+  <img src="halloween/stats/graveyard_frame.svg" alt="Graveyard Frame" width="100%" style="display: block;">
+</p>
+<p align="center" style="margin-top: -150px; padding-bottom: 50px; width: 100%;">
+  <!-- Contribution grid snake game (offset behind columns) -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/CharanBS18/CharanBS18/output/github-contribution-grid-snake.svg?v=2">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/CharanBS18/CharanBS18/output/github-contribution-grid-snake-light.svg?v=2">
+    <img alt="GitHub Snake Game" src="https://raw.githubusercontent.com/CharanBS18/CharanBS18/output/github-contribution-grid-snake.svg?v=2" width="85%">
+  </picture>
+</p>
+
+<!-- Trophies Display -->
+<p align="center" style="margin-top: 20px;">
+  <img src="trophies.svg" alt="Trophies display" width="100%" style="max-width: 850px; border: 2px solid #5a189a; border-radius: 8px;">
+</p>
+
+<p align="center">
+  <img src="halloween/dividers/magic_circle.svg" width="100%">
+</p>
+
+<!-- Story Section 7: Raven Mail (Contact) -->
+<a id="raven-mail"></a>
+<h2 align="center">📮 RAVEN MAIL</h2>
+
 <p align="center" style="font-family: monospace; color: #f8f9fa; font-size: 14px;">
-  Send a message through the dark portal if you dare to collaborate:
+  Summon the mage through the dark portal if you dare to collaborate on project architectures:
   <br><br>
-  <a href="mailto:charan201204@gmail.com" style="display: inline-block; background-color: #240046; color: #ff7518; border: 2px solid #ff7518; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-    📧 SUMMON THE WIZARD
+  <a href="mailto:charan201204@gmail.com" style="display: inline-block; background-color: #240046; color: #ff7518; border: 2px solid #ff7518; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: monospace;">
+    📧 SEND RAVEN SUMMONS
   </a>
 </p>
 
-<!-- Spooky Footer -->
-<p align="center" style="margin-top: 50px;">
-  <img src="halloween/dividers/vines.svg" width="100%">
+<!-- Spooky Forest Footer -->
+<p align="center" style="margin-top: 70px;">
+  <img src="halloween/footer/footer.svg" width="100%">
 </p>
 
 <p align="center" style="font-family: monospace; color: #5a189a; font-size: 11px;">

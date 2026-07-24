@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 200" width="1280" height="200">
+  <defs>
+    <linearGradient id="sky-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#120124" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&amp;display=swap');
+    .footer-quote {
+      font-family: 'Creepster', cursive;
+      font-size: 24px;
+      fill: #ff7518;
+      letter-spacing: 2px;
+      filter: drop-shadow(0 0 6px #e85d04);
+    }
+  </style>
+
+  <!-- Sky background -->
+  <rect width="1280" height="200" fill="url(#sky-dark)"/>
+
+  <!-- Haunted Forest Silhouettes -->
+  <g fill="#0d1117" stroke="#000" stroke-width="1">
+    <!-- Tree 1 -->
+    <polygon points="100,200 130,80 160,200"/>
+    <polygon points="115,140 130,50 145,140"/>
+    
+    <!-- Tree 2 -->
+    <polygon points="250,200 270,110 290,200"/>
+    
+    <!-- Tree 3 -->
+    <polygon points="900,200 930,90 960,200"/>
+    <polygon points="915,130 930,60 945,130"/>
+
+    <!-- Tree 4 -->
+    <polygon points="1100,200 1120,100 1140,200"/>
+  </g>
+
+  <!-- Ground -->
+  <rect y="180" width="1280" height="20" fill="#0d1117"/>
+
+  <!-- Quote -->
+  <text class="footer-quote" x="640" y="110" text-anchor="middle">"Every line of code tells a story."</text>
+
+  <!-- Small bats -->
+  <path d="M 300 40 Q 310 20, 315 35 Q 320 20, 330 40 Q 315 45, 300 40 Z" fill="#0d1117"/>
+  <path d="M 850 50 Q 860 30, 865 45 Q 870 30, 880 50 Q 865 55, 850 50 Z" fill="#0d1117"/>
+</svg>

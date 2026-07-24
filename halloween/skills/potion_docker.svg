@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 120" width="80" height="120" fill="none">
+  <!-- Cork -->
+  <polygon points="35,10 45,10 42,22 38,22" fill="#ffd166" stroke="#0d1117" stroke-width="1.5"/>
+  <!-- Neck -->
+  <rect x="36" y="22" width="8" height="15" fill="#f8f9fa" fill-opacity="0.1" stroke="#ffd166" stroke-width="1.5"/>
+  <!-- Bottle body -->
+  <path d="M 36 37 Q 15 50, 15 85 C 15 110, 65 110, 65 85 Q 65 50, 44 37 Z" fill="#f8f9fa" fill-opacity="0.05" stroke="#ffd166" stroke-width="2"/>
+  
+  <!-- Liquid Content -->
+  <path d="M 16 85 C 16 108, 64 108, 64 85 C 64 78, 60 57, 40 57 C 20 57, 16 78, 16 85 Z" fill="#240046" fill-opacity="0.75"/>
+  
+  <!-- Bubble detail -->
+  <circle cx="35" cy="80" r="3" fill="#f8f9fa" opacity="0.6"/>
+  <circle cx="48" cy="90" r="4" fill="#f8f9fa" opacity="0.4"/>
+  <circle cx="40" cy="70" r="2.5" fill="#f8f9fa" opacity="0.5"/>
+
+  <!-- Text Label -->
+  <rect x="15" y="105" width="50" height="12" rx="4" fill="#1c1c1c" stroke="#ffd166" stroke-width="1"/>
+  <text x="40" y="114" fill="#ffd166" font-family="monospace" font-size="7" font-weight="bold" text-anchor="middle">DOCKER</text>
+</svg>
