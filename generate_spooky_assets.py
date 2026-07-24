@@ -66,11 +66,27 @@ def clean_sticker_bfs(img):
     return clean_img
 
 def crop_stickers():
-    # 1. Crop stickers from halloch.png
-    if not os.path.exists("halloch.png"):
-        print("halloch.png not found, skipping sticker cropping.")
-    else:
-        print("Cropping stickers from halloch.png...")
+    # 1. Crop/Copy stickers
+    downloads_dir = "/Users/charanbs/Downloads/stickers"
+    if os.path.exists(downloads_dir):
+        print(f"Using user-provided cropped stickers from {downloads_dir}...")
+        for i in range(20):
+            idx_offset = 68 + i
+            src_path = os.path.join(downloads_dir, f"{idx_offset}.png")
+            dst_path = f"halloween/stickers/sticker_{i+1}.png"
+            if os.path.exists(src_path):
+                img = Image.open(src_path)
+                bbox = img.getbbox()
+                if bbox:
+                    img = img.crop(bbox)
+                img.thumbnail((300, 300), Image.Resampling.LANCZOS)
+                img.save(dst_path)
+                print(f"Processed user sticker {i+1} from {idx_offset}.png")
+            else:
+                print(f"Warning: {src_path} not found!")
+        print("All 20 user-provided stickers copied and processed successfully.")
+    elif os.path.exists("halloch.png"):
+        print("halloch.png found, cropping stickers using BFS components...")
         img = Image.open("halloch.png")
         w, h = img.size
         cols, rows = 5, 4
@@ -92,7 +108,9 @@ def crop_stickers():
                     box = box.crop(bbox)
                 box.thumbnail((300, 300), Image.Resampling.LANCZOS)
                 box.save(f"halloween/stickers/sticker_{idx}.png")
-        print("All 20 stickers cropped successfully.")
+        print("All 20 stickers cropped from sheet successfully.")
+    else:
+        print("No sticker source found, skipping sticker cropping.")
 
     # 2. Crop user portrait from chtransparent.png
     if not os.path.exists("chtransparent.png"):
