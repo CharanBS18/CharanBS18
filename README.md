@@ -25,12 +25,18 @@
     </td>
     <!-- Bio Monospace Details -->
     <td valign="top" style="border: 0px; padding: 20px; width: 60%; font-family: monospace; color: #f8f9fa;">
+      <div style="float: right; margin-left: 10px; transform: rotate(-5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">
+        <img src="halloween/stickers/sticker_12.png" width="90" alt="Mascot Cat">
+      </div>
+      <div style="float: left; margin-right: 10px; transform: rotate(5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">
+        <img src="halloween/stickers/sticker_1.png" width="90" alt="Mascot Pumpkin">
+      </div>
       <h3 style="color: #ff7518; margin-top: 0;">&gt; COFFIN_NODE.conf</h3>
       <p><b>&gt; IDENTITY:</b> Charan BS / @CharanBS18</p>
       <p><b>&gt; ACCESS_PORT:</b> <a href="mailto:charan201204@gmail.com" style="color: #39ff14;">charan201204@gmail.com</a></p>
       <p><b>&gt; ALIGNMENT:</b> <code style="color: #ffd166;">Frontend Wizard [Level 99]</code></p>
       <hr style="border: 1px solid #240046; opacity: 0.8; margin: 15px 0;">
-      <p style="line-height: 1.6; color: #f8f9fa;">
+      <p style="line-height: 1.6; color: #f8f9fa; clear: both;">
         Welcome, mortal visitor, to the spectral repository node. I craft responsive, high-performance web structures using midnight potions, green slime, and dark-mode coding rituals. I believe in clean code, robust architectures, and pixel-perfect design craftsmanship.
       </p>
     </td>
@@ -47,6 +53,7 @@
 
 <!-- Potion bottle skills grids -->
 <p align="center">
+  <img src="halloween/stickers/sticker_19.png" width="90" style="transform: rotate(6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); vertical-align: middle; margin-right: 15px;" alt="Potion Brew">
   <img src="halloween/skills/potion_react.svg" width="85" alt="React">
   <img src="halloween/skills/potion_ts.svg" width="85" alt="TypeScript">
   <img src="halloween/skills/potion_node.svg" width="85" alt="Node.js">
@@ -55,6 +62,7 @@
   <img src="halloween/skills/potion_k8s.svg" width="85" alt="Kubernetes">
   <img src="halloween/skills/potion_rust.svg" width="85" alt="Rust">
   <img src="halloween/skills/potion_go.svg" width="85" alt="Go">
+  <img src="halloween/stickers/sticker_3.png" width="90" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); vertical-align: middle; margin-left: 15px;" alt="Vampire Potion">
 </p>
 
 <!-- Spell cards details -->
@@ -83,7 +91,13 @@
     </td>
     <!-- Status Text -->
     <td valign="top" style="border: 0px; padding: 20px; width: 55%; font-family: monospace; color: #f8f9fa; line-height: 1.6;">
-      <h3 style="color: #ff7518; margin-top: 0;">&gt; ACTIVE_EXPERIMENT.bin</h3>
+      <div style="float: right; transform: rotate(4deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4)); margin-left: 10px;">
+        <img src="halloween/stickers/sticker_15.png" width="85" alt="Lantern Wizard">
+      </div>
+      <div style="float: left; transform: rotate(-5deg); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.45)); margin-right: 10px;">
+        <img src="halloween/stickers/sticker_6.png" width="80" alt="Mummy Mascot">
+      </div>
+      <h3 style="color: #ff7518; margin-top: 0; clear: both;">&gt; ACTIVE_EXPERIMENT.bin</h3>
       <p><b>&gt; STATUS:</b> Brewing spell-check algorithms</p>
       <p><b>&gt; OBJECTIVE:</b> Building lightweight, pixel-perfect layout nodes</p>
       <p><b>&gt; INGREDIENTS:</b> <code>TailwindCSS</code> <code>Next.js</code> <code>Pillow</code></p>
@@ -102,12 +116,16 @@
 <table align="center" border="0" cellpadding="15" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto; width: 100%; max-width: 900px;">
   <tr style="border: 0px;">
     <!-- Project 1 Spellbook Card -->
-    <td valign="top" style="border: 0px; width: 50%; padding: 15px;">
+    <td valign="top" style="border: 0px; width: 50%; padding: 15px; text-align: center;">
       <img src="halloween/projects/spellbook_spellcaster.svg" width="100%" alt="spellcaster-compiler Book">
+      <br>
+      <img src="halloween/stickers/sticker_11.png" width="110" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Broom Fly">
     </td>
     <!-- Project 2 Spellbook Card -->
-    <td valign="top" style="border: 0px; width: 50%; padding: 15px;">
+    <td valign="top" style="border: 0px; width: 50%; padding: 15px; text-align: center;">
       <img src="halloween/projects/spellbook_cauldron.svg" width="100%" alt="cauldron-db Book">
+      <br>
+      <img src="halloween/stickers/sticker_4.png" width="110" style="transform: rotate(6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Witch Broom">
     </td>
   </tr>
 </table>
@@ -121,12 +139,14 @@
 <h2 align="center">🏆 ANCIENT RELICS</h2>
 
 <p align="center">
+  <img src="halloween/stickers/sticker_16.png" width="95" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); vertical-align: middle; margin-right: 15px;" alt="Cast Magic">
   <img src="halloween/badges/relic_orb.svg" width="90" alt="Crystal Orb">
   <img src="halloween/badges/relic_skull.svg" width="90" alt="Skull Trophy">
   <img src="halloween/badges/relic_crown.svg" width="90" alt="Ancient Crown">
   <img src="halloween/badges/relic_candle.svg" width="90" alt="Haunted Candle">
   <img src="halloween/badges/relic_staff.svg" width="90" alt="Magic Staff">
   <img src="halloween/badges/relic_pumpkin.svg" width="90" alt="Golden Pumpkin">
+  <img src="halloween/stickers/sticker_13.png" width="95" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); vertical-align: middle; margin-left: 15px;" alt="Magic Cat">
 </p>
 
 <p align="center">
@@ -142,6 +162,8 @@
     <!-- Character RPG Status Card -->
     <td align="center" valign="middle" style="border: 0px; padding: 10px;">
       <img src="halloween/stats/rpg_card.svg" alt="Mage Character Card" width="440">
+      <br>
+      <img src="halloween/stickers/sticker_17.png" width="100" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Run Ghost">
     </td>
     <!-- Commits and languages grids -->
     <td align="center" valign="middle" style="border: 0px; padding: 10px;">
@@ -149,6 +171,8 @@
         <img src="stats.svg" alt="Stats Summary" width="400" style="border: 2px solid #ff7518; border-radius: 8px;">
         <img src="halloween/animations/pumpkin_glow.gif" alt="Glowing Pumpkin" width="65" style="position: absolute; top: -25px; left: -25px;">
       </div>
+      <br>
+      <img src="halloween/stickers/sticker_18.png" width="100" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)); margin-top: 15px;" alt="Float Pumpkins">
     </td>
   </tr>
 </table>
@@ -176,14 +200,33 @@
   <img src="halloween/dividers/magic_circle.svg" width="100%">
 </p>
 
+<!-- Story Section 6.5: Familiar Spirits (Collage of all remaining stickers) -->
+<a id="familiar-spirits"></a>
+<h2 align="center">🦇 FAMILIAR SPIRITS</h2>
+<p align="center" style="font-family: monospace; color: #cbd5e1; font-size: 13px;">
+  The many spectral forms and familiars conjured inside this Halloween code capsule:
+</p>
+<p align="center" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; max-width: 900px; margin: 20px auto;">
+  <img src="halloween/stickers/sticker_2.png" width="105" style="transform: rotate(-4deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Ghost Familiar">
+  <img src="halloween/stickers/sticker_5.png" width="105" style="transform: rotate(5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Skeleton Familiar">
+  <img src="halloween/stickers/sticker_7.png" width="105" style="transform: rotate(-6deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Frankenstein Familiar">
+  <img src="halloween/stickers/sticker_8.png" width="105" style="transform: rotate(3deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Werewolf Familiar">
+  <img src="halloween/stickers/sticker_9.png" width="105" style="transform: rotate(-3deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Zombie Familiar">
+  <img src="halloween/stickers/sticker_10.png" width="105" style="transform: rotate(4deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Pumpkin Candy Familiar">
+  <img src="halloween/stickers/sticker_14.png" width="105" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin: 10px;" alt="Castle Wizard Familiar">
+</p>
+
+<p align="center">
+  <img src="halloween/dividers/bats.svg" width="100%">
+</p>
+
 <!-- Story Section 7: Raven Mail (Contact) -->
 <a id="raven-mail"></a>
 <h2 align="center">📮 RAVEN MAIL</h2>
 
-<p align="center" style="font-family: monospace; color: #f8f9fa; font-size: 14px;">
-  Summon the mage through the dark portal if you dare to collaborate on project architectures:
-  <br><br>
-  <a href="mailto:charan201204@gmail.com" style="display: inline-block; background-color: #240046; color: #ff7518; border: 2px solid #ff7518; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: monospace;">
+<p align="center" style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+  <img src="halloween/stickers/sticker_20.png" width="105" style="transform: rotate(-5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45)); margin-right: 20px;" alt="Happy Halloween">
+  <a href="mailto:charan201204@gmail.com" style="display: inline-block; background-color: #240046; color: #ff7518; border: 2px solid #ff7518; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: monospace; height: fit-content; align-self: center;">
     📧 SEND RAVEN SUMMONS
   </a>
 </p>
