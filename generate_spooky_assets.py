@@ -25,6 +25,46 @@ def setup_dirs():
         os.makedirs(d, exist_ok=True)
     print("Spooky directory structure initialized successfully.")
 
+def clean_sticker_bfs(img):
+    w, h = img.size
+    pix = img.load()
+    visited = [[False]*h for _ in range(w)]
+    components = []
+    
+    for x in range(w):
+        for y in range(h):
+            if pix[x, y][3] > 15 and not visited[x][y]:
+                comp = []
+                queue = [(x, y)]
+                visited[x][y] = True
+                q_idx = 0
+                while q_idx < len(queue):
+                    cx, cy = queue[q_idx]
+                    q_idx += 1
+                    comp.append((cx, cy))
+                    # Check 8 neighbors
+                    for dx in [-1, 0, 1]:
+                        for dy in [-1, 0, 1]:
+                            nx, ny = cx + dx, cy + dy
+                            if 0 <= nx < w and 0 <= ny < h:
+                                if pix[nx, ny][3] > 15 and not visited[nx][ny]:
+                                    visited[nx][ny] = True
+                                    queue.append((nx, ny))
+                components.append(comp)
+                
+    if not components:
+        return img
+        
+    largest_comp = max(components, key=len)
+    largest_set = set(largest_comp)
+    
+    clean_img = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    clean_pix = clean_img.load()
+    for x, y in largest_set:
+        clean_pix[x, y] = pix[x, y]
+                
+    return clean_img
+
 def crop_stickers():
     # 1. Crop stickers from halloch.png
     if not os.path.exists("halloch.png"):
@@ -43,6 +83,10 @@ def crop_stickers():
                 right = int((c + 1) * col_w)
                 bottom = int((r + 1) * row_h)
                 box = img.crop((left, top, right, bottom))
+                
+                # Clean stray elements from neighbors
+                box = clean_sticker_bfs(box)
+                
                 bbox = box.getbbox()
                 if bbox:
                     box = box.crop(bbox)
