@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 600" width="1280" height="600">
+  <defs>
+    <!-- Background Space Gradient -->
+    <radialGradient id="space-grad" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#240046" />
+      <stop offset="60%" stop-color="#0f021f" />
+      <stop offset="100%" stop-color="#0d1117" />
+    </radialGradient>
+    
+    <!-- Moon Glow Filter -->
+    <filter id="moon-glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Cauldron Glow -->
+    <radialGradient id="cauldron-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;family=Creepster&amp;display=swap');
+    
+    .title-text {
+      font-family: 'Creepster', cursive;
+      font-size: 58px;
+      fill: #ff7518;
+      letter-spacing: 4px;
+      filter: drop-shadow(0 0 8px #e85d04);
+    }
+    
+    .body-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      fill: #f8f9fa;
+      opacity: 0.9;
+    }
+
+    .neon-text {
+      fill: #39ff14;
+      font-weight: bold;
+      filter: drop-shadow(0 0 5px #39ff14);
+    }
+
+    /* Keyframe Animations */
+    @keyframes float-ghost {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(1deg); }
+    }
+    @keyframes float-hat {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+    @keyframes flap-wings {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.4); }
+    }
+    @keyframes drift-clouds {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-400px); }
+    }
+    @keyframes flicker-lantern {
+      0%, 100% { fill: #ffd166; filter: drop-shadow(0 0 8px #ff7518); }
+      50% { fill: #e85d04; filter: drop-shadow(0 0 2px #e85d04); }
+    }
+
+    .animated-ghost { animation: float-ghost 4s ease-in-out infinite; }
+    .animated-hat { animation: float-hat 3.5s ease-in-out infinite; }
+    .bat-wing { animation: flap-wings 0.3s ease-in-out infinite; transform-origin: center; }
+    .ambient-clouds { animation: drift-clouds 45s linear infinite; }
+    .lantern-eye { animation: flicker-lantern 0.25s infinite; }
+  </style>
+
+  <!-- Sky background -->
+  <rect width="1280" height="600" rx="16" fill="url(#space-grad)"/>
+
+  <!-- Stars -->
+  <g fill="#f8f9fa">
+    <circle cx="120" cy="80" r="1.5" opacity="0.6"/>
+    <circle cx="340" cy="120" r="2" opacity="0.9"/>
+    <circle cx="560" cy="70" r="1" opacity="0.4"/>
+    <circle cx="890" cy="140" r="1.5" opacity="0.7"/>
+    <circle cx="1020" cy="90" r="2.5" opacity="0.8"/>
+  </g>
+
+  <!-- Large Crescent Moon -->
+  <g transform="translate(1050, 60)">
+    <circle cx="50" cy="50" r="80" fill="#ffd166" filter="url(#moon-glow-effect)"/>
+    <circle cx="20" cy="50" r="80" fill="#240046" />
+  </g>
+
+  <!-- Parallax drifting clouds -->
+  <g class="ambient-clouds" opacity="0.25">
+    <path d="M 100 200 C 180 180, 260 220, 320 200 C 380 180, 480 230, 540 210 L 1700 210 L 1700 600 Z" fill="#5a189a"/>
+    <path d="M -100 300 C 20 280, 180 340, 260 300 C 380 280, 580 350, 680 300 L 1700 300 L 1700 600 Z" fill="#0d1117"/>
+  </g>
+
+  <!-- Hand-drawn Twisted Tree L -->
+  <path d="M 0 600 C 80 500, 60 380, 120 300 C 140 280, 180 290, 210 270 M 120 300 C 90 280, 60 250, 30 260 M 70 410 C 150 360, 200 370, 220 340" fill="none" stroke="#0d1117" stroke-width="12" stroke-linecap="round"/>
+  <!-- Hand-drawn Twisted Tree R -->
+  <path d="M 1280 600 C 1200 500, 1220 400, 1160 320 C 1120 300, 1080 320, 1040 290 M 1160 320 C 1190 290, 1210 260, 1230 270" fill="none" stroke="#0d1117" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Left: Developer Cauldron Station -->
+  <g transform="translate(100, 120)">
+    <!-- Cauldron Glow -->
+    <circle cx="160" cy="300" r="180" fill="url(#cauldron-glow)"/>
+    
+    <!-- Cauldron Body -->
+    <path d="M 80 360 C 80 460, 240 460, 240 360 C 240 330, 80 330, 80 360 Z" fill="#1c1c1c" stroke="#5a189a" stroke-width="4"/>
+    <ellipse cx="160" cy="335" rx="76" ry="14" fill="#240046" stroke="#5a189a" stroke-width="3"/>
+    
+    <!-- Bubbling Green Potion inside -->
+    <ellipse cx="160" cy="335" rx="70" ry="10" fill="#39ff14"/>
+    
+    <!-- Glowing eyes from cauldron base -->
+    <polygon points="120,400 130,395 125,405" fill="#39ff14" />
+    <polygon points="200,400 190,395 195,405" fill="#39ff14" />
+    
+    <!-- Coffee Mug next to cauldron -->
+    <rect x="250" y="390" width="30" height="35" rx="6" fill="#8b0000" stroke="#f8f9fa" stroke-width="2"/>
+    <path d="M 280 398 C 285 398, 288 402, 288 406 C 288 410, 285 414, 280 414" fill="none" stroke="#f8f9fa" stroke-width="2"/>
+    <!-- Ghost Steam -->
+    <path d="M 265 380 Q 270 370, 265 362 Q 275 370, 270 382 Z" fill="#f8f9fa" opacity="0.8"/>
+  </g>
+
+  <!-- Center Text and Info Panel -->
+  <g transform="translate(380, 180)">
+    <text class="title-text" x="0" y="40">CHARAN BS</text>
+    <text class="body-text" x="0" y="80">&gt; <tspan class="neon-text">SPOOKY FULL-STACK WIZARD</tspan></text>
+    
+    <!-- Code Box (Terminal Style) -->
+    <g transform="translate(0, 110)">
+      <rect width="520" height="150" rx="10" fill="#0d1117" stroke="#ff7518" stroke-width="2" style="filter: drop-shadow(0 8px 16px rgba(0,0,0,0.5));"/>
+      <path d="M 0 30 H 520" stroke="#ff7518" stroke-width="1.5"/>
+      <circle cx="15" cy="15" r="5" fill="#8b0000"/>
+      <circle cx="30" cy="15" r="5" fill="#ff7518"/>
+      <circle cx="45" cy="15" r="5" fill="#39ff14"/>
+      <text x="260" y="20" fill="#f8f9fa" font-family="monospace" font-size="12" text-anchor="middle">spooky_terminal.sh</text>
+      
+      <!-- Text inside Terminal -->
+      <g font-family="monospace" font-size="14" fill="#f8f9fa" transform="translate(20, 55)">
+        <text x="0" y="10" fill="#39ff14">&gt; npm run cast-spells</text>
+        <text x="0" y="35" fill="#ffd166">&gt; Compiling witch brew...</text>
+        <text x="0" y="60" fill="#ff7518">&gt; Power Level: INF_SPOOKY</text>
+        <!-- Blinking cursor -->
+        <rect x="235" y="48" width="8" height="15" fill="#ff7518">
+          <animate attributeName="visibility" values="visible;hidden" dur="1s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right: Handcrafted Jack-o'-lantern & Ghost -->
+  <g class="animated-ghost" transform="translate(980, 260)">
+    <!-- Cute Ghost -->
+    <path d="M 30 70 C 30 20, 90 20, 90 70 C 90 90, 80 85, 60 95 C 40 85, 30 90, 30 70 Z" fill="#f8f9fa" stroke="#240046" stroke-width="3"/>
+    <circle cx="50" cy="50" r="3.5" fill="#0d1117"/>
+    <circle cx="70" cy="50" r="3.5" fill="#0d1117"/>
+    <path d="M 56 60 Q 60 64, 64 60" stroke="#0d1117" stroke-width="2" fill="none"/>
+  </g>
+
+  <g transform="translate(1000, 370)">
+    <!-- Pumpkin -->
+    <ellipse cx="60" cy="65" rx="50" ry="40" fill="#ff7518" stroke="#0d1117" stroke-width="3"/>
+    <ellipse cx="60" cy="65" rx="30" ry="40" fill="#e85d04" stroke="#0d1117" stroke-width="2"/>
+    <!-- Stem -->
+    <path d="M 60 25 C 58 15, 52 10, 50 10 L 55 25" stroke="#0d1117" stroke-width="4" fill="none"/>
+    <!-- Flashing Yellow-Orange Eyes -->
+    <polygon class="lantern-eye" points="40,55 50,50 45,62" fill="#ffd166"/>
+    <polygon class="lantern-eye" points="80,55 70,50 75,62" fill="#ffd166"/>
+    <!-- Scary Mouth -->
+    <path class="lantern-eye" d="M 35,75 Q 60,95 85,75 Q 70,80 60,77 Q 50,80 35,75 Z" fill="#ffd166"/>
+  </g>
+
+  <!-- Floating Witch Hat on Cauldron L -->
+  <g class="animated-hat" transform="translate(210, 200)">
+    <!-- Hat -->
+    <path d="M 10 50 Q 40 45, 70 50 Q 40 55, 10 50 Z" fill="#240046" stroke="#0d1117" stroke-width="2"/>
+    <path d="M 22 47 L 40 10 L 58 47 Z" fill="#5a189a" stroke="#0d1117" stroke-width="2"/>
+    <rect x="33" y="42" width="14" height="6" fill="#e85d04"/>
+  </g>
+
+  <!-- Floating Bats -->
+  <g transform="translate(720, 100)">
+    <path class="bat-wing" d="M 0 10 Q 15 -10, 25 5 Q 35 -10, 50 10 Q 25 15, 0 10 Z" fill="#0d1117"/>
+  </g>
+  <g transform="translate(850, 70)">
+    <path class="bat-wing" d="M 0 8 Q 10 -8, 18 4 Q 26 -8, 36 8 Q 18 12, 0 8 Z" fill="#0d1117"/>
+  </g>
+</svg>

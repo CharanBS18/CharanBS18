@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" width="100%" height="60" fill="none">
+  <path d="M 0 30 Q 300 50, 600 30 Q 900 10, 1200 30" stroke="#ff7518" stroke-width="2" stroke-opacity="0.5"/>
+  <g transform="translate(150, 15)" fill="#ffd166">
+    <path d="M 10 0 C 15 5, 15 15, 10 20 C 5 15, 5 5, 10 0 Z" />
+  </g>
+  <g transform="translate(450, 15)" fill="#ffd166">
+    <path d="M 10 0 C 15 5, 15 15, 10 20 C 5 15, 5 5, 10 0 Z" />
+  </g>
+  <g transform="translate(750, 15)" fill="#ffd166">
+    <path d="M 10 0 C 15 5, 15 15, 10 20 C 5 15, 5 5, 10 0 Z" />
+  </g>
+  <g transform="translate(1050, 15)" fill="#ffd166">
+    <path d="M 10 0 C 15 5, 15 15, 10 20 C 5 15, 5 5, 10 0 Z" />
+  </g>
+</svg>

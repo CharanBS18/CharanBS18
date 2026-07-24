@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="none">
+  <path d="M 25 55 C 25 78, 75 78, 75 55 C 75 45, 25 45, 25 55 Z" fill="#1c1c1c" stroke="#39ff14" stroke-width="2.5"/>
+  <ellipse cx="50" cy="48" rx="23" ry="5" fill="#240046" stroke="#39ff14" stroke-width="2"/>
+  <ellipse cx="50" cy="48" rx="20" ry="3" fill="#39ff14"/>
+  <circle cx="45" cy="32" r="3.5" fill="#39ff14" opacity="0.8"/>
+  <circle cx="58" cy="28" r="4.5" fill="#39ff14" opacity="0.6"/>
+  <text x="50" y="68" fill="#f8f9fa" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">NODE</text>
+</svg>

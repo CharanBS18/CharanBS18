@@ -9,6 +9,14 @@ def get_base64_image(filename):
     return base64.b64encode(data).decode('utf-8')
 
 def main():
+    print("Initializing directories...")
+    # Create all target folders
+    os.makedirs("halloween", exist_ok=True)
+    os.makedirs("halloween/dividers", exist_ok=True)
+    os.makedirs("halloween/buttons", exist_ok=True)
+    os.makedirs("halloween/icons", exist_ok=True)
+    os.makedirs("halloween/animations", exist_ok=True)
+
     print("Loading image assets...")
     try:
         char_b64 = get_base64_image("character_600.png")
@@ -18,7 +26,7 @@ def main():
         print(f"Error loading images: {e}")
         return
 
-    # User details
+    # Details
     name = "Charan BS"
     username = "CharanBS18"
     email = "charan201204@gmail.com"
@@ -28,1167 +36,804 @@ def main():
     skills_list = ["React", "Next.js", "TypeScript", "Node.js", "Python", "Docker", "TailwindCSS"]
     skills_html = " ".join([f"<code>{s}</code>" for s in skills_list])
 
-    # 1. banner.svg (Dark Mode - Matte Black & Halloween Purple/Orange Theme)
-    print("Generating banner.svg (dark theme)...")
-    banner_dark_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
+    # ==================== 1. halloween/banner.svg ====================
+    print("Generating halloween/banner.svg...")
+    banner_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
   <defs>
-    <!-- Background Grid (Modern Purple/Slate) -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8b5cf6" stroke-width="1.2" stroke-opacity="0.08"/>
-    </pattern>
-    
-    <!-- Cybernetic Hexagon Pattern -->
-    <pattern id="hex-pattern" width="120" height="104" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#ea580c" stroke-width="1" stroke-opacity="0.04"/>
-    </pattern>
-
-    <!-- Radial Glow Gradients (Purple / Orange) -->
-    <radialGradient id="green-glow-1" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="green-glow-2" cx="80%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="neon-glow" cx="50%" cy="80%" r="40%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
-    </radialGradient>
-    
-    <!-- Linear Gradients for UI Elements -->
-    <linearGradient id="signature-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8b5cf6"/>
-      <stop offset="50%" stop-color="#f97316"/>
-      <stop offset="100%" stop-color="#facc15"/>
+    <!-- Background Gradient -->
+    <linearGradient id="sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f0726" />
+      <stop offset="60%" stop-color="#1c0a35" />
+      <stop offset="100%" stop-color="#240046" />
     </linearGradient>
-
-    <!-- Glowing Filters -->
-    <filter id="neon-glow-filter" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
+    
+    <!-- Moon Glow Filter -->
+    <filter id="moon-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="subtle-glow" x="-10%" y="-10%" width="120%" height="120%">
+
+    <!-- Warm Pumpkin Glow -->
+    <radialGradient id="lamp-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7518" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#e85d04" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Keyboard Backlight Gradient -->
+    <linearGradient id="rgb-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+
+    <clipPath id="hologram-clip">
+      <rect x="780" y="100" width="450" height="0">
+        <animate attributeName="height" from="0" to="620" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      </rect>
+    </clipPath>
+
+    <clipPath id="terminal-type">
+      <rect x="0" y="100" width="0" height="40">
+        <animate attributeName="width" from="0" to="400" dur="1.2s" begin="0.8s" fill="freeze"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <style>
+    <![CDATA[
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Outfit:wght@400;600&amp;display=swap');
+    
+    .name-text {{
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      letter-spacing: 2px;
+      fill: #ff7518;
+    }}
+
+    .sub-text {{
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      fill: #f8f9fa;
+      opacity: 0.8;
+    }}
+
+    @keyframes blink {{
+      0%, 100% {{ opacity: 1; }}
+      50% {{ opacity: 0; }}
+    }}
+    .cursor {{
+      animation: blink 0.8s infinite;
+      fill: #ff7518;
+    }}
+
+    @keyframes float {{
+      0%, 100% {{ transform: translateY(0px); }}
+      50% {{ transform: translateY(-10px); }}
+    }}
+    .ghost-floater {{
+      animation: float 4s ease-in-out infinite;
+    }}
+
+    @keyframes flicker {{
+      0%, 100% {{ opacity: 0.95; }}
+      50% {{ opacity: 0.8; }}
+    }}
+    .light-flicker {{
+      animation: flicker 0.2s infinite;
+    }}
+    ]]>
+  </style>
+
+  <!-- Sky background inside window -->
+  <rect width="1280" height="740" rx="20" fill="url(#sky-grad)"/>
+
+  <!-- Stars -->
+  <g fill="#f8f9fa" opacity="0.5">
+    <circle cx="150" cy="80" r="1.5"/>
+    <circle cx="280" cy="120" r="1"/>
+    <circle cx="450" cy="70" r="2"/>
+    <circle cx="600" cy="100" r="1"/>
+    <circle cx="720" cy="60" r="1.5"/>
+    <circle cx="1100" cy="90" r="1"/>
+  </g>
+
+  <!-- Large Full Moon -->
+  <circle cx="150" cy="150" r="90" fill="#ffd166" filter="url(#moon-glow)" opacity="0.85"/>
+  <!-- Moon details -->
+  <circle cx="120" cy="120" r="15" fill="#fbc43d" opacity="0.3"/>
+  <circle cx="180" cy="170" r="20" fill="#fbc43d" opacity="0.3"/>
+  <circle cx="130" cy="180" r="10" fill="#fbc43d" opacity="0.3"/>
+
+  <!-- Spooky twisted branches in front of moon -->
+  <path d="M 0 300 C 50 250, 100 240, 120 180 C 122 170, 100 160, 95 150 M 120 180 C 150 170, 180 130, 200 150 C 220 170, 250 160, 260 140" fill="none" stroke="#0d1117" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 0 300 C 30 290, 80 320, 110 300 C 130 280, 150 290, 160 270" fill="none" stroke="#0d1117" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Clouds -->
+  <path d="M -50 220 C 50 180, 150 200, 250 220 C 350 240, 450 210, 550 230 L 1280 230 L 1280 740 L -50 740 Z" fill="#1c1c1c" opacity="0.4"/>
+  <path d="M 700 120 C 800 100, 900 130, 1000 110 C 1100 90, 1200 110, 1300 100 L 1300 740 L 700 740 Z" fill="#0d1117" opacity="0.35"/>
+
+  <!-- Flying bats silhouettes -->
+  <path d="M 280 180 Q 290 170, 295 178 Q 300 170, 310 180 Q 295 185, 280 180 Z" fill="#0d1117" class="ghost-floater"/>
+  <path d="M 330 150 Q 338 142, 342 148 Q 346 142, 354 150 Q 342 154, 330 150 Z" fill="#0d1117" class="ghost-floater" style="animation-delay: 1.5s;"/>
+
+  <!-- Ambient lamp glow behind desk elements -->
+  <circle cx="1080" cy="380" r="320" fill="url(#lamp-glow)" class="light-flicker"/>
+
+  <!-- LEFT PANEL: Spooky Terminal Window (x=50, y=80, width=700, height=580) -->
+  <g transform="translate(50, 80)">
+    <rect width="700" height="580" rx="16" fill="#0d1117" stroke="#5a189a" stroke-width="2" style="filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.65));"/>
+    
+    <!-- Window Header -->
+    <path d="M 0 45 H 700" stroke="#1c1c1c" stroke-width="1.5"/>
+    <circle cx="20" cy="22" r="7" fill="#ff5f56"/>
+    <circle cx="42" cy="22" r="7" fill="#ffbd2e"/>
+    <circle cx="64" cy="22" r="7" fill="#27c93f"/>
+    <text x="350" y="28" fill="#ff7518" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="1" text-anchor="middle">SPOOKY_TERMINAL // Bio.sh</text>
+
+    <!-- Terminal Text -->
+    <g transform="translate(40, 80)">
+      <!-- Line 1 -->
+      <g clip-path="url(#terminal-type)">
+        <text x="0" y="25" fill="#f8f9fa" font-family="monospace" font-size="18" font-weight="bold">
+          <tspan fill="#5a189a">user@hallow-box</tspan>:<tspan fill="#ff7518">~$</tspan> cat dev_profile.txt
+        </text>
+      </g>
+      <!-- Blinking Cursor -->
+      <rect x="0" y="8" width="10" height="20" class="cursor">
+        <animate attributeName="x" from="0" to="370" dur="1.2s" begin="0.8s" fill="freeze"/>
+        <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="2s" fill="freeze"/>
+      </rect>
+
+      <!-- Profile Header -->
+      <text class="name-text" x="0" y="90" opacity="0">
+        CHARAN BS
+        <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.8s" fill="freeze" />
+      </text>
+
+      <!-- Roles -->
+      <g transform="translate(0, 130)">
+        <text x="0" y="0" fill="#f8f9fa" font-family="monospace" font-size="20">> ROLE: </text>
+        <g>
+          <text x="90" y="0" fill="#ff7518" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+            Full-Stack Developer
+            <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.22;0.25;1" dur="12s" repeatCount="indefinite" />
+          </text>
+          <text x="90" y="0" fill="#7fff00" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+            Spooky Script Wizard
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.30;0.47;0.50;1" dur="12s" repeatCount="indefinite" />
+          </text>
+          <text x="90" y="0" fill="#5a189a" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+            UI/UX Alchemist
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.55;0.72;0.75;1" dur="12s" repeatCount="indefinite" />
+          </text>
+        </g>
+      </g>
+
+      <!-- Quote Box with Twisting Vine Frame -->
+      <g transform="translate(0, 170)">
+        <rect width="620" height="90" rx="8" fill="#1c1c1c" stroke="#5a189a" stroke-width="1.5"/>
+        <path d="M 0 15 V 0 H 15 M 605 0 H 620 V 15 M 620 75 V 90 H 605 M 15 90 H 0 V 75" stroke="#ff7518" stroke-width="3" fill="none"/>
+        <text x="30" y="50" fill="#ffd166" font-family="monospace" font-size="14" font-style="italic">
+          "{quote}"
+        </text>
+      </g>
+
+      <!-- Skills Details -->
+      <g transform="translate(0, 290)">
+        <text x="0" y="20" fill="#f8f9fa" font-family="monospace" font-size="16" font-weight="bold">> CORE_OBJECTIVES:</text>
+        <text x="20" y="50" fill="#f8f9fa" font-family="monospace" font-size="15" opacity="0">
+          - Crafting responsive frontend architectures
+          <animate attributeName="opacity" from="0" to="0.9" dur="0.5s" begin="4.2s" fill="freeze"/>
+        </text>
+        <text x="20" y="80" fill="#f8f9fa" font-family="monospace" font-size="15" opacity="0">
+          - Secure backends &amp; microservice frameworks
+          <animate attributeName="opacity" from="0" to="0.9" dur="0.5s" begin="4.8s" fill="freeze"/>
+        </text>
+        <text x="20" y="110" fill="#f8f9fa" font-family="monospace" font-size="15" opacity="0">
+          - Handcrafted premium designs &amp; user experiences
+          <animate attributeName="opacity" from="0" to="0.9" dur="0.5s" begin="5.4s" fill="freeze"/>
+        </text>
+      </g>
+      
+      <!-- Tech Pills (Halloween Colors) -->
+      <g transform="translate(0, 430)">
+        <text x="0" y="15" fill="#ea580c" font-family="monospace" font-size="15" font-weight="bold">> WEAPONS_OF_CHOICE:</text>
+        
+        <g transform="translate(20, 30)">
+          <!-- React -->
+          <rect width="70" height="26" rx="13" fill="#240046" stroke="#8b5cf6" stroke-width="1.5"/>
+          <text x="35" y="17" fill="#f8f9fa" font-family="monospace" font-size="11" text-anchor="middle">React</text>
+          
+          <!-- Node -->
+          <g transform="translate(80, 0)">
+            <rect width="75" height="26" rx="13" fill="#240046" stroke="#7fff00" stroke-width="1.5"/>
+            <text x="37.5" y="17" fill="#7fff00" font-family="monospace" font-size="11" text-anchor="middle">Node.js</text>
+          </g>
+
+          <!-- Python -->
+          <g transform="translate(165, 0)">
+            <rect width="80" height="26" rx="13" fill="#240046" stroke="#ff7518" stroke-width="1.5"/>
+            <text x="40" y="17" fill="#ff7518" font-family="monospace" font-size="11" text-anchor="middle">Python</text>
+          </g>
+
+          <!-- Tailwind -->
+          <g transform="translate(255, 0)">
+            <rect width="90" height="26" rx="13" fill="#240046" stroke="#8b5cf6" stroke-width="1.5"/>
+            <text x="45" y="17" fill="#f8f9fa" font-family="monospace" font-size="11" text-anchor="middle">Tailwind</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL: Character & Spooky desk setup -->
+  <g transform="translate(780, 80)">
+    <!-- Desktop monitors backing -->
+    <rect x="0" y="0" width="450" height="250" rx="12" fill="#1c1c1c" stroke="#5a189a" stroke-width="1.5"/>
+    <path d="M 0 35 H 450" stroke="#0d1117" stroke-width="1.5"/>
+    
+    <!-- Spooky Code Card -->
+    <g transform="translate(20, 50)" font-family="monospace" font-size="12" font-weight="bold">
+      <text x="0" y="20" fill="#7fff00">const <tspan fill="#ff7518">hallowCode</tspan> = () => {{</text>
+      <text x="20" y="45" fill="#f8f9fa">deployPotion(<tspan fill="#5a189a">"cauldron"</tspan>);</text>
+      <text x="20" y="70" fill="#f8f9fa">ignite(<tspan fill="#ea580c">"jack-o-lantern"</tspan>);</text>
+      <text x="20" y="95" fill="#7fff00">return <tspan fill="#ffd166">"magic_sparks"</tspan>;</text>
+      <text x="0" y="120" fill="#f8f9fa">}};</text>
+    </g>
+
+    <!-- Pumpkin Lamp on Desk -->
+    <g transform="translate(320, 75)">
+      <!-- Lamp base -->
+      <path d="M 50 80 L 35 150 H 65 Z" fill="#0d1117" stroke="#ea580c" stroke-width="1"/>
+      <!-- Pumpkin carving lamp -->
+      <circle cx="50" cy="70" r="30" fill="#ff7518" style="filter: drop-shadow(0 0 8px #ff7518);"/>
+      <path d="M 40 65 L 45 70 L 38 72 Z" fill="#240046"/>
+      <path d="M 60 65 L 55 70 L 62 72 Z" fill="#240046"/>
+      <path d="M 42 80 Q 50 88, 58 80 Q 50 83, 42 80 Z" fill="#240046"/>
+      <path d="M 48 40 L 52 40 L 50 32 Z" fill="#0d1117"/>
+    </g>
+
+    <!-- Programmer Desk Surface -->
+    <rect x="-20" y="580" width="490" height="20" rx="4" fill="#0d1117"/>
+
+    <!-- Keyboard with Backlight -->
+    <g transform="translate(100, 560)">
+      <rect width="250" height="20" rx="3" fill="#1c1c1c" stroke="url(#rgb-grad)" stroke-width="2" style="filter: drop-shadow(0 0 10px #ff7518);"/>
+      <path d="M 20 5 H 230" stroke="#f8f9fa" stroke-dasharray="8 4" stroke-width="2" opacity="0.8"/>
+      <path d="M 15 15 H 235" stroke="#f8f9fa" stroke-dasharray="12 6" stroke-width="2" opacity="0.8"/>
+    </g>
+
+    <!-- Coffee Mug with Ghost Steam -->
+    <g transform="translate(30, 520)" class="ghost-floater">
+      <rect x="10" y="30" width="30" height="30" rx="6" fill="#5a189a" stroke="#f8f9fa" stroke-width="1.5"/>
+      <path d="M 40 38 C 45 38, 48 42, 48 45 C 48 48, 45 52, 40 52" fill="none" stroke="#f8f9fa" stroke-width="2"/>
+      <!-- Ghost Steam -->
+      <path d="M 20 20 Q 25 10, 20 2 Q 30 10, 25 25 Z" fill="#f8f9fa" opacity="0.6"/>
+    </g>
+
+    <!-- Vector Character Hologram Reveal -->
+    <g clip-path="url(#hologram-clip)">
+      <image href="data:image/png;base64,{{char_b64}}" x="13" y="100" width="424" height="600" />
+      <rect x="0" y="100" width="450" height="480" fill="url(#grid)" opacity="0.2" pointer-events="none" />
+    </g>
+
+    <!-- Green Scanline reveal -->
+    <line x1="10" y1="100" x2="440" y2="100" stroke="#7fff00" stroke-width="3" opacity="0" style="filter: drop-shadow(0 0 5px #7fff00);">
+      <animate attributeName="y1" from="100" to="580" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="y2" from="100" to="580" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" begin="0.5s" fill="freeze" />
+    </line>
+  </g>
+</svg>"""
+
+    with open("halloween/banner.svg", "w") as f:
+      f.write(banner_content.replace("{{char_b64}}", char_b64))
+    print("halloween/banner.svg generated.")
+
+    # ==================== 2. halloween/dividers/ ====================
+    print("Generating dividers...")
+    # A. Twisting Pumpkin Vines Divider
+    vines_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" width="100%" height="60">
+  <path d="M 0 30 C 150 10, 250 50, 400 30 C 550 10, 650 50, 800 30 C 950 10, 1050 50, 1200 30" fill="none" stroke="#e85d04" stroke-width="4" stroke-linecap="round"/>
+  <!-- Twigs and Tendrils -->
+  <path d="M 100 24 Q 120 10, 110 5" fill="none" stroke="#5a189a" stroke-width="1.5"/>
+  <path d="M 500 35 Q 510 50, 530 45" fill="none" stroke="#5a189a" stroke-width="1.5"/>
+  <!-- Pumpkin Leaves -->
+  <path d="M 280 23 Q 295 10, 310 25 Z" fill="#240046" stroke="#ff7518" stroke-width="1"/>
+  <path d="M 680 37 Q 695 50, 710 35 Z" fill="#240046" stroke="#ff7518" stroke-width="1"/>
+  <!-- Mini Pumpkins -->
+  <g transform="translate(400, 20)">
+    <ellipse cx="0" cy="5" rx="12" ry="9" fill="#ff7518"/>
+    <ellipse cx="0" cy="5" rx="6" ry="9" fill="#e85d04"/>
+    <path d="M 0 -4 L 2 -9" stroke="#7fff00" stroke-width="2" fill="none"/>
+  </g>
+  <g transform="translate(800, 20)">
+    <ellipse cx="0" cy="5" rx="12" ry="9" fill="#ff7518"/>
+    <ellipse cx="0" cy="5" rx="6" ry="9" fill="#e85d04"/>
+    <path d="M 0 -4 L 2 -9" stroke="#7fff00" stroke-width="2" fill="none"/>
+  </g>
+</svg>"""
+    with open("halloween/dividers/vines.svg", "w") as f:
+      f.write(vines_content)
+
+    # B. Spooky bats wave divider
+    bats_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" width="100%" height="60" fill="#0d1117">
+  <!-- Small line behind bats -->
+  <line x1="0" y1="30" x2="1200" y2="30" stroke="#240046" stroke-width="2" stroke-dasharray="10 15"/>
+  
+  <!-- Bat silhouettes -->
+  <!-- Bat 1 -->
+  <path d="M 150 25 Q 165 10, 175 22 Q 185 10, 200 25 Q 175 35, 150 25" fill="#ff7518"/>
+  <!-- Bat 2 -->
+  <path d="M 580 20 Q 595 5, 605 17 Q 615 5, 630 20 Q 605 30, 580 20" fill="#0d1117" stroke="#5a189a" stroke-width="1.5"/>
+  <!-- Bat 3 -->
+  <path d="M 980 28 Q 995 13, 1005 25 Q 1015 13, 1030 28 Q 1005 38, 980 28" fill="#e85d04"/>
+</svg>"""
+    with open("halloween/dividers/bats.svg", "w") as f:
+      f.write(bats_content)
+
+    # C. Floating Ghost Divider
+    ghosts_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" width="100%" height="60" fill="none">
+  <path d="M 0 35 Q 150 15, 300 35 Q 450 55, 600 35 Q 750 15, 900 35 Q 1050 55, 1200 35" stroke="#5a189a" stroke-width="2" stroke-dasharray="8 8"/>
+  <!-- Tiny Ghosts floating along the line -->
+  <g transform="translate(200, 20)">
+    <path d="M -10 10 C -10 -5, 10 -5, 10 10 C 10 15, 5 13, 0 15 C -5 13, -10 15, -10 10 Z" fill="#f8f9fa" stroke="#ff7518" stroke-width="1"/>
+    <circle cx="-3" cy="5" r="1.2" fill="#000"/>
+    <circle cx="3" cy="5" r="1.2" fill="#000"/>
+  </g>
+  <g transform="translate(600, 20)">
+    <path d="M -10 10 C -10 -5, 10 -5, 10 10 C 10 15, 5 13, 0 15 C -5 13, -10 15, -10 10 Z" fill="#f8f9fa" stroke="#5a189a" stroke-width="1"/>
+    <circle cx="-3" cy="5" r="1.2" fill="#000"/>
+    <circle cx="3" cy="5" r="1.2" fill="#000"/>
+  </g>
+  <g transform="translate(1000, 20)">
+    <path d="M -10 10 C -10 -5, 10 -5, 10 10 C 10 15, 5 13, 0 15 C -5 13, -10 15, -10 10 Z" fill="#f8f9fa" stroke="#ff7518" stroke-width="1"/>
+    <circle cx="-3" cy="5" r="1.2" fill="#000"/>
+    <circle cx="3" cy="5" r="1.2" fill="#000"/>
+  </g>
+</svg>"""
+    with open("halloween/dividers/ghosts.svg", "w") as f:
+      f.write(ghosts_content)
+    print("Dividers generated.")
+
+    # ==================== 3. halloween/buttons/ ====================
+    print("Generating buttons...")
+    button_titles = ["ABOUT_ME", "CORE_SKILLS", "MY_PROJECTS", "CONNECT_PORTAL"]
+    button_filenames = ["about.svg", "skills.svg", "projects.svg", "contact.svg"]
+    button_colors = ["#ff7518", "#7fff00", "#8b5cf6", "#ffd166"]
+    
+    for title, filename, col in zip(button_titles, button_filenames, button_colors):
+      btn_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <defs>
+    <filter id="btn-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-
-    <!-- Clip Paths -->
-    <clipPath id="banner-clip">
-      <rect width="1280" height="740" rx="20"/>
-    </clipPath>
-    <clipPath id="hologram-clip">
-      <rect x="780" y="100" width="450" height="0">
-        <animate attributeName="height" from="0" to="620" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      </rect>
-    </clipPath>
-    
-    <!-- Typing Clipping Paths -->
-    <clipPath id="clip-terminal-line1">
-      <rect x="0" y="100" width="0" height="40">
-        <animate attributeName="width" from="0" to="400" dur="1.2s" begin="0.8s" fill="freeze"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-quote-line">
-      <rect x="0" y="10" width="0" height="80">
-        <animate attributeName="width" from="0" to="640" dur="2s" begin="3.2s" fill="freeze"/>
-      </rect>
-    </clipPath>
   </defs>
+  <!-- Wooden Signpost / Tombstone Look -->
+  <rect x="5" y="5" width="190" height="40" rx="6" fill="#1c1c1c" stroke="{col}" stroke-width="2" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));"/>
+  <!-- Spooky Bracket Border Accents -->
+  <path d="M 12 12 V 8 H 25 M 188 12 V 8 H 175 M 188 38 V 42 H 175 M 12 38 V 42 H 25" stroke="{col}" stroke-width="2" fill="none"/>
+  
+  <text x="100" y="29" fill="{col}" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1.5" text-anchor="middle" filter="url(#btn-glow)">{title}</text>
+  
+  <!-- Tiny bat decoration -->
+  <path d="M 25 15 Q 30 10, 33 13 Q 36 10, 41 15 Q 33 18, 25 15 Z" fill="{col}" opacity="0.8"/>
+</svg>"""
+      with open(f"halloween/buttons/{filename}", "w") as f:
+        f.write(btn_svg)
+    print("Buttons generated.")
 
-  <style>
-    <![CDATA[
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;display=swap');
-    
-    .name-text {
-      font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-weight: 800;
-      font-size: 44px;
-      letter-spacing: 2px;
-    }
+    # ==================== 4. halloween/icons/ ====================
+    print("Generating Halloween-styled Coding Icons...")
+    # HTML: Tombstone Style
+    html_icon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <path d="M 15 70 C 15 25, 65 25, 65 70 Z" fill="#1c1c1c" stroke="#e85d04" stroke-width="3"/>
+  <path d="M 25 40 L 35 48 L 25 56 M 55 40 L 45 48 L 55 56" stroke="#ff7518" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="40" y="65" fill="#f8f9fa" font-family="monospace" font-size="10" text-anchor="middle">HTML</text>
+  <!-- Cobweb in corner -->
+  <path d="M 18 55 Q 28 58, 30 70 M 18 62 Q 24 64, 25 70" stroke="#ea580c" stroke-width="1" fill="none"/>
+</svg>"""
+    with open("halloween/icons/html.svg", "w") as f:
+      f.write(html_icon)
 
-    @keyframes blink-cursor {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .cursor-pipe {
-      animation: blink-cursor 0.8s infinite;
-      font-family: monospace;
-      font-weight: bold;
-    }
-    
-    @keyframes pulse-orb {
-      0%, 100% { transform: scale(1); opacity: 0.3; }
-      50% { transform: scale(1.08); opacity: 0.45; }
-    }
-    .ambient-orb-1 {
-      transform-origin: 200px 150px;
-      animation: pulse-orb 10s ease-in-out infinite;
-    }
-    .ambient-orb-2 {
-      transform-origin: 1000px 500px;
-      animation: pulse-orb 12s ease-in-out infinite;
-    }
+    # CSS: Tombstone Style
+    css_icon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <path d="M 15 70 C 15 25, 65 25, 65 70 Z" fill="#1c1c1c" stroke="#8b5cf6" stroke-width="3"/>
+  <text x="40" y="48" fill="#8b5cf6" font-family="monospace" font-size="20" font-weight="bold" text-anchor="middle">{ }</text>
+  <text x="40" y="65" fill="#f8f9fa" font-family="monospace" font-size="10" text-anchor="middle">CSS</text>
+</svg>"""
+    with open("halloween/icons/css.svg", "w") as f:
+      f.write(css_icon)
 
-    /* Tech Stack Pills Hover Effect */
-    .tech-pill {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .tech-pill:hover {
-      fill: #111827;
-      stroke: #f97316;
-      filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
-    }
-    
-    /* Code typing animation line-by-line using opacity and keyframes */
-    @keyframes type-code-1 { 0%, 10% { opacity: 0; } 11%, 100% { opacity: 1; } }
-    @keyframes type-code-2 { 0%, 20% { opacity: 0; } 21%, 100% { opacity: 1; } }
-    @keyframes type-code-3 { 0%, 30% { opacity: 0; } 31%, 100% { opacity: 1; } }
-    @keyframes type-code-4 { 0%, 40% { opacity: 0; } 41%, 100% { opacity: 1; } }
-    @keyframes type-code-5 { 0%, 50% { opacity: 0; } 51%, 100% { opacity: 1; } }
-    @keyframes type-code-6 { 0%, 60% { opacity: 0; } 61%, 100% { opacity: 1; } }
-    @keyframes type-code-7 { 0%, 70% { opacity: 0; } 71%, 100% { opacity: 1; } }
-    
-    .code-l1 { animation: type-code-1 6s forwards; }
-    .code-l2 { animation: type-code-2 6s forwards; }
-    .code-l3 { animation: type-code-3 6s forwards; }
-    .code-l4 { animation: type-code-4 6s forwards; }
-    .code-l5 { animation: type-code-5 6s forwards; }
-    .code-l6 { animation: type-code-6 6s forwards; }
-    .code-l7 { animation: type-code-7 6s forwards; }
-    ]]>
-  </style>
+    # JS: Wizard Spell-book
+    js_icon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Book Cover -->
+  <rect x="20" y="15" width="44" height="52" rx="4" fill="#5a189a" stroke="#ffd166" stroke-width="2"/>
+  <rect x="15" y="15" width="6" height="52" fill="#240046"/>
+  <!-- Gold JS Symbol on book -->
+  <rect x="35" y="32" width="20" height="20" fill="#ffd166"/>
+  <text x="45" y="47" fill="#240046" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">JS</text>
+  <line x1="18" y1="25" x2="18" y2="55" stroke="#ffd166" stroke-width="2"/>
+</svg>"""
+    with open("halloween/icons/js.svg", "w") as f:
+      f.write(js_icon)
 
-  <!-- Main Banner Wrapper (Clipped to Rounded Corners) -->
-  <g clip-path="url(#banner-clip)">
-    <!-- Deep Matte Background (neutral-950 / #0a0a0a) -->
-    <rect width="1280" height="740" fill="#0a0a0a"/>
-    <rect width="1280" height="740" fill="url(#grid)"/>
-    <rect width="1280" height="740" fill="url(#hex-pattern)"/>
+    # Python: Skull with Slithered Snake
+    python_icon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Cartoon Skull -->
+  <rect x="25" y="25" width="30" height="26" rx="10" fill="#f8f9fa" stroke="#1c1c1c" stroke-width="2"/>
+  <rect x="30" y="48" width="20" height="12" fill="#f8f9fa" stroke="#1c1c1c" stroke-width="2"/>
+  <circle cx="33" cy="38" r="4.5" fill="#000"/>
+  <circle cx="47" cy="38" r="4.5" fill="#000"/>
+  <line x1="37" y1="54" x2="37" y2="60" stroke="#1c1c1c" stroke-width="2"/>
+  <line x1="43" y1="54" x2="43" y2="60" stroke="#1c1c1c" stroke-width="2"/>
+  <!-- Green Python coiled around it -->
+  <path d="M 15 50 Q 25 35, 40 40 Q 55 45, 60 30 Q 62 20, 52 15" fill="none" stroke="#7fff00" stroke-width="5" stroke-linecap="round"/>
+  <!-- Snake Eye -->
+  <circle cx="54" cy="17" r="1" fill="#fff"/>
+</svg>"""
+    with open("halloween/icons/python.svg", "w") as f:
+      f.write(python_icon)
 
-    <!-- Ambient Glowing Orbs -->
-    <circle cx="200" cy="150" r="220" fill="url(#green-glow-1)" class="ambient-orb-1" />
-    <circle cx="1000" cy="500" r="300" fill="url(#green-glow-2)" class="ambient-orb-2" />
-    <circle cx="640" cy="700" r="250" fill="url(#neon-glow)" opacity="0.3" />
+    # React: Spider-Web Atomic structure
+    react_icon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- React orbits transformed into spider web lines -->
+  <ellipse cx="40" cy="40" rx="35" ry="12" fill="none" stroke="#8b5cf6" stroke-width="1.5" transform="rotate(30 40 40)"/>
+  <ellipse cx="40" cy="40" rx="35" ry="12" fill="none" stroke="#8b5cf6" stroke-width="1.5" transform="rotate(90 40 40)"/>
+  <ellipse cx="40" cy="40" rx="35" ry="12" fill="none" stroke="#8b5cf6" stroke-width="1.5" transform="rotate(150 40 40)"/>
+  
+  <!-- Spiders web lines connecting orbits -->
+  <path d="M 40 28 Q 48 35, 40 52 M 40 28 Q 32 35, 40 52" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+  
+  <!-- Spider at center -->
+  <circle cx="40" cy="40" r="4.5" fill="#e85d04"/>
+  <path d="M 40 40 L 46 36 M 40 40 L 46 44 M 40 40 L 34 36 M 40 40 L 34 44" stroke="#e85d04" stroke-width="1.5"/>
+</svg>"""
+    with open("halloween/icons/react.svg", "w") as f:
+      f.write(react_icon)
 
-    <!-- Circuit Lines & Geometric Tech Accents -->
-    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="8 8"/>
-    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#f97316" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
-    <circle cx="500" cy="150" r="4" fill="#7c3aed" opacity="0.5"/>
-    <circle cx="700" cy="550" r="4" fill="#f97316" opacity="0.4"/>
+    # Node: Cauldron bubbling with green potion
+    node_icon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Cauldron Body -->
+  <path d="M 20 40 C 20 62, 60 62, 60 40 C 60 30, 20 30, 20 40 Z" fill="#1c1c1c" stroke="#5a189a" stroke-width="2"/>
+  <ellipse cx="40" cy="32" rx="18" ry="4" fill="#240046" stroke="#5a189a" stroke-width="2"/>
+  
+  <!-- Bubbling green steam -->
+  <circle cx="32" cy="22" r="4" fill="#7fff00"/>
+  <circle cx="48" cy="20" r="6" fill="#7fff00"/>
+  <circle cx="40" cy="25" r="5" fill="#7fff00"/>
+  
+  <text x="40" y="52" fill="#7fff00" font-family="monospace" font-weight="bold" font-size="9" text-anchor="middle">NODE</text>
+</svg>"""
+    with open("halloween/icons/node.svg", "w") as f:
+      f.write(node_icon)
 
-    <!-- Floating Hexagons and Binary Particles -->
-    <g opacity="0.3">
-      <text x="80" y="80" fill="#7c3aed" font-family="monospace" font-size="12" opacity="0.35">
-        101010
-        <animate attributeName="opacity" values="0.1;0.9;0.1" dur="4s" repeatCount="indefinite" />
-      </text>
-      <text x="1150" y="120" fill="#f97316" font-family="monospace" font-size="12" opacity="0.4">
-        011001
-        <animate attributeName="opacity" values="0.9;0.2;0.9" dur="5s" repeatCount="indefinite" />
-      </text>
-      <text x="720" y="680" fill="#7c3aed" font-family="monospace" font-size="12" opacity="0.25">
-        1101
-        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" />
-      </text>
-    </g>
-
-    <!-- LEFT COLUMN: Terminal & Dashboard Panel (x=50, y=50, width=700, height=640) -->
-    <rect x="50" y="50" width="700" height="640" rx="16" fill="#09090b" stroke="#27272a" stroke-width="1.5" style="filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.4));" />
-    
-    <!-- Terminal Header Bar -->
-    <path d="M 50 85 H 750" stroke="#27272a" stroke-width="1" />
-    <circle cx="75" cy="68" r="6" fill="#ff5f56"/>
-    <circle cx="95" cy="68" r="6" fill="#ffbd2e"/>
-    <circle cx="115" cy="68" r="6" fill="#27c93f"/>
-    <text x="365" y="73" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
-
-    <!-- Terminal Content Area -->
-    <!-- Line 1: user@dev:~$ cat README.md -->
-    <g clip-path="url(#clip-terminal-line1)">
-      <text x="80" y="125" fill="#8b5cf6" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
-        <tspan fill="#737373">user@dev</tspan>:<tspan fill="#e2e8f0">~$</tspan> cat README.md
-      </text>
-    </g>
-    <!-- Blinking Terminal Cursor for Line 1 -->
-    <text x="80" y="125" fill="#8b5cf6" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
-      |
-      <animate attributeName="x" from="80" to="350" dur="1.2s" begin="0.8s" fill="freeze" />
-      <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="2.0s" fill="freeze" />
-    </text>
-
-    <!-- Bold Extended Name: CHARAN BS (Syne Bold Style) -->
-    <g transform="translate(80, 192)" filter="url(#subtle-glow)">
-      <text class="name-text" fill="url(#signature-grad)" opacity="0">
-        CHARAN BS
-        <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.8s" fill="freeze" />
-      </text>
-    </g>
-
-    <!-- Cycling Role Titles -->
-    <g transform="translate(80, 220)">
-      <text x="0" y="20" fill="#8b5cf6" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
-        > ROLE: <tspan fill="#8b5cf6" class="cursor-pipe">|</tspan>
-      </text>
-      
-      <!-- Role 1: Full-Stack Developer -->
-      <g>
-        <text x="90" y="20" fill="#f97316" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-          Full-Stack Developer
-          <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.22;0.25;1" dur="12s" repeatCount="indefinite" />
-        </text>
-      </g>
-
-      <!-- Role 2: Cyberpunk Coder -->
-      <g>
-        <text x="90" y="20" fill="#a855f7" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-          Cyberpunk Coder
-          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.30;0.47;0.50;1" dur="12s" repeatCount="indefinite" />
-        </text>
-      </g>
-
-      <!-- Role 3: UI/UX Engineer -->
-      <g>
-        <text x="90" y="20" fill="#facc15" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-          UI/UX Engineer
-          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.55;0.72;0.75;1" dur="12s" repeatCount="indefinite" />
-        </text>
-      </g>
-
-      <!-- Role 4: Systems Architect -->
-      <g>
-        <text x="90" y="20" fill="#fafafa" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-          Systems Architect
-          <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.75;0.80;0.97;1;1" dur="12s" repeatCount="indefinite" />
-        </text>
-      </g>
-    </g>
-
-    <!-- Tagline Quote Box -->
-    <g transform="translate(80, 270)">
-      <rect x="0" y="0" width="640" height="90" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1.5" />
-      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#ea580c" stroke-width="2" />
-      
-      <!-- Quote text typing -->
-      <g clip-path="url(#clip-quote-line)">
-        <text x="25" y="50" fill="#e4e4e7" font-family="monospace" font-size="14" font-style="italic" font-weight="bold">
-          "{quote}"
-        </text>
-      </g>
-      <!-- Blinking cursor for quote -->
-      <text x="25" y="50" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
-        |
-        <animate attributeName="x" from="25" to="610" dur="2s" begin="3.2s" fill="freeze" />
-        <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="5.2s" fill="freeze" />
-      </text>
-    </g>
-
-    <!-- About Me Section -->
-    <g transform="translate(80, 390)">
-      <text x="0" y="20" fill="#8b5cf6" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
-      
-      <!-- Lines that appear sequentially -->
-      <text x="20" y="50" fill="#d4d4d8" font-family="monospace" font-size="15" opacity="0">
-        - Professional full-stack engineer and designer.
-        <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="5.5s" fill="freeze"/>
-      </text>
-      <text x="20" y="80" fill="#d4d4d8" font-family="monospace" font-size="15" opacity="0">
-        - Focused on secure, high-performance web products.
-        <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6.2s" fill="freeze"/>
-      </text>
-      <text x="20" y="110" fill="#d4d4d8" font-family="monospace" font-size="15" opacity="0">
-        - Turning lines of code into responsive cyberpunk UI.
-        <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6.9s" fill="freeze"/>
-      </text>
-    </g>
-
-    <!-- Tech Stack Pills -->
-    <g transform="translate(80, 530)">
-      <!-- Title -->
-      <text x="0" y="15" fill="#f97316" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
-      
-      <!-- Pills -->
-      <!-- Pill 1: React -->
-      <g transform="translate(20, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#11131c" stroke="#8b5cf6" stroke-width="1.5" />
-        <text x="37.5" y="19" fill="#e2e8f0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">React</text>
-      </g>
-
-      <!-- Pill 2: Next.js -->
-      <g transform="translate(105, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.7s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#8b5cf6" stroke-width="1.5" />
-        <text x="42.5" y="19" fill="#e2e8f0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Next.js</text>
-      </g>
-
-      <!-- Pill 3: TypeScript -->
-      <g transform="translate(200, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.9s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="105" height="30" rx="15" fill="#11131c" stroke="url(#signature-grad)" stroke-width="1.5" />
-        <text x="52.5" y="19" fill="#fafafa" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">TypeScript</text>
-      </g>
-
-      <!-- Pill 4: Node.js -->
-      <g transform="translate(315, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.1s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#ea580c" stroke-width="1.5" />
-        <text x="42.5" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
-      </g>
-
-      <!-- Pill 5: Python -->
-      <g transform="translate(410, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.3s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#ea580c" stroke-width="1.5" />
-        <text x="40" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
-      </g>
-
-      <!-- Pill 6: Docker -->
-      <g transform="translate(500, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#facc15" stroke-width="1.5" />
-        <text x="40" y="19" fill="#facc15" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
-      </g>
-    </g>
-
-    <!-- Animated System/Stats Bar -->
-    <g transform="translate(80, 620)">
-      <!-- CPU Overclock Status -->
-      <text x="0" y="15" fill="#fafafa" font-family="monospace" font-size="12" font-weight="bold">CORE_OVERCLOCK: 99%</text>
-      <rect x="150" y="5" width="200" height="12" rx="3" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-      <rect x="152" y="7" width="0" height="8" rx="2" fill="url(#signature-grad)">
-        <animate attributeName="width" from="0" to="196" dur="2s" begin="5s" fill="freeze" calcMode="spline" keySplines="0.1 0.8 0.2 1"/>
-      </rect>
-
-      <!-- Neural Bandwidth Status -->
-      <text x="380" y="15" fill="#fafafa" font-family="monospace" font-size="12" font-weight="bold">NEURAL_LINK: 100%</text>
-      <rect x="520" y="5" width="120" height="12" rx="3" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-      <rect x="522" y="7" width="0" height="8" rx="2" fill="#f97316">
-        <animate attributeName="width" from="0" to="116" dur="2s" begin="5.5s" fill="freeze" calcMode="spline" keySplines="0.1 0.8 0.2 1"/>
-      </rect>
-    </g>
-
-    <!-- RIGHT COLUMN: Code Card, Slogan sign, Character -->
-    <!-- Code Editor Card (types buildDreams JSX) -->
-    <g transform="translate(780, 50)">
-      <rect x="0" y="0" width="450" height="240" rx="12" fill="#09090b" stroke="#27272a" stroke-width="1.5" style="filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));"/>
-      <path d="M 0 35 H 450" stroke="#27272a" stroke-width="1.2"/>
-      <!-- Dots -->
-      <circle cx="20" cy="18" r="5" fill="#ff5f56"/>
-      <circle cx="35" cy="18" r="5" fill="#ffbd2e"/>
-      <circle cx="50" cy="18" r="5" fill="#27c93f"/>
-      <text x="225" y="22" fill="#737373" font-family="monospace" font-size="11" font-weight="bold" opacity="0.6" text-anchor="middle">buildDreams.jsx</text>
-
-      <!-- Code Snippet -->
-      <g transform="translate(20, 60)" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="0.2">
-        <text class="code-l1" x="0" y="15" fill="#8b5cf6">const <tspan fill="#f97316">buildDreams</tspan> = <tspan fill="#e2e8f0">() => {</tspan></text>
-        <text class="code-l2" x="20" y="35" fill="#8b5cf6">while <tspan fill="#e2e8f0">(coding) {</tspan></text>
-        <text class="code-l3" x="40" y="55" fill="#ea580c">coffee<tspan fill="#e2e8f0">.consume();</tspan></text>
-        <text class="code-l4" x="40" y="75" fill="#8b5cf6">ideas<tspan fill="#e2e8f0">.compile();</tspan></text>
-        <text class="code-l5" x="40" y="95" fill="#facc15">dreams<tspan fill="#e2e8f0">.deploy();</tspan></text>
-        <text class="code-l6" x="20" y="115" fill="#e2e8f0">}</text>
-        <text class="code-l7" x="0" y="135" fill="#e2e8f0">};</text>
-      </g>
-    </g>
-
-    <!-- Slogan Sign: STAY SHARP. KEEP BUILDING. -->
-    <g transform="translate(780, 310)">
-      <rect x="0" y="0" width="450" height="70" rx="8" fill="#09090b" stroke="#27272a" stroke-width="1.5" />
-      <text x="225" y="42" fill="#f97316" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
-    </g>
-
-    <!-- Holographic Scan Character Container -->
-    <g clip-path="url(#hologram-clip)">
-      <image href="data:image/png;base64,{char_b64}" x="793" y="390" width="424" height="600" />
-      <rect x="780" y="390" width="450" height="350" fill="url(#grid)" opacity="0.35" pointer-events="none" />
-    </g>
-
-    <!-- One-time top-to-bottom scan line for hologram reveal -->
-    <line x1="780" y1="100" x2="1230" y2="100" stroke="#8b5cf6" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
-      <animate attributeName="y1" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      <animate attributeName="y2" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" begin="0.5s" fill="freeze" />
-    </line>
-
-    <!-- Continuous Full-width Scanner Line Sweeping every 3.5s -->
-    <line x1="0" y1="0" x2="1280" y2="0" stroke="#f97316" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 5px #f97316);">
-      <animate attributeName="y1" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
-      <animate attributeName="y2" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.1;0.9;1" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
-    </line>
+    # Docker: Ghost Cargo
+    docker_icon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Ghost Whale Body -->
+  <path d="M 10 45 C 10 25, 45 25, 55 35 C 65 35, 75 40, 70 50 C 65 52, 45 50, 10 45 Z" fill="#f8f9fa" stroke="#5a189a" stroke-width="2"/>
+  <path d="M 68 46 L 75 42 L 72 50 Z" fill="#f8f9fa" stroke="#5a189a" stroke-width="1.5"/>
+  <circle cx="22" cy="38" r="2.5" fill="#000"/>
+  
+  <!-- Glowing shipping crates (represented as pumpkins!) -->
+  <g transform="translate(32, 18)">
+    <rect width="10" height="10" fill="#ff7518" stroke="#000" stroke-width="1"/>
+    <rect x="12" y="0" width="10" height="10" fill="#e85d04" stroke="#000" stroke-width="1"/>
   </g>
 </svg>"""
+    with open("halloween/icons/docker.svg", "w") as f:
+      f.write(docker_icon)
+    print("Icons generated.")
 
-    banner_dark_content = banner_dark_template.replace("{char_b64}", char_b64).replace("{quote}", quote)
-    with open("banner.svg", "w") as f:
-      f.write(banner_dark_content)
-    print("banner.svg generated.")
-
-    # 2. banner-light.svg (Light Mode - Premium Purple/Orange Theme)
-    print("Generating banner-light.svg (light theme)...")
-    banner_light_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
+    # ==================== 5. halloween/animations/ ====================
+    print("Generating animations...")
+    
+    # A. Typing Ghost with laptop
+    typing_ghost = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
   <defs>
-    <!-- Background Grid -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.05"/>
-    </pattern>
-    
-    <!-- Cybernetic Hexagon Pattern -->
-    <pattern id="hex-pattern" width="120" height="104" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#ea580c" stroke-width="1" stroke-opacity="0.03"/>
-    </pattern>
-
-    <!-- Radial Glow Gradients -->
-    <radialGradient id="green-glow" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="mint-glow" cx="80%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    
-    <!-- Linear Gradients for UI Elements -->
-    <linearGradient id="signature-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8b5cf6"/>
-      <stop offset="50%" stop-color="#f97316"/>
-      <stop offset="100%" stop-color="#facc15"/>
-    </linearGradient>
-
-    <!-- Glowing Filters -->
-    <filter id="neon-glow-filter" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
+    <filter id="ghost-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="subtle-glow" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur stdDeviation="2" result="blur" />
+  </defs>
+  
+  <style>
+    @keyframes floatGhost {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes typeHands {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes keyboardGlow {
+      0%, 100% { fill: #ff7518; }
+      50% { fill: #a855f7; }
+    }
+    .ghost-body { animation: floatGhost 3.5s ease-in-out infinite; }
+    .ghost-hands { animation: typeHands 0.15s ease-in-out infinite; }
+    .key-glow { animation: keyboardGlow 0.4s infinite; }
+  </style>
+
+  <!-- Animated Ghost -->
+  <g class="ghost-body" filter="url(#ghost-glow)">
+    <!-- Main Body -->
+    <path d="M 60 120 C 60 50, 140 50, 140 120 C 140 160, 125 150, 100 165 C 75 150, 60 160, 60 120 Z" fill="#f8f9fa" stroke="#5a189a" stroke-width="2"/>
+    
+    <!-- Glasses -->
+    <circle cx="88" cy="100" r="10" fill="none" stroke="#ff7518" stroke-width="2"/>
+    <circle cx="112" cy="100" r="10" fill="none" stroke="#ff7518" stroke-width="2"/>
+    <line x1="98" y1="100" x2="102" y2="100" stroke="#ff7518" stroke-width="2"/>
+    <!-- Eyes inside glasses -->
+    <circle cx="88" cy="100" r="2.5" fill="#000"/>
+    <circle cx="112" cy="100" r="2.5" fill="#000"/>
+
+    <!-- Cheeks -->
+    <circle cx="76" cy="110" r="3" fill="#ff7518" opacity="0.5"/>
+    <circle cx="124" cy="110" r="3" fill="#ff7518" opacity="0.5"/>
+
+    <!-- Typing Hands -->
+    <g class="ghost-hands">
+      <ellipse cx="80" cy="132" rx="6" ry="4" fill="#f8f9fa" stroke="#5a189a" stroke-width="1.5"/>
+      <ellipse cx="120" cy="132" rx="6" ry="4" fill="#f8f9fa" stroke="#5a189a" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Laptop (Stationary) -->
+  <g transform="translate(50, 135)">
+    <!-- Base -->
+    <path d="M 10 40 L 110 40 L 120 50 L 0 50 Z" fill="#1c1c1c" stroke="#ff7518" stroke-width="2"/>
+    <!-- Keys with flashing light -->
+    <rect class="key-glow" x="20" y="42" width="80" height="4" rx="1"/>
+    
+    <!-- Lid/Screen -->
+    <path d="M 20 40 L 15 5 L 105 5 L 100 40 Z" fill="#0d1117" stroke="#ff7518" stroke-width="2"/>
+    <rect x="22" y="8" width="76" height="28" fill="#240046"/>
+    <!-- Code lines on screen -->
+    <line x1="30" y1="15" x2="70" y2="15" stroke="#7fff00" stroke-width="2"/>
+    <line x1="30" y1="23" x2="80" y2="23" stroke="#ff7518" stroke-width="2"/>
+    <line x1="30" y1="31" x2="55" y2="31" stroke="#f8f9fa" stroke-width="2"/>
+  </g>
+</svg>"""
+    with open("halloween/animations/typing_ghost.svg", "w") as f:
+      f.write(typing_ghost)
+
+    # B. Blinking scary Jack-o'-lantern
+    blinking_jack = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <style>
+    @keyframes eyeBlink {
+      0%, 90%, 100% { fill: #ffd166; }
+      95% { fill: #1c1c1c; }
+    }
+    @keyframes glowPulse {
+      0%, 100% { filter: drop-shadow(0 0 4px #ff7518); }
+      50% { filter: drop-shadow(0 0 12px #ff7518); }
+    }
+    .glowing-eyes { animation: eyeBlink 3.8s infinite; }
+    .pumpkin-glow { animation: glowPulse 2s ease-in-out infinite; }
+  </style>
+
+  <!-- Stem -->
+  <path d="M 80 40 C 78 30, 72 25, 70 25 C 68 25, 72 32, 75 40 Z" fill="#240046" stroke="#ea580c" stroke-width="2"/>
+
+  <!-- Pumpkin Body -->
+  <g class="pumpkin-glow">
+    <!-- Asymmetric organic round ribs -->
+    <ellipse cx="80" cy="95" rx="55" fill="#ff7518" stroke="#1c1c1c" stroke-width="3"/>
+    <ellipse cx="80" cy="95" rx="35" fill="#e85d04" stroke="#1c1c1c" stroke-width="2"/>
+    <ellipse cx="80" cy="95" rx="16" fill="#d04e00" stroke="#1c1c1c" stroke-width="1.5"/>
+
+    <!-- Carved Eyes (flashing/blinking) -->
+    <!-- Left Eye -->
+    <path class="glowing-eyes" d="M 52 80 L 68 76 L 62 90 Z" stroke="#1c1c1c" stroke-width="1.5"/>
+    <!-- Right Eye -->
+    <path class="glowing-eyes" d="M 108 80 L 92 76 L 98 90 Z" stroke="#1c1c1c" stroke-width="1.5"/>
+
+    <!-- Carved Mouth -->
+    <path class="glowing-eyes" d="M 45 105 Q 80 135, 115 105 Q 98 115, 80 110 Q 62 115, 45 105 Z" stroke="#1c1c1c" stroke-width="1.5"/>
+  </g>
+</svg>"""
+    with open("halloween/animations/blinking_jack.svg", "w") as f:
+      f.write(blinking_jack)
+
+    # C. Melting candle with flickering flame
+    candle = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 160" width="100%" height="160">
+  <defs>
+    <filter id="candle-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-
-    <!-- Clip Paths -->
-    <clipPath id="banner-clip">
-      <rect width="1280" height="740" rx="20"/>
-    </clipPath>
-    <clipPath id="hologram-clip">
-      <rect x="780" y="100" width="450" height="0">
-        <animate attributeName="height" from="0" to="620" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      </rect>
-    </clipPath>
-    
-    <!-- Typing Clipping Paths -->
-    <clipPath id="clip-terminal-line1">
-      <rect x="0" y="100" width="0" height="40">
-        <animate attributeName="width" from="0" to="400" dur="1.2s" begin="0.8s" fill="freeze"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-quote-line">
-      <rect x="0" y="10" width="0" height="80">
-        <animate attributeName="width" from="0" to="640" dur="2s" begin="3.2s" fill="freeze"/>
-      </rect>
-    </clipPath>
   </defs>
-
+  
   <style>
-    <![CDATA[
-    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;display=swap');
-    
-    .name-text {
-      font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-weight: 800;
-      font-size: 44px;
-      letter-spacing: 2px;
+    @keyframes sway {
+      0%, 100% { transform: rotate(-2deg) scale(1); }
+      50% { transform: rotate(3deg) scale(0.95); }
     }
-
-    @keyframes blink-cursor {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+    .flame-anim {
+      transform-origin: 50px 48px;
+      animation: sway 0.25s infinite ease-in-out;
     }
-    .cursor-pipe {
-      animation: blink-cursor 0.8s infinite;
-      font-family: monospace;
-      font-weight: bold;
-    }
-
-    /* Tech Stack Pills Hover Effect */
-    .tech-pill {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .tech-pill:hover {
-      fill: #f1f5f9;
-      stroke: #f97316;
-      filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.4));
-    }
-    
-    /* Code typing animation line-by-line using opacity and keyframes */
-    @keyframes type-code-1 { 0%, 10% { opacity: 0; } 11%, 100% { opacity: 1; } }
-    @keyframes type-code-2 { 0%, 20% { opacity: 0; } 21%, 100% { opacity: 1; } }
-    @keyframes type-code-3 { 0%, 30% { opacity: 0; } 31%, 100% { opacity: 1; } }
-    @keyframes type-code-4 { 0%, 40% { opacity: 0; } 41%, 100% { opacity: 1; } }
-    @keyframes type-code-5 { 0%, 50% { opacity: 0; } 51%, 100% { opacity: 1; } }
-    @keyframes type-code-6 { 0%, 60% { opacity: 0; } 61%, 100% { opacity: 1; } }
-    @keyframes type-code-7 { 0%, 70% { opacity: 0; } 71%, 100% { opacity: 1; } }
-    
-    .code-l1 { animation: type-code-1 6s forwards; }
-    .code-l2 { animation: type-code-2 6s forwards; }
-    .code-l3 { animation: type-code-3 6s forwards; }
-    .code-l4 { animation: type-code-4 6s forwards; }
-    .code-l5 { animation: type-code-5 6s forwards; }
-    .code-l6 { animation: type-code-6 6s forwards; }
-    .code-l7 { animation: type-code-7 6s forwards; }
-    ]]>
   </style>
 
-  <!-- Main Banner Wrapper (Clipped to Rounded Corners) -->
-  <g clip-path="url(#banner-clip)">
-    <!-- White / Light Theme Background -->
-    <rect width="1280" height="740" fill="#f8fafc"/>
-    <rect width="1280" height="740" fill="url(#grid)"/>
-    <rect width="1280" height="740" fill="url(#hex-pattern)"/>
+  <!-- Skull Candle Holder -->
+  <g transform="translate(15, 95)">
+    <rect width="70" height="40" rx="14" fill="#f8f9fa" stroke="#1c1c1c" stroke-width="2.5"/>
+    <circle cx="28" cy="18" r="6" fill="#1c1c1c"/>
+    <circle cx="42" cy="18" r="6" fill="#1c1c1c"/>
+    <path d="M 28 30 Q 35 36, 42 30" fill="none" stroke="#1c1c1c" stroke-width="2"/>
+  </g>
 
-    <!-- Ambient Glowing Orbs -->
-    <circle cx="200" cy="150" r="220" fill="url(#green-glow)" />
-    <circle cx="1000" cy="500" r="300" fill="url(#mint-glow)" />
+  <!-- Candle Wax Pillar -->
+  <rect x="38" y="55" width="24" height="50" rx="3" fill="#ffd166" stroke="#1c1c1c" stroke-width="2"/>
+  
+  <!-- Melted dripping wax details -->
+  <path d="M 38 60 Q 42 75, 45 60" fill="#ffd166" stroke="#1c1c1c" stroke-width="2"/>
+  <path d="M 52 58 Q 55 78, 57 58" fill="#ffd166" stroke="#1c1c1c" stroke-width="2"/>
 
-    <!-- Circuit Lines & Geometric Tech Accents -->
-    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="8 8"/>
-    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
-    <circle cx="500" cy="150" r="4" fill="#7c3aed" opacity="0.4"/>
-    <circle cx="700" cy="550" r="4" fill="#ea580c" opacity="0.3"/>
+  <!-- Wick -->
+  <line x1="50" y1="55" x2="50" y2="46" stroke="#000" stroke-width="2.5"/>
 
-    <!-- LEFT COLUMN: Terminal & Dashboard Panel (x=50, y=50, width=700, height=640) -->
-    <rect x="50" y="50" width="700" height="640" rx="16" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5" style="filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.05));" />
-    
-    <!-- Terminal Header Bar -->
-    <path d="M 50 85 H 750" stroke="#e4e4e7" stroke-width="1" />
-    <circle cx="75" cy="68" r="6" fill="#ff5f56"/>
-    <circle cx="95" cy="68" r="6" fill="#ffbd2e"/>
-    <circle cx="115" cy="68" r="6" fill="#27c93f"/>
-    <text x="365" y="73" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
-
-    <!-- Terminal Content Area -->
-    <!-- Line 1: user@dev:~$ cat README.md -->
-    <g clip-path="url(#clip-terminal-line1)">
-      <text x="80" y="125" fill="#7c3aed" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
-        <tspan fill="#737373">user@dev</tspan>:<tspan fill="#71717a">~$</tspan> cat README.md
-      </text>
-    </g>
-    <!-- Blinking Terminal Cursor for Line 1 -->
-    <text x="80" y="125" fill="#7c3aed" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
-      |
-      <animate attributeName="x" from="80" to="350" dur="1.2s" begin="0.8s" fill="freeze"/>
-      <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="2.0s" fill="freeze"/>
-    </text>
-
-    <!-- Bold Extended Name: CHARAN BS -->
-    <g transform="translate(80, 192)" filter="url(#subtle-glow)">
-      <text class="name-text" fill="url(#signature-grad)" opacity="0">
-        CHARAN BS
-        <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.8s" fill="freeze"/>
-      </text>
-    </g>
-
-    <!-- Cycling Role Titles -->
-    <g transform="translate(80, 220)">
-      <text x="0" y="20" fill="#7c3aed" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
-        > ROLE: <tspan fill="#7c3aed" class="cursor-pipe">|</tspan>
-      </text>
-      
-      <text x="90" y="20" fill="#f97316" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-        Full-Stack Developer
-        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.22;0.25;1" dur="12s" repeatCount="indefinite"/>
-      </text>
-
-      <text x="90" y="20" fill="#8b5cf6" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-        Cyberpunk Coder
-        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.30;0.47;0.50;1" dur="12s" repeatCount="indefinite"/>
-      </text>
-
-      <text x="90" y="20" fill="#d97706" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-        UI/UX Engineer
-        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.55;0.72;0.75;1" dur="12s" repeatCount="indefinite"/>
-      </text>
-
-      <text x="90" y="20" fill="#7c3aed" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
-        Systems Architect
-        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.75;0.80;0.97;1;1" dur="12s" repeatCount="indefinite"/>
-      </text>
-    </g>
-
-    <!-- Tagline Quote Box -->
-    <g transform="translate(80, 270)">
-      <rect x="0" y="0" width="640" height="90" rx="8" fill="#f8fafc" stroke="#e4e4e7" stroke-width="1.5"/>
-      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#ea580c" stroke-width="2"/>
-      
-      <g clip-path="url(#clip-quote-line)">
-        <text x="25" y="50" fill="#18181b" font-family="monospace" font-size="14" font-style="italic" font-weight="bold">
-          "{quote}"
-        </text>
-      </g>
-      <!-- Blinking cursor for quote -->
-      <text x="25" y="50" fill="#7c3aed" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
-        |
-        <animate attributeName="x" from="25" to="610" dur="2s" begin="3.2s" fill="freeze"/>
-        <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="5.2s" fill="freeze"/>
-      </text>
-    </g>
-
-    <!-- About Me Section -->
-    <g transform="translate(80, 390)">
-      <text x="0" y="20" fill="#7c3aed" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
-      <text x="20" y="50" fill="#3f3f46" font-family="monospace" font-size="15" opacity="0">
-        - Professional full-stack engineer and designer.
-        <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="5.5s" fill="freeze"/>
-      </text>
-      <text x="20" y="80" fill="#3f3f46" font-family="monospace" font-size="15" opacity="0">
-        - Focused on secure, high-performance web products.
-        <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6.2s" fill="freeze"/>
-      </text>
-      <text x="20" y="110" fill="#3f3f46" font-family="monospace" font-size="15" opacity="0">
-        - Turning lines of code into responsive cyberpunk UI.
-        <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6.9s" fill="freeze"/>
-      </text>
-    </g>
-
-    <!-- Tech Stack Pills -->
-    <g transform="translate(80, 530)">
-      <text x="0" y="15" fill="#ea580c" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
-      
-      <!-- Pills -->
-      <g transform="translate(20, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.5s" fill="freeze"/>
-        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.5"/>
-        <text x="37.5" y="19" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">React</text>
-      </g>
-
-      <g transform="translate(105, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.7s" fill="freeze"/>
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.5"/>
-        <text x="42.5" y="19" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Next.js</text>
-      </g>
-
-      <g transform="translate(200, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.9s" fill="freeze"/>
-        <rect class="tech-pill" x="0" y="0" width="105" height="30" rx="15" fill="#f8fafc" stroke="url(#signature-grad)" stroke-width="1.5"/>
-        <text x="52.5" y="19" fill="#18181b" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">TypeScript</text>
-      </g>
-
-      <g transform="translate(315, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.1s" fill="freeze"/>
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#f8fafc" stroke="#ea580c" stroke-width="1.5"/>
-        <text x="42.5" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
-      </g>
-
-      <g transform="translate(410, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.3s" fill="freeze"/>
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#f8fafc" stroke="#ea580c" stroke-width="1.5"/>
-        <text x="40" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
-      </g>
-
-      <g transform="translate(500, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.5s" fill="freeze"/>
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#f8fafc" stroke="#facc15" stroke-width="1.5"/>
-        <text x="40" y="19" fill="#facc15" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
-      </g>
-    </g>
-
-    <!-- Animated System/Stats Bar -->
-    <g transform="translate(80, 620)">
-      <text x="0" y="15" fill="#27272a" font-family="monospace" font-size="12" font-weight="bold">CORE_OVERCLOCK: 99%</text>
-      <rect x="150" y="5" width="200" height="12" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-      <rect x="152" y="7" width="0" height="8" rx="2" fill="url(#signature-grad)">
-        <animate attributeName="width" from="0" to="196" dur="2s" begin="5s" fill="freeze" calcMode="spline" keySplines="0.1 0.8 0.2 1"/>
-      </rect>
-
-      <text x="380" y="15" fill="#27272a" font-family="monospace" font-size="12" font-weight="bold">NEURAL_LINK: 100%</text>
-      <rect x="520" y="5" width="120" height="12" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-      <rect x="522" y="7" width="0" height="8" rx="2" fill="#ea580c">
-        <animate attributeName="width" from="0" to="116" dur="2s" begin="5.5s" fill="freeze" calcMode="spline" keySplines="0.1 0.8 0.2 1"/>
-      </rect>
-    </g>
-
-    <!-- RIGHT COLUMN: Code Card, Slogan sign, Character -->
-    <g transform="translate(780, 50)">
-      <!-- Editor Frame -->
-      <rect x="0" y="0" width="450" height="240" rx="12" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5" style="filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));"/>
-      <path d="M 0 35 H 450" stroke="#e4e4e7" stroke-width="1"/>
-      <circle cx="20" cy="18" r="5" fill="#ff5f56"/>
-      <circle cx="35" cy="18" r="5" fill="#ffbd2e"/>
-      <circle cx="50" cy="18" r="5" fill="#27c93f"/>
-      <text x="225" y="22" fill="#71717a" font-family="monospace" font-size="11" font-weight="bold" opacity="0.6" text-anchor="middle">buildDreams.jsx</text>
-
-      <!-- Code Snippet -->
-      <g transform="translate(20, 60)" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="0.2">
-        <text class="code-l1" x="0" y="15" fill="#7c3aed">const <tspan fill="#ea580c">buildDreams</tspan> = <tspan fill="#18181b">() => {</tspan></text>
-        <text class="code-l2" x="20" y="35" fill="#7c3aed">while <tspan fill="#18181b">(coding) {</tspan></text>
-        <text class="code-l3" x="40" y="55" fill="#ea580c">coffee<tspan fill="#18181b">.consume();</tspan></text>
-        <text class="code-l4" x="40" y="75" fill="#7c3aed">ideas<tspan fill="#18181b">.compile();</tspan></text>
-        <text class="code-l5" x="40" y="95" fill="#facc15">dreams<tspan fill="#18181b">.deploy();</tspan></text>
-        <text class="code-l6" x="20" y="115" fill="#18181b">}</text>
-        <text class="code-l7" x="0" y="135" fill="#18181b">};</text>
-      </g>
-    </g>
-
-    <!-- Slogan Sign: STAY SHARP. KEEP BUILDING. -->
-    <g transform="translate(780, 310)">
-      <rect x="0" y="0" width="450" height="70" rx="8" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5" />
-      <text x="225" y="42" fill="#ea580c" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
-    </g>
-
-    <!-- Character Container -->
-    <g clip-path="url(#hologram-clip)">
-      <image href="data:image/png;base64,{char_b64}" x="793" y="390" width="424" height="600" />
-      <rect x="780" y="390" width="450" height="350" fill="url(#grid)" opacity="0.15" pointer-events="none" />
-    </g>
-
-    <!-- Scan Line for hologram reveal -->
-    <line x1="780" y1="100" x2="1230" y2="100" stroke="#7c3aed" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
-      <animate attributeName="y1" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      <animate attributeName="y2" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" begin="0.5s" fill="freeze"/>
-    </line>
-
-    <!-- Continuous Scanner Line -->
-    <line x1="0" y1="0" x2="1280" y2="0" stroke="#ea580c" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 4px #ea580c);">
-      <animate attributeName="y1" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
-      <animate attributeName="y2" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.1;0.9;1" dur="3.5s" begin="2.5s" repeatCount="indefinite"/>
-    </line>
+  <!-- Glowing Flame -->
+  <g class="flame-anim" filter="url(#candle-glow)">
+    <path d="M 50 46 C 45 42, 42 30, 50 18 C 58 30, 55 42, 50 46 Z" fill="#ff7518"/>
+    <path d="M 50 44 C 47 40, 45 32, 50 24 C 55 32, 53 40, 50 44 Z" fill="#ffd166"/>
   </g>
 </svg>"""
+    with open("halloween/animations/candle.svg", "w") as f:
+      f.write(candle)
+    print("Animations generated.")
 
-    banner_light_content = banner_light_template.replace("{char_b64}", char_b64).replace("{quote}", quote)
-    with open("banner-light.svg", "w") as f:
-      f.write(banner_light_content)
-    print("banner-light.svg generated.")
-
-    # 3. lanyard.svg (React-Bits Lanyard style - Purple/Orange Theme)
-    print("Generating lanyard.svg...")
-    lanyard_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%" style="max-height: 550px;">
+    # ==================== 6. Custom Stats Cards ====================
+    # A. Stats Card: Tombstone style
+    print("Generating custom stats.svg...")
+    stats_svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
   <defs>
-    <!-- Card Glassmorphism Gradient -->
-    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#09090b" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#18181b" stop-opacity="0.85" />
+    <linearGradient id="tomb-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c1c" />
+      <stop offset="100%" stop-color="#0d1117" />
     </linearGradient>
-
-    <!-- Metal clasp texture -->
-    <linearGradient id="metal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#94a3b8" />
-      <stop offset="35%" stop-color="#cbd5e1" />
-      <stop offset="50%" stop-color="#f1f5f9" />
-      <stop offset="65%" stop-color="#cbd5e1" />
-      <stop offset="100%" stop-color="#64748b" />
-    </linearGradient>
-
-    <!-- Purple/Orange gradient -->
-    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7c3aed" />
-      <stop offset="100%" stop-color="#ea580c" />
-    </linearGradient>
-
-    <clipPath id="avatar-clip">
-      <circle cx="150" cy="180" r="60" />
-    </clipPath>
   </defs>
+  <!-- Tombstone Silhouette Backing Frame -->
+  <rect width="450" height="200" rx="14" fill="url(#tomb-grad)" stroke="#5a189a" stroke-width="2"/>
+  
+  <!-- Cobwebs in corners -->
+  <path d="M 5 35 Q 25 25, 35 5 M 5 20 Q 18 18, 20 5 M 5 10 Q 10 10, 10 5" stroke="#ff7518" stroke-width="1.2" stroke-opacity="0.6" fill="none"/>
+  <path d="M 445 35 Q 425 25, 415 5 M 445 20 Q 432 18, 430 5 M 445 10 Q 440 10, 440 5" stroke="#ff7518" stroke-width="1.2" stroke-opacity="0.6" fill="none"/>
 
-  <style>
-    <![CDATA[
-    /* Physics-based Pendulum Drop and Sway Animation */
-    @keyframes drop-swing {
-      0% { transform: rotate(-40deg) translateY(-300px); }
-      10% { transform: rotate(32deg) translateY(0); }
-      20% { transform: rotate(-24deg); }
-      30% { transform: rotate(18deg); }
-      40% { transform: rotate(-12deg); }
-      50% { transform: rotate(8deg); }
-      60% { transform: rotate(-5deg); }
-      70% { transform: rotate(3deg); }
-      80% { transform: rotate(-1.5deg); }
-      90% { transform: rotate(0.8deg); }
-      100% { transform: rotate(0deg); }
-    }
+  <!-- Tombstone top arch decor -->
+  <path d="M 120 30 C 180 15, 270 15, 330 30" fill="none" stroke="#e85d04" stroke-width="2" stroke-linecap="round"/>
 
-    @keyframes sway-loop {
-      0%, 100% { transform: rotate(-1.5deg); }
-      50% { transform: rotate(1.5deg); }
-    }
+  <text x="225" y="32" fill="#ffd166" font-family="monospace" font-weight="bold" font-size="14" text-anchor="middle">// GHOSTLY STATS.bin</text>
 
-    .swing-assembly {
-      transform-origin: 500px 50px;
-      animation: drop-swing 4.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1,
-                 sway-loop 5s ease-in-out 4.5s infinite;
-    }
-    ]]>
-  </style>
+  <!-- Left: Glowing Tombstone RIP ring -->
+  <g transform="translate(10, 0)">
+    <path d="M 40 145 C 40 90, 100 90, 100 145 Z" fill="#1c1c1c" stroke="#ff7518" stroke-width="2"/>
+    <text x="70" y="125" fill="#f8f9fa" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">RIP</text>
+    <text x="70" y="165" fill="#ff7518" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">DEV LEVEL</text>
+  </g>
 
-  <!-- Lanyard assembly, swings from top center -->
-  <g class="swing-assembly">
-    <!-- STRAP LEFT -->
-    <path d="M 450 0 L 490 200" stroke="#09090b" stroke-width="26" stroke-linecap="round" />
-    <path d="M 450 0 L 490 200" stroke="#7c3aed" stroke-width="12" stroke-linecap="round" stroke-dasharray="8 6" />
-
-    <!-- STRAP RIGHT -->
-    <path d="M 550 0 L 510 200" stroke="#09090b" stroke-width="26" stroke-linecap="round" />
-    <path d="M 550 0 L 510 200" stroke="#7c3aed" stroke-width="12" stroke-linecap="round" stroke-dasharray="8 6" />
-    
-    <!-- Strap Texts -->
-    <text x="450" y="80" fill="#a1a1aa" font-family="monospace" font-size="10" font-weight="bold" transform="rotate(78 450 80)" letter-spacing="1">{username_upper} // SECURE ACCESS</text>
-    <text x="540" y="80" fill="#a1a1aa" font-family="monospace" font-size="10" font-weight="bold" transform="rotate(-78 540 80)" letter-spacing="1">DEVELOPER // CLASS C</text>
-
-    <!-- Metal Ring & Clasp -->
-    <polygon points="485,200 515,200 500,225" fill="url(#metal-grad)" stroke="#475569" stroke-width="1" />
-    <rect x="492" y="222" width="16" height="24" rx="3" fill="url(#metal-grad)" stroke="#475569" stroke-width="1" />
-    <circle cx="500" cy="234" r="3" fill="#334155" />
-    <rect x="480" y="246" width="40" height="8" rx="2" fill="#09090b" />
-
-    <!-- THE BADGE CARD (x=350, y=254, width=300, height=480) -->
-    <g transform="translate(350, 254)">
-      <rect x="0" y="0" width="300" height="480" rx="18" fill="url(#card-grad)" stroke="url(#neon-cyan)" stroke-width="2" style="filter: drop-shadow(0 10px 25px rgba(139, 92, 246, 0.25));" />
-      
-      <path d="M 0 40 H 300" stroke="#27272a" stroke-width="1" />
-      <path d="M 0 440 H 300" stroke="#27272a" stroke-width="1" />
-      <rect x="10" y="10" width="280" height="460" rx="12" fill="none" stroke="#ea580c" stroke-width="1" stroke-opacity="0.15" />
-
-      <!-- Top Text -->
-      <text x="150" y="28" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="2" text-anchor="middle">WORKSPACE IDENTITY</text>
-
-      <!-- Glow Avatar Rings -->
-      <circle cx="150" cy="180" r="66" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.3" />
-      <circle cx="150" cy="180" r="63" fill="none" stroke="#ea580c" stroke-width="2" style="filter: drop-shadow(0 0 6px #ea580c);" />
-
-      <!-- Cropped Avatar Image -->
-      <image href="data:image/png;base64,{avatar_b64}" x="90" y="120" width="120" height="120" clip-path="url(#avatar-clip)" />
-
-      <!-- Developer Info -->
-      <text x="150" y="280" fill="#ffffff" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1" text-anchor="middle">{name}</text>
-      <text x="150" y="305" fill="#f97316" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">{role_upper}</text>
-      
-      <rect x="50" y="325" width="200" height="24" rx="4" fill="#09090b" stroke="#27272a" stroke-width="1" />
-      <text x="150" y="341" fill="#ea580c" font-family="monospace" font-size="12" text-anchor="middle">ID: @{username}</text>
-
-      <!-- Barcode area at bottom -->
-      <g transform="translate(40, 370)">
-        <!-- Barcode lines -->
-        <rect x="0" y="0" width="3" height="40" fill="#e4e4e7" />
-        <rect x="5" y="0" width="1" height="40" fill="#e4e4e7" />
-        <rect x="8" y="0" width="6" height="40" fill="#e4e4e7" />
-        <rect x="16" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="20" y="0" width="4" height="40" fill="#e4e4e7" />
-        <rect x="26" y="0" width="1" height="40" fill="#e4e4e7" />
-        <rect x="30" y="0" width="5" height="40" fill="#e4e4e7" />
-        <rect x="38" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="42" y="0" width="6" height="40" fill="#e4e4e7" />
-        <rect x="50" y="0" width="1" height="40" fill="#e4e4e7" />
-        <rect x="54" y="0" width="3" height="40" fill="#e4e4e7" />
-        <rect x="60" y="0" width="5" height="40" fill="#e4e4e7" />
-        <rect x="68" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="74" y="0" width="7" height="40" fill="#e4e4e7" />
-        <rect x="83" y="0" width="1" height="40" fill="#e4e4e7" />
-        <rect x="86" y="0" width="4" height="40" fill="#e4e4e7" />
-        <rect x="92" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="96" y="0" width="6" height="40" fill="#e4e4e7" />
-        <rect x="104" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="108" y="0" width="4" height="40" fill="#e4e4e7" />
-        
-        <rect x="114" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="118" y="0" width="5" height="40" fill="#e4e4e7" />
-        <rect x="125" y="0" width="1" height="40" fill="#e4e4e7" />
-        <rect x="128" y="0" width="6" height="40" fill="#e4e4e7" />
-        <rect x="136" y="0" width="3" height="40" fill="#e4e4e7" />
-        <rect x="142" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="146" y="0" width="5" height="40" fill="#e4e4e7" />
-        <rect x="154" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="158" y="0" width="7" height="40" fill="#e4e4e7" />
-        <rect x="167" y="0" width="1" height="40" fill="#e4e4e7" />
-        <rect x="170" y="0" width="3" height="40" fill="#e4e4e7" />
-        <rect x="175" y="0" width="5" height="40" fill="#e4e4e7" />
-        <rect x="182" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="186" y="0" width="6" height="40" fill="#e4e4e7" />
-        <rect x="194" y="0" width="1" height="40" fill="#e4e4e7" />
-        <rect x="198" y="0" width="3" height="40" fill="#e4e4e7" />
-        <rect x="204" y="0" width="6" height="40" fill="#e4e4e7" />
-        <rect x="212" y="0" width="2" height="40" fill="#e4e4e7" />
-        <rect x="216" y="0" width="4" height="40" fill="#e4e4e7" />
-
-        <text x="110" y="52" fill="#7c3aed" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="2" text-anchor="middle">LEVEL_C_AUTHENTIC_ID</text>
-      </g>
+  <!-- Stats List -->
+  <g transform="translate(160, 50)" fill="#f8f9fa" font-family="monospace" font-size="13">
+    <!-- Commits -->
+    <g transform="translate(0, 15)">
+      <text x="0" y="0">Spooky Commits</text>
+      <text x="260" y="0" fill="#ffd166" font-weight="bold" text-anchor="end">1,420</text>
+      <line x1="0" y1="8" x2="260" y2="8" stroke="#5a189a" stroke-width="1" stroke-opacity="0.4"/>
+    </g>
+    <!-- Pull Requests -->
+    <g transform="translate(0, 45)">
+      <text x="0" y="0">Magic PRs</text>
+      <text x="260" y="0" fill="#7fff00" font-weight="bold" text-anchor="end">184</text>
+      <line x1="0" y1="8" x2="260" y2="8" stroke="#5a189a" stroke-width="1" stroke-opacity="0.4"/>
+    </g>
+    <!-- Stars -->
+    <g transform="translate(0, 75)">
+      <text x="0" y="0">Haunted Stars</text>
+      <text x="260" y="0" fill="#ff7518" font-weight="bold" text-anchor="end">92</text>
+      <line x1="0" y1="8" x2="260" y2="8" stroke="#5a189a" stroke-width="1" stroke-opacity="0.4"/>
+    </g>
+    <!-- Issues -->
+    <g transform="translate(0, 105)">
+      <text x="0" y="0">Banish Issues</text>
+      <text x="260" y="0" fill="#f8f9fa" font-weight="bold" text-anchor="end">56</text>
+      <line x1="0" y1="8" x2="260" y2="8" stroke="#5a189a" stroke-width="1" stroke-opacity="0.4"/>
     </g>
   </g>
 </svg>"""
+    with open("halloween/stats.svg", "w") as f:
+      f.write(stats_svg)
 
-    lanyard_content = lanyard_template.replace("{avatar_b64}", avatar_b64).replace("{name}", name).replace("{role_upper}", role.upper()).replace("{username}", username).replace("{username_upper}", username.upper())
-    with open("lanyard.svg", "w") as f:
-      f.write(lanyard_content)
-    print("lanyard.svg generated.")
-
-    # 4. stats.svg (Local Stats Card - Purple/Orange Theme)
-    print("Generating stats.svg...")
-    stats_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#09090b" />
-      <stop offset="100%" stop-color="#18181b" />
-    </linearGradient>
-    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7c3aed" />
-      <stop offset="100%" stop-color="#ea580c" />
-    </linearGradient>
-  </defs>
-
-  <style>
-    <![CDATA[
-    @keyframes rotate-dashed {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .rotating-ring {
-      transform-origin: 75px 100px;
-      animation: rotate-dashed 20s linear infinite;
-    }
-    @keyframes slide-row {
-      from { transform: translateX(-30px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    .row-anim { animation: slide-row 0.6s ease-out forwards; opacity: 0; }
-    
-    @keyframes pulse {
-      0%, 100% { filter: drop-shadow(0 0 2px #ea580c); }
-      50% { filter: drop-shadow(0 0 8px #ea580c); }
-    }
-    .glow-pulse {
-      animation: pulse 3s infinite;
-    }
-    ]]>
-  </style>
-
-  <!-- Frame -->
-  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#27272a" stroke-width="1.5" style="filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));" />
+    # B. Languages Card: Potion shelves theme
+    print("Generating custom langs.svg...")
+    langs_svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
+  <rect width="450" height="200" rx="14" fill="#0d1117" stroke="#7fff00" stroke-width="2"/>
   
-  <!-- Left Side: Power Ring -->
-  <g class="glow-pulse">
-    <circle cx="75" cy="100" r="48" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 6" class="rotating-ring" />
-    <circle cx="75" cy="100" r="42" fill="#0c0c0e" stroke="#ea580c" stroke-width="2" style="filter: drop-shadow(0 0 4px #ea580c);" />
-    <text x="75" y="108" fill="#ea580c" font-family="monospace" font-size="28" font-weight="bold" text-anchor="middle" style="filter: drop-shadow(0 0 3px #ea580c);">S</text>
-  </g>
-  <text x="75" y="165" fill="#ea580c" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">DEV RANK</text>
+  <text x="25" y="32" fill="#7fff00" font-family="monospace" font-weight="bold" font-size="14">// SPOOKY INGREDIENTS</text>
+  <line x1="20" y1="40" x2="430" y2="40" stroke="#1c1c1c" stroke-width="2"/>
 
-  <!-- Right Side: Stats Rows -->
-  <g transform="translate(150, 20)">
-    <text x="10" y="20" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM STATS</text>
-    <line x1="10" y1="28" x2="270" y2="28" stroke="#27272a" stroke-width="1" />
-    
-    <!-- Row 1 -->
-    <g transform="translate(10, 45)">
-      <g class="row-anim" style="animation-delay: 0.2s;">
-        <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Total Commits</text>
-        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">1,420</text>
-        <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
-        <rect x="0" y="20" width="230" height="4" rx="2" fill="url(#neon-cyan)" />
-      </g>
+  <!-- Potion Shelf design for languages -->
+  <g transform="translate(25, 55)" font-family="monospace" font-size="12" fill="#f8f9fa">
+    <!-- TS: Purple Potion -->
+    <g transform="translate(0, 10)">
+      <path d="M 12 18 L 6 32 C 4 37, 10 40, 15 40 L 20 40 C 25 40, 31 37, 29 32 L 23 18 Z" fill="#5a189a" stroke="#8b5cf6" stroke-width="1.5"/>
+      <rect x="15" y="14" width="5" height="4" fill="#facc15"/>
+      <text x="45" y="28">TypeScript Potion</text>
+      <text x="380" y="28" fill="#8b5cf6" font-weight="bold" text-anchor="end">85%</text>
     </g>
 
-    <!-- Row 2 -->
-    <g transform="translate(10, 80)">
-      <g class="row-anim" style="animation-delay: 0.4s;">
-        <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Pull Requests</text>
-        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">184</text>
-        <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
-        <rect x="0" y="20" width="190" height="4" rx="2" fill="url(#neon-cyan)" />
-      </g>
+    <!-- JS: Orange Liquid -->
+    <g transform="translate(0, 50)">
+      <path d="M 12 18 L 6 32 C 4 37, 10 40, 15 40 L 20 40 C 25 40, 31 37, 29 32 L 23 18 Z" fill="#e85d04" stroke="#ff7518" stroke-width="1.5"/>
+      <rect x="15" y="14" width="5" height="4" fill="#facc15"/>
+      <text x="45" y="28">JavaScript Brew</text>
+      <text x="380" y="28" fill="#ff7518" font-weight="bold" text-anchor="end">78%</text>
     </g>
 
-    <!-- Row 3 -->
-    <g transform="translate(10, 115)">
-      <g class="row-anim" style="animation-delay: 0.6s;">
-        <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Issues Closed</text>
-        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">56</text>
-        <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
-        <rect x="0" y="20" width="150" height="4" rx="2" fill="url(#neon-cyan)" />
-      </g>
-    </g>
-
-    <!-- Row 4 -->
-    <g transform="translate(10, 150)">
-      <g class="row-anim" style="animation-delay: 0.8s;">
-        <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Stars Earned</text>
-        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">92</text>
-        <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
-        <rect x="0" y="20" width="175" height="4" rx="2" fill="url(#neon-cyan)" />
-      </g>
+    <!-- Python: Glowing Slime -->
+    <g transform="translate(0, 90)">
+      <path d="M 12 18 L 6 32 C 4 37, 10 40, 15 40 L 20 40 C 25 40, 31 37, 29 32 L 23 18 Z" fill="#240046" stroke="#7fff00" stroke-width="1.5"/>
+      <rect x="15" y="14" width="5" height="4" fill="#facc15"/>
+      <!-- Glowing green liquid bubble -->
+      <circle cx="17" cy="32" r="4" fill="#7fff00"/>
+      <text x="45" y="28">Python Slime</text>
+      <text x="380" y="28" fill="#7fff00" font-weight="bold" text-anchor="end">70%</text>
     </g>
   </g>
-</svg>
-"""
-    with open("stats.svg", "w") as f:
-      f.write(stats_content)
-    print("stats.svg generated.")
+</svg>"""
+    with open("halloween/langs.svg", "w") as f:
+      f.write(langs_svg)
 
-    # 5. langs.svg (Local Langs Card - Purple/Orange Theme)
-    print("Generating langs.svg...")
-    langs_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#09090b" />
-      <stop offset="100%" stop-color="#18181b" />
-    </linearGradient>
-    <linearGradient id="bar-ts" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7c3aed" />
-      <stop offset="100%" stop-color="#c084fc" />
-    </linearGradient>
-    <linearGradient id="bar-js" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ea580c" />
-      <stop offset="100%" stop-color="#ffedd5" />
-    </linearGradient>
-    <linearGradient id="bar-py" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="100%" stop-color="#fef3c7" />
-    </linearGradient>
-    <linearGradient id="bar-html" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#db2777" />
-      <stop offset="100%" stop-color="#fbcfe8" />
-    </linearGradient>
-  </defs>
+    # C. Trophies Card: Coffin Display
+    print("Generating custom trophies.svg...")
+    trophies_svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
+  <rect width="450" height="200" rx="14" fill="#1c1c1c" stroke="#ff7518" stroke-width="2"/>
+  <text x="25" y="32" fill="#ff7518" font-family="monospace" font-weight="bold" font-size="14">// SPOOKY COFFIN HALL</text>
+  <line x1="20" y1="40" x2="430" y2="40" stroke="#0d1117" stroke-width="2"/>
 
-  <style>
-    <![CDATA[
-    @keyframes load-bar {
-      from { width: 0; }
-    }
-    .fill-bar {
-      animation: load-bar 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
-    }
-    ]]>
-  </style>
-
-  <!-- Frame -->
-  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(234,88,12,0.08));" />
-  
-  <text x="25" y="30" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// LANGUAGE PROFILE</text>
-  <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
-
-  <g transform="translate(25, 50)" font-family="monospace" font-size="12" fill="#e2e8f0">
-    <!-- TS -->
-    <text x="0" y="15">TypeScript</text>
-    <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
-    <rect class="fill-bar" x="110" y="5" width="212" height="10" rx="5" fill="url(#bar-ts)" />
-    <text x="375" y="15" fill="#7c3aed" font-weight="bold">85%</text>
-
-    <!-- JS (React/Next) -->
-    <g transform="translate(0, 32)">
-      <text x="0" y="15">React/JS</text>
-      <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
-      <rect class="fill-bar" x="110" y="5" width="195" height="10" rx="5" fill="url(#bar-js)" />
-      <text x="375" y="15" fill="#ea580c" font-weight="bold">78%</text>
-    </g>
-
-    <!-- Python -->
-    <g transform="translate(0, 64)">
-      <text x="0" y="15">Python</text>
-      <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
-      <rect class="fill-bar" x="110" y="5" width="175" height="10" rx="5" fill="url(#bar-py)" />
-      <text x="375" y="15" fill="#f59e0b" font-weight="bold">70%</text>
-    </g>
-
-    <!-- HTML/CSS -->
-    <g transform="translate(0, 96)">
-      <text x="0" y="15">UI/CSS/HTML</text>
-      <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
-      <rect class="fill-bar" x="110" y="5" width="187" height="10" rx="5" fill="url(#bar-html)" />
-      <text x="375" y="15" fill="#db2777" font-weight="bold">75%</text>
-    </g>
-  </g>
-</svg>
-"""
-    with open("langs.svg", "w") as f:
-      f.write(langs_content)
-    print("langs.svg generated.")
-
-    # 6. trophies.svg (Local Trophies Card - Purple/Orange Theme)
-    print("Generating trophies.svg...")
-    trophies_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#09090b" />
-      <stop offset="100%" stop-color="#18181b" />
-    </linearGradient>
-  </defs>
-
-  <style>
-    <![CDATA[
-    @keyframes cell-pop {
-      from { transform: scale(0.85); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    .trophy-anim { animation: cell-pop 0.5s ease-out forwards; opacity: 0; }
-    ]]>
-  </style>
-
-  <!-- Frame -->
-  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(234,88,12,0.1));" />
-  
-  <text x="25" y="30" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM TROPHIES</text>
-  <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
-
-  <!-- Cell 1 -->
-  <g transform="translate(20, 52)">
-    <g class="trophy-anim" style="animation-delay: 0.2s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#7c3aed" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#7c3aed" stroke-width="1.5" />
-      
-      <!-- Trophy Icon -->
-      <path d="M 60 20 L 75 35 H 85 V 50 H 60 H 35 V 35 H 45 Z M 57 50 V 68 H 50 V 74 H 70 V 68 H 63 V 50 Z" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #7c3aed);" />
-      <text x="60" y="92" fill="#7c3aed" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CODE WARRIOR</text>
-      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
-    </g>
+  <!-- Coffin 1: Code Warrior -->
+  <g transform="translate(30, 60)">
+    <!-- Coffin frame shape -->
+    <polygon points="15,0 45,0 55,20 45,100 15,100 5,20" fill="#0d1117" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="30" y="45" fill="#8b5cf6" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">CODE</text>
+    <text x="30" y="60" fill="#f8f9fa" font-family="monospace" font-size="8" text-anchor="middle">RIP</text>
   </g>
 
-  <!-- Cell 2 -->
-  <g transform="translate(165, 52)">
-    <g class="trophy-anim" style="animation-delay: 0.4s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#ea580c" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#ea580c" stroke-width="1.5" />
-      
-      <path d="M 50 25 H 70 L 75 42 L 60 52 L 45 42 Z M 60 52 V 68 H 50 V 74 H 70 V 68 H 60 Z" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #ea580c);" />
-      <text x="60" y="92" fill="#ea580c" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">PR CHAMPION</text>
-      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">S-RANK</text>
-    </g>
+  <!-- Coffin 2: PR Champion -->
+  <g transform="translate(195, 60)">
+    <polygon points="15,0 45,0 55,20 45,100 15,100 5,20" fill="#0d1117" stroke="#ff7518" stroke-width="2"/>
+    <text x="30" y="45" fill="#ff7518" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">PRs</text>
+    <text x="30" y="60" fill="#f8f9fa" font-family="monospace" font-size="8" text-anchor="middle">RIP</text>
   </g>
 
-  <!-- Cell 3 -->
-  <g transform="translate(310, 52)">
-    <g class="trophy-anim" style="animation-delay: 0.6s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#facc15" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#facc15" stroke-width="1.5" />
-      
-      <circle cx="60" cy="40" r="16" fill="none" stroke="#facc15" stroke-width="2" style="filter: drop-shadow(0 0 3px #facc15);" />
-      <path d="M 54 40 H 66 M 60 34 V 46" stroke="#facc15" stroke-width="2" stroke-linecap="round" />
-      <text x="60" y="92" fill="#facc15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">BUG HUNTER</text>
-      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
-    </g>
+  <!-- Coffin 3: Bug Hunter -->
+  <g transform="translate(360, 60)">
+    <polygon points="15,0 45,0 55,20 45,100 15,100 5,20" fill="#0d1117" stroke="#7fff00" stroke-width="2"/>
+    <text x="30" y="45" fill="#7fff00" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">BUGS</text>
+    <text x="30" y="60" fill="#f8f9fa" font-family="monospace" font-size="8" text-anchor="middle">RIP</text>
   </g>
-</svg>
-"""
-    with open("trophies.svg", "w") as f:
-      f.write(trophies_content)
-    print("trophies.svg generated.")
+</svg>"""
+    with open("halloween/trophies.svg", "w") as f:
+      f.write(trophies_svg)
+    print("Cards generated.")
 
-    # 7. github-snake.yml (GitHub Action Workflow with permissions fix and Halloween theme)
+    # ==================== 7. Output files for GitHub Actions Workflow ====================
     print("Generating github-snake.yml...")
-    os.makedirs(".github/workflows", exist_ok=True)
     snake_workflow_content = """name: Generate Contribution Snake
 
 on:
@@ -1234,101 +879,98 @@ jobs:
 """
     with open(".github/workflows/github-snake.yml", "w") as f:
       f.write(snake_workflow_content)
-    print(".github/workflows/github-snake.yml generated.")
 
-    # 8. README.md (Purple & Orange themed)
+    # ==================== 8. README.md ====================
     print("Generating README.md...")
     readme_template = """<h1 align="center">ACCESS SYSTEM // {name_upper}</h1>
 
 <p align="center">
-  <!-- Auto-switching preferences banner using HTML picture element -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="banner.svg?v=2">
-    <source media="(prefers-color-scheme: light)" srcset="banner-light.svg?v=2">
-    <img alt="Cyberpunk Developer Banner" src="banner.svg?v=2" width="100%">
-  </picture>
+  <img alt="Halloween Room Developer Banner" src="halloween/banner.svg" width="100%">
 </p>
 
----
+<!-- Navigation Buttons -->
+<p align="center">
+  <a href="#bio">
+    <img src="halloween/buttons/about.svg" width="180">
+  </a>
+  <a href="#skills">
+    <img src="halloween/buttons/skills.svg" width="180">
+  </a>
+  <a href="#projects">
+    <img src="halloween/buttons/projects.svg" width="180">
+  </a>
+  <a href="#contact">
+    <img src="halloween/buttons/contact.svg" width="180">
+  </a>
+</p>
 
-<table align="center" border="0" cellpadding="10" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto;">
+<p align="center">
+  <img src="halloween/dividers/vines.svg" width="100%">
+</p>
+
+<a id="bio"></a>
+<h2 align="center">🔮 SYSTEM_BIOMETRICS // ACCESS</h2>
+
+<table align="center" border="0" cellpadding="15" cellspacing="0" style="border: 0px; border-collapse: collapse; margin: 0px auto;">
   <tr style="border: 0px;">
-    <!-- Swinging Badge Lanyard -->
-    <td align="center" valign="top" style="border: 0px; padding: 20px; width: 45%;">
-      <img src="lanyard.svg?v=2" alt="Developer ID Lanyard" width="100%" style="max-width: 320px;">
+    <!-- Animated typing ghost flanking the bio -->
+    <td align="center" valign="top" style="border: 0px; padding: 10px; width: 40%;">
+      <img src="halloween/animations/typing_ghost.svg" alt="Animated Coding Ghost" width="100%" style="max-width: 250px;">
     </td>
-    <!-- Bio / System Terminal Details -->
-    <td valign="top" style="border: 0px; padding: 20px; width: 55%; font-family: monospace; color: #cbd5e1;">
-      <h3>SYSTEM_PROFILE.bin</h3>
+    <!-- Bio text details -->
+    <td valign="top" style="border: 0px; padding: 20px; width: 60%; font-family: monospace; color: #cbd5e1;">
+      <h3>HALLOWEEN_NODE.bin</h3>
       <p><b>&gt; IDENTITY:</b> {name} / @{username}</p>
-      <p><b>&gt; COGNITIVE_ROLE:</b> {role}</p>
-      <p><b>&gt; ACCESS_PORT:</b> <a href="mailto:{email}">{email}</a></p>
-      <p><b>&gt; MISSION_TAGLINE:</b> <code>{tagline}</code></p>
-      <hr style="border-color: #ea580c; opacity: 0.3;">
-      <h4>CORE_SKILLS:</h4>
+      <p><b>&gt; ACCESS_PORT:</b> <a href="mailto:{email}" style="color: #ff7518;">{email}</a></p>
+      <p><b>&gt; POWER_LEVEL:</b> <code>Stay Spooky. Keep Building.</code></p>
+      <hr style="border-color: #5a189a; opacity: 0.4;">
       <p>
-        {skills_html}
-      </p>
-      <p>
-        Welcome to my digital terminal. I specialize in building responsive, high-performance web applications with clean architecture and interactive cyberpunk visual systems. Feel free to explore my source nodes below.
+        Welcome, mortal node, to my digital workstation. I construct responsive, highly modular web architectures under the coverage of midnight purples and glowing neon spell-work. Proactive code wizardry is the rule of this domain.
       </p>
     </td>
   </tr>
 </table>
 
----
-
-<h2 align="center">SYSTEM PERFORMANCE CARDS</h2>
-
 <p align="center">
-  <img src="stats.svg?v=2" alt="GitHub System Stats" width="48%" style="max-width: 440px; margin-right: 15px;">
-  <img src="langs.svg?v=2" alt="Language Distribution" width="48%" style="max-width: 440px;">
-</p>
-<p align="center">
-  <img src="trophies.svg?v=2" alt="System Achievement Trophies" width="98%" style="max-width: 900px; margin-top: 15px;">
+  <img src="halloween/dividers/bats.svg" width="100%">
 </p>
 
----
+<a id="skills"></a>
+<h2 align="center">🔥 SPOOKY SKILLS ORBS</h2>
 
-<h2 align="center">PROJECT NODES</h2>
-
-<table align="center" style="width: 100%; border-collapse: collapse; text-align: left; font-family: monospace; border: 1px solid #ea580c;">
-  <thead>
-    <tr style="background-color: #0c0c0e; color: #ea580c; border-bottom: 2px solid #ea580c;">
-      <th style="padding: 12px; border: 1px solid #ea580c;">Node Name</th>
-      <th style="padding: 12px; border: 1px solid #ea580c;">Operational Parameters</th>
-      <th style="padding: 12px; border: 1px solid #ea580c;">Tech Spec</th>
-      <th style="padding: 12px; border: 1px solid #ea580c;">Status Link</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid rgba(234, 88, 12, 0.2);">
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🌌 cyber-dashboard</td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Futuristic network operations center dashboard in the browser.</td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>React</code> <code>Three.js</code> <code>Tailwind</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/{username}/cyber-dashboard">Deploy Node &gt;</a></td>
-    </tr>
-    <tr style="border-bottom: 1px solid rgba(234, 88, 12, 0.2);">
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🛡️ sentinel-auth</td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Decentralized cryptographically secure authenticator system.</td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>Node.js</code> <code>TypeScript</code> <code>ECDSA</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/{username}/sentinel-auth">Deploy Node &gt;</a></td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🔮 neural-mesh</td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Serverless neural network text analyzer and content summarizer.</td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>Python</code> <code>Next.js</code> <code>PyTorch</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/{username}/neural-mesh">Deploy Node &gt;</a></td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-<h2 align="center">CONTRIBUTION GRID MESH</h2>
+<!-- Modular coding icons grid -->
+<p align="center">
+  <img src="halloween/icons/html.svg" width="70" alt="HTML">
+  <img src="halloween/icons/css.svg" width="70" alt="CSS">
+  <img src="halloween/icons/js.svg" width="70" alt="JS">
+  <img src="halloween/icons/python.svg" width="70" alt="Python">
+  <img src="halloween/icons/react.svg" width="70" alt="React">
+  <img src="halloween/icons/node.svg" width="70" alt="Node.js">
+  <img src="halloween/icons/docker.svg" width="70" alt="Docker">
+</p>
 
 <p align="center">
-  <!-- GitHub snake contribution graph generated from workflow -->
+  <img src="halloween/dividers/ghosts.svg" width="100%">
+</p>
+
+<h2 align="center">💀 COFFIN ARCHIVES // PERFORMANCE</h2>
+
+<p align="center">
+  <img src="halloween/stats.svg" alt="System Stats" width="48%" style="max-width: 440px; margin-right: 15px;">
+  <img src="halloween/langs.svg" alt="Languages" width="48%" style="max-width: 440px;">
+</p>
+<p align="center">
+  <img src="halloween/trophies.svg" alt="Coffin Trophies" width="98%" style="max-width: 900px; margin-top: 15px;">
+</p>
+
+<p align="center">
+  <img src="halloween/dividers/vines.svg" width="100%">
+</p>
+
+<h2 align="center">🎃 CONTRIBUTION SPIDER GRID</h2>
+
+<p align="center">
+  <!-- Dynamic snake contribution graph -->
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/{username}/{username}/output/github-contribution-grid-snake.svg?v=2">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/{username}/{username}/output/github-contribution-grid-snake-light.svg?v=2">
@@ -1336,30 +978,15 @@ jobs:
   </picture>
 </p>
 
----
-
-<h3 align="center">CONNECT_PORTALS</h3>
-<p align="center">
-  <a href="https://github.com/{username}">
-    <img src="https://img.shields.io/badge/GitHub-101000?style=for-the-badge&logo=github&logoColor=a855f7&labelColor=09090b&borderColor=a855f7" alt="GitHub Portal">
-  </a>
-  <a href="mailto:{email}">
-    <img src="https://img.shields.io/badge/Email-101000?style=for-the-badge&logo=gmail&logoColor=ea580c&labelColor=09090b&borderColor=ea580c" alt="Email Direct">
-  </a>
-  <a href="https://linkedin.com/in/{username}">
-    <img src="https://img.shields.io/badge/LinkedIn-101000?style=for-the-badge&logo=linkedin&logoColor=facc15&labelColor=09090b&borderColor=facc15" alt="LinkedIn Node">
-  </a>
-</p>
-
 <p align="center" style="font-family: monospace; color: #71717a; font-size: 11px;">
-  SYSTEM PROFILE VISITS: <img src="https://profile-counter.glitch.me/{username}/count.svg" alt="Views Counter" style="vertical-align: middle;"> // SECURE CONNECTIONS COMPLETED
+  PORTAL SECURED VISITORS: <img src="https://profile-counter.glitch.me/{username}/count.svg" alt="Views Counter" style="vertical-align: middle;"> // SECURE CONNECTIONS COMPLETED
 </p>"""
 
     readme_content = readme_template.replace("{name}", name).replace("{name_upper}", name.upper()).replace("{username}", username).replace("{email}", email).replace("{role}", role).replace("{tagline}", tagline).replace("{skills_html}", skills_html)
     with open("README.md", "w") as f:
       f.write(readme_content)
-    print("README.md generated.")
-    print("All profile assets generated successfully!")
+    print("README.md generated successfully!")
+    print("All Halloween modular assets generated successfully!")
 
 if __name__ == "__main__":
     main()
