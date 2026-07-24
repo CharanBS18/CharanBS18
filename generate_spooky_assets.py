@@ -26,28 +26,45 @@ def setup_dirs():
     print("Spooky directory structure initialized successfully.")
 
 def crop_stickers():
+    # 1. Crop stickers from halloch.png
     if not os.path.exists("halloch.png"):
         print("halloch.png not found, skipping sticker cropping.")
-        return
-    print("Cropping stickers from halloch.png...")
-    img = Image.open("halloch.png")
-    w, h = img.size
-    cols, rows = 5, 4
-    col_w, row_h = w / cols, h / rows
-    for r in range(rows):
-        for c in range(cols):
-            idx = r * cols + c + 1
-            left = int(c * col_w)
-            top = int(r * row_h)
-            right = int((c + 1) * col_w)
-            bottom = int((r + 1) * row_h)
-            box = img.crop((left, top, right, bottom))
-            bbox = box.getbbox()
-            if bbox:
-                box = box.crop(bbox)
-            box.thumbnail((300, 300), Image.Resampling.LANCZOS)
-            box.save(f"halloween/stickers/sticker_{idx}.png")
-    print("All 20 stickers cropped successfully.")
+    else:
+        print("Cropping stickers from halloch.png...")
+        img = Image.open("halloch.png")
+        w, h = img.size
+        cols, rows = 5, 4
+        col_w, row_h = w / cols, h / rows
+        for r in range(rows):
+            for c in range(cols):
+                idx = r * cols + c + 1
+                left = int(c * col_w)
+                top = int(r * row_h)
+                right = int((c + 1) * col_w)
+                bottom = int((r + 1) * row_h)
+                box = img.crop((left, top, right, bottom))
+                bbox = box.getbbox()
+                if bbox:
+                    box = box.crop(bbox)
+                box.thumbnail((300, 300), Image.Resampling.LANCZOS)
+                box.save(f"halloween/stickers/sticker_{idx}.png")
+        print("All 20 stickers cropped successfully.")
+
+    # 2. Crop user portrait from chtransparent.png
+    if not os.path.exists("chtransparent.png"):
+        print("chtransparent.png not found, skipping user avatar cropping.")
+    else:
+        print("Cropping user portrait from chtransparent.png...")
+        img = Image.open("chtransparent.png")
+        bbox = img.getbbox()
+        if bbox:
+            img = img.crop(bbox)
+        w, h = img.size
+        new_w = 160
+        new_h = int(new_w * h / w)
+        img = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+        img.save("halloween/stickers/user_avatar.png")
+        print("Transparent user avatar cropped and saved successfully.")
 
 # Helper to save transparent GIFs in Pillow
 def save_transparent_gif(frames, filename, duration=100):
@@ -828,7 +845,7 @@ def generate_readme():
     <!-- Profile Frame with spooky avatar overlay -->
     <td align="center" valign="middle" style="border: 0px; padding: 10px; width: 40%;">
       <div style="position: relative; display: inline-block; width: 240px; height: 280px;">
-        <img src="halloween/spooky_avatar.png" alt="Spooky Avatar" width="160" style="position: absolute; top: 90px; left: 40px; border-radius: 50%; border: 3px solid #ff7518; z-index: 1;">
+        <img src="halloween/stickers/user_avatar.png" alt="Spooky Avatar" width="160" style="position: absolute; top: 40px; left: 40px; z-index: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));">
         <img src="halloween/frames/profile_frame.svg" alt="Tombstone Frame" width="240" style="position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none;">
         <img src="halloween/animations/floating_ghost.gif" alt="Animated Ghost" width="80" style="position: absolute; bottom: -5px; right: -5px; z-index: 3;">
       </div>

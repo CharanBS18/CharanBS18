@@ -18,7 +18,7 @@
     <!-- Profile Frame with spooky avatar overlay -->
     <td align="center" valign="middle" style="border: 0px; padding: 10px; width: 40%;">
       <div style="position: relative; display: inline-block; width: 240px; height: 280px;">
-        <img src="halloween/spooky_avatar.png" alt="Spooky Avatar" width="160" style="position: absolute; top: 90px; left: 40px; border-radius: 50%; border: 3px solid #ff7518; z-index: 1;">
+        <img src="halloween/stickers/user_avatar.png" alt="Spooky Avatar" width="160" style="position: absolute; top: 40px; left: 40px; z-index: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));">
         <img src="halloween/frames/profile_frame.svg" alt="Tombstone Frame" width="240" style="position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none;">
         <img src="halloween/animations/floating_ghost.gif" alt="Animated Ghost" width="80" style="position: absolute; bottom: -5px; right: -5px; z-index: 3;">
       </div>
