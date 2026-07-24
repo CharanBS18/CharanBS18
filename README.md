@@ -24,7 +24,7 @@
       <p><b>&gt; COGNITIVE_ROLE:</b> Full-Stack Developer</p>
       <p><b>&gt; ACCESS_PORT:</b> <a href="mailto:charan201204@gmail.com">charan201204@gmail.com</a></p>
       <p><b>&gt; MISSION_TAGLINE:</b> <code>Stay Sharp. Keep Building.</code></p>
-      <hr style="border-color: #4ade80; opacity: 0.3;">
+      <hr style="border-color: #ea580c; opacity: 0.3;">
       <h4>CORE_SKILLS:</h4>
       <p>
         <code>React</code> <code>Next.js</code> <code>TypeScript</code> <code>Node.js</code> <code>Python</code> <code>Docker</code> <code>TailwindCSS</code>
@@ -52,33 +52,33 @@
 
 <h2 align="center">PROJECT NODES</h2>
 
-<table align="center" style="width: 100%; border-collapse: collapse; text-align: left; font-family: monospace; border: 1px solid #4ade80;">
+<table align="center" style="width: 100%; border-collapse: collapse; text-align: left; font-family: monospace; border: 1px solid #ea580c;">
   <thead>
-    <tr style="background-color: #0c0c0e; color: #4ade80; border-bottom: 2px solid #4ade80;">
-      <th style="padding: 12px; border: 1px solid #4ade80;">Node Name</th>
-      <th style="padding: 12px; border: 1px solid #4ade80;">Operational Parameters</th>
-      <th style="padding: 12px; border: 1px solid #4ade80;">Tech Spec</th>
-      <th style="padding: 12px; border: 1px solid #4ade80;">Status Link</th>
+    <tr style="background-color: #0c0c0e; color: #ea580c; border-bottom: 2px solid #ea580c;">
+      <th style="padding: 12px; border: 1px solid #ea580c;">Node Name</th>
+      <th style="padding: 12px; border: 1px solid #ea580c;">Operational Parameters</th>
+      <th style="padding: 12px; border: 1px solid #ea580c;">Tech Spec</th>
+      <th style="padding: 12px; border: 1px solid #ea580c;">Status Link</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid rgba(74, 222, 128, 0.2);">
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2); font-weight: bold;">🌌 cyber-dashboard</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);">Futuristic network operations center dashboard in the browser.</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><code>React</code> <code>Three.js</code> <code>Tailwind</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><a href="https://github.com/CharanBS18/cyber-dashboard">Deploy Node &gt;</a></td>
+    <tr style="border-bottom: 1px solid rgba(234, 88, 12, 0.2);">
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🌌 cyber-dashboard</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Futuristic network operations center dashboard in the browser.</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>React</code> <code>Three.js</code> <code>Tailwind</code></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/CharanBS18/cyber-dashboard">Deploy Node &gt;</a></td>
     </tr>
-    <tr style="border-bottom: 1px solid rgba(74, 222, 128, 0.2);">
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2); font-weight: bold;">🛡️ sentinel-auth</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);">Decentralized cryptographically secure authenticator system.</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><code>Node.js</code> <code>TypeScript</code> <code>ECDSA</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><a href="https://github.com/CharanBS18/sentinel-auth">Deploy Node &gt;</a></td>
+    <tr style="border-bottom: 1px solid rgba(234, 88, 12, 0.2);">
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🛡️ sentinel-auth</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Decentralized cryptographically secure authenticator system.</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>Node.js</code> <code>TypeScript</code> <code>ECDSA</code></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/CharanBS18/sentinel-auth">Deploy Node &gt;</a></td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2); font-weight: bold;">🔮 neural-mesh</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);">Serverless neural network text analyzer and content summarizer.</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><code>Python</code> <code>Next.js</code> <code>PyTorch</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><a href="https://github.com/CharanBS18/neural-mesh">Deploy Node &gt;</a></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🔮 neural-mesh</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Serverless neural network text analyzer and content summarizer.</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>Python</code> <code>Next.js</code> <code>PyTorch</code></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/CharanBS18/neural-mesh">Deploy Node &gt;</a></td>
     </tr>
   </tbody>
 </table>
@@ -101,13 +101,13 @@
 <h3 align="center">CONNECT_PORTALS</h3>
 <p align="center">
   <a href="https://github.com/CharanBS18">
-    <img src="https://img.shields.io/badge/GitHub-101000?style=for-the-badge&logo=github&logoColor=4ade80&labelColor=09090b&borderColor=4ade80" alt="GitHub Portal">
+    <img src="https://img.shields.io/badge/GitHub-101000?style=for-the-badge&logo=github&logoColor=a855f7&labelColor=09090b&borderColor=a855f7" alt="GitHub Portal">
   </a>
   <a href="mailto:charan201204@gmail.com">
-    <img src="https://img.shields.io/badge/Email-101000?style=for-the-badge&logo=gmail&logoColor=22c55e&labelColor=09090b&borderColor=22c55e" alt="Email Direct">
+    <img src="https://img.shields.io/badge/Email-101000?style=for-the-badge&logo=gmail&logoColor=ea580c&labelColor=09090b&borderColor=ea580c" alt="Email Direct">
   </a>
   <a href="https://linkedin.com/in/CharanBS18">
-    <img src="https://img.shields.io/badge/LinkedIn-101000?style=for-the-badge&logo=linkedin&logoColor=a7f3d0&labelColor=09090b&borderColor=a7f3d0" alt="LinkedIn Node">
+    <img src="https://img.shields.io/badge/LinkedIn-101000?style=for-the-badge&logo=linkedin&logoColor=facc15&labelColor=09090b&borderColor=facc15" alt="LinkedIn Node">
   </a>
 </p>
 

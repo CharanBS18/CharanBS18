@@ -1,34 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
   <defs>
-    <!-- Background Grid (Modern Emerald/Slate) -->
+    <!-- Background Grid (Modern Purple/Slate) -->
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-opacity="0.05"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8b5cf6" stroke-width="1.2" stroke-opacity="0.08"/>
     </pattern>
     
     <!-- Cybernetic Hexagon Pattern -->
     <pattern id="hex-pattern" width="120" height="104" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#22c55e" stroke-width="1" stroke-opacity="0.03"/>
+      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#ea580c" stroke-width="1" stroke-opacity="0.04"/>
     </pattern>
 
-    <!-- Radial Glow Gradients (Emerald Green / Mint) -->
+    <!-- Radial Glow Gradients (Purple / Orange) -->
     <radialGradient id="green-glow-1" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.15"/>
       <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="green-glow-2" cx="80%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.12"/>
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="neon-glow" cx="50%" cy="80%" r="40%">
-      <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.06"/>
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
     </radialGradient>
     
     <!-- Linear Gradients for UI Elements -->
     <linearGradient id="signature-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e"/>
-      <stop offset="50%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#a7f3d0"/>
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#facc15"/>
     </linearGradient>
 
     <!-- Glowing Filters -->
@@ -111,8 +111,8 @@
     }
     .tech-pill:hover {
       fill: #111827;
-      stroke: #4ade80;
-      filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.5));
+      stroke: #f97316;
+      filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
     }
     
     /* Code typing animation line-by-line using opacity and keyframes */
@@ -147,22 +147,22 @@
     <circle cx="640" cy="700" r="250" fill="url(#neon-glow)" opacity="0.3" />
 
     <!-- Circuit Lines & Geometric Tech Accents -->
-    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="8 8"/>
-    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
-    <circle cx="500" cy="150" r="4" fill="#22c55e" opacity="0.5"/>
-    <circle cx="700" cy="550" r="4" fill="#4ade80" opacity="0.4"/>
+    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="8 8"/>
+    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#f97316" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
+    <circle cx="500" cy="150" r="4" fill="#7c3aed" opacity="0.5"/>
+    <circle cx="700" cy="550" r="4" fill="#f97316" opacity="0.4"/>
 
     <!-- Floating Hexagons and Binary Particles -->
     <g opacity="0.3">
-      <text x="80" y="80" fill="#22c55e" font-family="monospace" font-size="12" opacity="0.35">
+      <text x="80" y="80" fill="#7c3aed" font-family="monospace" font-size="12" opacity="0.35">
         101010
         <animate attributeName="opacity" values="0.1;0.9;0.1" dur="4s" repeatCount="indefinite" />
       </text>
-      <text x="1150" y="120" fill="#4ade80" font-family="monospace" font-size="12" opacity="0.4">
+      <text x="1150" y="120" fill="#f97316" font-family="monospace" font-size="12" opacity="0.4">
         011001
         <animate attributeName="opacity" values="0.9;0.2;0.9" dur="5s" repeatCount="indefinite" />
       </text>
-      <text x="720" y="680" fill="#22c55e" font-family="monospace" font-size="12" opacity="0.25">
+      <text x="720" y="680" fill="#7c3aed" font-family="monospace" font-size="12" opacity="0.25">
         1101
         <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" />
       </text>
@@ -176,17 +176,17 @@
     <circle cx="75" cy="68" r="6" fill="#ff5f56"/>
     <circle cx="95" cy="68" r="6" fill="#ffbd2e"/>
     <circle cx="115" cy="68" r="6" fill="#27c93f"/>
-    <text x="365" y="73" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
+    <text x="365" y="73" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
 
     <!-- Terminal Content Area -->
     <!-- Line 1: user@dev:~$ cat README.md -->
     <g clip-path="url(#clip-terminal-line1)">
-      <text x="80" y="125" fill="#4ade80" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
+      <text x="80" y="125" fill="#8b5cf6" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
         <tspan fill="#737373">user@dev</tspan>:<tspan fill="#e2e8f0">~$</tspan> cat README.md
       </text>
     </g>
     <!-- Blinking Terminal Cursor for Line 1 -->
-    <text x="80" y="125" fill="#4ade80" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
+    <text x="80" y="125" fill="#8b5cf6" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
       |
       <animate attributeName="x" from="80" to="350" dur="1.2s" begin="0.8s" fill="freeze" />
       <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="2.0s" fill="freeze" />
@@ -202,13 +202,13 @@
 
     <!-- Cycling Role Titles -->
     <g transform="translate(80, 220)">
-      <text x="0" y="20" fill="#4ade80" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
-        > ROLE: <tspan fill="#4ade80" class="cursor-pipe">|</tspan>
+      <text x="0" y="20" fill="#8b5cf6" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
+        > ROLE: <tspan fill="#8b5cf6" class="cursor-pipe">|</tspan>
       </text>
       
       <!-- Role 1: Full-Stack Developer -->
       <g>
-        <text x="90" y="20" fill="#4ade80" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+        <text x="90" y="20" fill="#f97316" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
           Full-Stack Developer
           <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.22;0.25;1" dur="12s" repeatCount="indefinite" />
         </text>
@@ -216,7 +216,7 @@
 
       <!-- Role 2: Cyberpunk Coder -->
       <g>
-        <text x="90" y="20" fill="#22c55e" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+        <text x="90" y="20" fill="#a855f7" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
           Cyberpunk Coder
           <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.30;0.47;0.50;1" dur="12s" repeatCount="indefinite" />
         </text>
@@ -224,7 +224,7 @@
 
       <!-- Role 3: UI/UX Engineer -->
       <g>
-        <text x="90" y="20" fill="#a7f3d0" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+        <text x="90" y="20" fill="#facc15" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
           UI/UX Engineer
           <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.55;0.72;0.75;1" dur="12s" repeatCount="indefinite" />
         </text>
@@ -242,7 +242,7 @@
     <!-- Tagline Quote Box -->
     <g transform="translate(80, 270)">
       <rect x="0" y="0" width="640" height="90" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1.5" />
-      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#4ade80" stroke-width="2" />
+      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#ea580c" stroke-width="2" />
       
       <!-- Quote text typing -->
       <g clip-path="url(#clip-quote-line)">
@@ -251,7 +251,7 @@
         </text>
       </g>
       <!-- Blinking cursor for quote -->
-      <text x="25" y="50" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
+      <text x="25" y="50" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
         |
         <animate attributeName="x" from="25" to="610" dur="2s" begin="3.2s" fill="freeze" />
         <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="5.2s" fill="freeze" />
@@ -260,7 +260,7 @@
 
     <!-- About Me Section -->
     <g transform="translate(80, 390)">
-      <text x="0" y="20" fill="#4ade80" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
+      <text x="0" y="20" fill="#8b5cf6" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
       
       <!-- Lines that appear sequentially -->
       <text x="20" y="50" fill="#d4d4d8" font-family="monospace" font-size="15" opacity="0">
@@ -280,20 +280,20 @@
     <!-- Tech Stack Pills -->
     <g transform="translate(80, 530)">
       <!-- Title -->
-      <text x="0" y="15" fill="#4ade80" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
+      <text x="0" y="15" fill="#f97316" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
       
       <!-- Pills -->
       <!-- Pill 1: React -->
       <g transform="translate(20, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#11131c" stroke="#4ade80" stroke-width="1.5" />
+        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#11131c" stroke="#8b5cf6" stroke-width="1.5" />
         <text x="37.5" y="19" fill="#e2e8f0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">React</text>
       </g>
 
       <!-- Pill 2: Next.js -->
       <g transform="translate(105, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.7s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#4ade80" stroke-width="1.5" />
+        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#8b5cf6" stroke-width="1.5" />
         <text x="42.5" y="19" fill="#e2e8f0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Next.js</text>
       </g>
 
@@ -307,22 +307,22 @@
       <!-- Pill 4: Node.js -->
       <g transform="translate(315, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.1s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#22c55e" stroke-width="1.5" />
-        <text x="42.5" y="19" fill="#22c55e" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
+        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#ea580c" stroke-width="1.5" />
+        <text x="42.5" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
       </g>
 
       <!-- Pill 5: Python -->
       <g transform="translate(410, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.3s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#22c55e" stroke-width="1.5" />
-        <text x="40" y="19" fill="#22c55e" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
+        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#ea580c" stroke-width="1.5" />
+        <text x="40" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
       </g>
 
       <!-- Pill 6: Docker -->
       <g transform="translate(500, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#a7f3d0" stroke-width="1.5" />
-        <text x="40" y="19" fill="#a7f3d0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
+        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#facc15" stroke-width="1.5" />
+        <text x="40" y="19" fill="#facc15" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
       </g>
     </g>
 
@@ -338,7 +338,7 @@
       <!-- Neural Bandwidth Status -->
       <text x="380" y="15" fill="#fafafa" font-family="monospace" font-size="12" font-weight="bold">NEURAL_LINK: 100%</text>
       <rect x="520" y="5" width="120" height="12" rx="3" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-      <rect x="522" y="7" width="0" height="8" rx="2" fill="#4ade80">
+      <rect x="522" y="7" width="0" height="8" rx="2" fill="#f97316">
         <animate attributeName="width" from="0" to="116" dur="2s" begin="5.5s" fill="freeze" calcMode="spline" keySplines="0.1 0.8 0.2 1"/>
       </rect>
     </g>
@@ -356,11 +356,11 @@
 
       <!-- Code Snippet -->
       <g transform="translate(20, 60)" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="0.2">
-        <text class="code-l1" x="0" y="15" fill="#4ade80">const <tspan fill="#22c55e">buildDreams</tspan> = <tspan fill="#e2e8f0">() => {</tspan></text>
-        <text class="code-l2" x="20" y="35" fill="#4ade80">while <tspan fill="#e2e8f0">(coding) {</tspan></text>
-        <text class="code-l3" x="40" y="55" fill="#22c55e">coffee<tspan fill="#e2e8f0">.consume();</tspan></text>
-        <text class="code-l4" x="40" y="75" fill="#4ade80">ideas<tspan fill="#e2e8f0">.compile();</tspan></text>
-        <text class="code-l5" x="40" y="95" fill="#a7f3d0">dreams<tspan fill="#e2e8f0">.deploy();</tspan></text>
+        <text class="code-l1" x="0" y="15" fill="#8b5cf6">const <tspan fill="#f97316">buildDreams</tspan> = <tspan fill="#e2e8f0">() => {</tspan></text>
+        <text class="code-l2" x="20" y="35" fill="#8b5cf6">while <tspan fill="#e2e8f0">(coding) {</tspan></text>
+        <text class="code-l3" x="40" y="55" fill="#ea580c">coffee<tspan fill="#e2e8f0">.consume();</tspan></text>
+        <text class="code-l4" x="40" y="75" fill="#8b5cf6">ideas<tspan fill="#e2e8f0">.compile();</tspan></text>
+        <text class="code-l5" x="40" y="95" fill="#facc15">dreams<tspan fill="#e2e8f0">.deploy();</tspan></text>
         <text class="code-l6" x="20" y="115" fill="#e2e8f0">}</text>
         <text class="code-l7" x="0" y="135" fill="#e2e8f0">};</text>
       </g>
@@ -369,7 +369,7 @@
     <!-- Slogan Sign: STAY SHARP. KEEP BUILDING. -->
     <g transform="translate(780, 310)">
       <rect x="0" y="0" width="450" height="70" rx="8" fill="#09090b" stroke="#27272a" stroke-width="1.5" />
-      <text x="225" y="42" fill="#4ade80" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
+      <text x="225" y="42" fill="#f97316" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
     </g>
 
     <!-- Holographic Scan Character Container -->
@@ -379,14 +379,14 @@
     </g>
 
     <!-- One-time top-to-bottom scan line for hologram reveal -->
-    <line x1="780" y1="100" x2="1230" y2="100" stroke="#4ade80" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
+    <line x1="780" y1="100" x2="1230" y2="100" stroke="#8b5cf6" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
       <animate attributeName="y1" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
       <animate attributeName="y2" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
       <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" begin="0.5s" fill="freeze" />
     </line>
 
     <!-- Continuous Full-width Scanner Line Sweeping every 3.5s -->
-    <line x1="0" y1="0" x2="1280" y2="0" stroke="#4ade80" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 5px #4ade80);">
+    <line x1="0" y1="0" x2="1280" y2="0" stroke="#f97316" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 5px #f97316);">
       <animate attributeName="y1" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
       <animate attributeName="y2" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.1;0.9;1" dur="3.5s" begin="2.5s" repeatCount="indefinite" />

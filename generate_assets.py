@@ -28,39 +28,39 @@ def main():
     skills_list = ["React", "Next.js", "TypeScript", "Node.js", "Python", "Docker", "TailwindCSS"]
     skills_html = " ".join([f"<code>{s}</code>" for s in skills_list])
 
-    # 1. banner.svg (Dark Mode - Matte Black & Emerald Terminal Theme)
+    # 1. banner.svg (Dark Mode - Matte Black & Halloween Purple/Orange Theme)
     print("Generating banner.svg (dark theme)...")
     banner_dark_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
   <defs>
-    <!-- Background Grid (Modern Emerald/Slate) -->
+    <!-- Background Grid (Modern Purple/Slate) -->
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-opacity="0.05"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8b5cf6" stroke-width="1.2" stroke-opacity="0.08"/>
     </pattern>
     
     <!-- Cybernetic Hexagon Pattern -->
     <pattern id="hex-pattern" width="120" height="104" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#22c55e" stroke-width="1" stroke-opacity="0.03"/>
+      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#ea580c" stroke-width="1" stroke-opacity="0.04"/>
     </pattern>
 
-    <!-- Radial Glow Gradients (Emerald Green / Mint) -->
+    <!-- Radial Glow Gradients (Purple / Orange) -->
     <radialGradient id="green-glow-1" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.15"/>
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.15"/>
       <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="green-glow-2" cx="80%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.12"/>
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="neon-glow" cx="50%" cy="80%" r="40%">
-      <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.06"/>
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.06"/>
       <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
     </radialGradient>
     
     <!-- Linear Gradients for UI Elements -->
     <linearGradient id="signature-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e"/>
-      <stop offset="50%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#a7f3d0"/>
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#facc15"/>
     </linearGradient>
 
     <!-- Glowing Filters -->
@@ -143,8 +143,8 @@ def main():
     }
     .tech-pill:hover {
       fill: #111827;
-      stroke: #4ade80;
-      filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.5));
+      stroke: #f97316;
+      filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
     }
     
     /* Code typing animation line-by-line using opacity and keyframes */
@@ -179,22 +179,22 @@ def main():
     <circle cx="640" cy="700" r="250" fill="url(#neon-glow)" opacity="0.3" />
 
     <!-- Circuit Lines & Geometric Tech Accents -->
-    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="8 8"/>
-    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
-    <circle cx="500" cy="150" r="4" fill="#22c55e" opacity="0.5"/>
-    <circle cx="700" cy="550" r="4" fill="#4ade80" opacity="0.4"/>
+    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.2" stroke-dasharray="8 8"/>
+    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#f97316" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
+    <circle cx="500" cy="150" r="4" fill="#7c3aed" opacity="0.5"/>
+    <circle cx="700" cy="550" r="4" fill="#f97316" opacity="0.4"/>
 
     <!-- Floating Hexagons and Binary Particles -->
     <g opacity="0.3">
-      <text x="80" y="80" fill="#22c55e" font-family="monospace" font-size="12" opacity="0.35">
+      <text x="80" y="80" fill="#7c3aed" font-family="monospace" font-size="12" opacity="0.35">
         101010
         <animate attributeName="opacity" values="0.1;0.9;0.1" dur="4s" repeatCount="indefinite" />
       </text>
-      <text x="1150" y="120" fill="#4ade80" font-family="monospace" font-size="12" opacity="0.4">
+      <text x="1150" y="120" fill="#f97316" font-family="monospace" font-size="12" opacity="0.4">
         011001
         <animate attributeName="opacity" values="0.9;0.2;0.9" dur="5s" repeatCount="indefinite" />
       </text>
-      <text x="720" y="680" fill="#22c55e" font-family="monospace" font-size="12" opacity="0.25">
+      <text x="720" y="680" fill="#7c3aed" font-family="monospace" font-size="12" opacity="0.25">
         1101
         <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" />
       </text>
@@ -208,17 +208,17 @@ def main():
     <circle cx="75" cy="68" r="6" fill="#ff5f56"/>
     <circle cx="95" cy="68" r="6" fill="#ffbd2e"/>
     <circle cx="115" cy="68" r="6" fill="#27c93f"/>
-    <text x="365" y="73" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
+    <text x="365" y="73" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
 
     <!-- Terminal Content Area -->
     <!-- Line 1: user@dev:~$ cat README.md -->
     <g clip-path="url(#clip-terminal-line1)">
-      <text x="80" y="125" fill="#4ade80" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
+      <text x="80" y="125" fill="#8b5cf6" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
         <tspan fill="#737373">user@dev</tspan>:<tspan fill="#e2e8f0">~$</tspan> cat README.md
       </text>
     </g>
     <!-- Blinking Terminal Cursor for Line 1 -->
-    <text x="80" y="125" fill="#4ade80" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
+    <text x="80" y="125" fill="#8b5cf6" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
       |
       <animate attributeName="x" from="80" to="350" dur="1.2s" begin="0.8s" fill="freeze" />
       <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="2.0s" fill="freeze" />
@@ -234,13 +234,13 @@ def main():
 
     <!-- Cycling Role Titles -->
     <g transform="translate(80, 220)">
-      <text x="0" y="20" fill="#4ade80" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
-        > ROLE: <tspan fill="#4ade80" class="cursor-pipe">|</tspan>
+      <text x="0" y="20" fill="#8b5cf6" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
+        > ROLE: <tspan fill="#8b5cf6" class="cursor-pipe">|</tspan>
       </text>
       
       <!-- Role 1: Full-Stack Developer -->
       <g>
-        <text x="90" y="20" fill="#4ade80" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+        <text x="90" y="20" fill="#f97316" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
           Full-Stack Developer
           <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.22;0.25;1" dur="12s" repeatCount="indefinite" />
         </text>
@@ -248,7 +248,7 @@ def main():
 
       <!-- Role 2: Cyberpunk Coder -->
       <g>
-        <text x="90" y="20" fill="#22c55e" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+        <text x="90" y="20" fill="#a855f7" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
           Cyberpunk Coder
           <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.30;0.47;0.50;1" dur="12s" repeatCount="indefinite" />
         </text>
@@ -256,7 +256,7 @@ def main():
 
       <!-- Role 3: UI/UX Engineer -->
       <g>
-        <text x="90" y="20" fill="#a7f3d0" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+        <text x="90" y="20" fill="#facc15" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
           UI/UX Engineer
           <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.55;0.72;0.75;1" dur="12s" repeatCount="indefinite" />
         </text>
@@ -274,7 +274,7 @@ def main():
     <!-- Tagline Quote Box -->
     <g transform="translate(80, 270)">
       <rect x="0" y="0" width="640" height="90" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1.5" />
-      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#4ade80" stroke-width="2" />
+      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#ea580c" stroke-width="2" />
       
       <!-- Quote text typing -->
       <g clip-path="url(#clip-quote-line)">
@@ -283,7 +283,7 @@ def main():
         </text>
       </g>
       <!-- Blinking cursor for quote -->
-      <text x="25" y="50" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
+      <text x="25" y="50" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
         |
         <animate attributeName="x" from="25" to="610" dur="2s" begin="3.2s" fill="freeze" />
         <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="5.2s" fill="freeze" />
@@ -292,7 +292,7 @@ def main():
 
     <!-- About Me Section -->
     <g transform="translate(80, 390)">
-      <text x="0" y="20" fill="#4ade80" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
+      <text x="0" y="20" fill="#8b5cf6" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
       
       <!-- Lines that appear sequentially -->
       <text x="20" y="50" fill="#d4d4d8" font-family="monospace" font-size="15" opacity="0">
@@ -312,20 +312,20 @@ def main():
     <!-- Tech Stack Pills -->
     <g transform="translate(80, 530)">
       <!-- Title -->
-      <text x="0" y="15" fill="#4ade80" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
+      <text x="0" y="15" fill="#f97316" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
       
       <!-- Pills -->
       <!-- Pill 1: React -->
       <g transform="translate(20, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#11131c" stroke="#4ade80" stroke-width="1.5" />
+        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#11131c" stroke="#8b5cf6" stroke-width="1.5" />
         <text x="37.5" y="19" fill="#e2e8f0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">React</text>
       </g>
 
       <!-- Pill 2: Next.js -->
       <g transform="translate(105, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.7s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#4ade80" stroke-width="1.5" />
+        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#8b5cf6" stroke-width="1.5" />
         <text x="42.5" y="19" fill="#e2e8f0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Next.js</text>
       </g>
 
@@ -339,22 +339,22 @@ def main():
       <!-- Pill 4: Node.js -->
       <g transform="translate(315, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.1s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#22c55e" stroke-width="1.5" />
-        <text x="42.5" y="19" fill="#22c55e" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
+        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#11131c" stroke="#ea580c" stroke-width="1.5" />
+        <text x="42.5" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
       </g>
 
       <!-- Pill 5: Python -->
       <g transform="translate(410, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.3s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#22c55e" stroke-width="1.5" />
-        <text x="40" y="19" fill="#22c55e" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
+        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#ea580c" stroke-width="1.5" />
+        <text x="40" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
       </g>
 
       <!-- Pill 6: Docker -->
       <g transform="translate(500, 35)" opacity="0">
         <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#a7f3d0" stroke-width="1.5" />
-        <text x="40" y="19" fill="#a7f3d0" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
+        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#11131c" stroke="#facc15" stroke-width="1.5" />
+        <text x="40" y="19" fill="#facc15" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
       </g>
     </g>
 
@@ -370,7 +370,7 @@ def main():
       <!-- Neural Bandwidth Status -->
       <text x="380" y="15" fill="#fafafa" font-family="monospace" font-size="12" font-weight="bold">NEURAL_LINK: 100%</text>
       <rect x="520" y="5" width="120" height="12" rx="3" fill="#18181b" stroke="#27272a" stroke-width="1"/>
-      <rect x="522" y="7" width="0" height="8" rx="2" fill="#4ade80">
+      <rect x="522" y="7" width="0" height="8" rx="2" fill="#f97316">
         <animate attributeName="width" from="0" to="116" dur="2s" begin="5.5s" fill="freeze" calcMode="spline" keySplines="0.1 0.8 0.2 1"/>
       </rect>
     </g>
@@ -388,11 +388,11 @@ def main():
 
       <!-- Code Snippet -->
       <g transform="translate(20, 60)" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="0.2">
-        <text class="code-l1" x="0" y="15" fill="#4ade80">const <tspan fill="#22c55e">buildDreams</tspan> = <tspan fill="#e2e8f0">() => {</tspan></text>
-        <text class="code-l2" x="20" y="35" fill="#4ade80">while <tspan fill="#e2e8f0">(coding) {</tspan></text>
-        <text class="code-l3" x="40" y="55" fill="#22c55e">coffee<tspan fill="#e2e8f0">.consume();</tspan></text>
-        <text class="code-l4" x="40" y="75" fill="#4ade80">ideas<tspan fill="#e2e8f0">.compile();</tspan></text>
-        <text class="code-l5" x="40" y="95" fill="#a7f3d0">dreams<tspan fill="#e2e8f0">.deploy();</tspan></text>
+        <text class="code-l1" x="0" y="15" fill="#8b5cf6">const <tspan fill="#f97316">buildDreams</tspan> = <tspan fill="#e2e8f0">() => {</tspan></text>
+        <text class="code-l2" x="20" y="35" fill="#8b5cf6">while <tspan fill="#e2e8f0">(coding) {</tspan></text>
+        <text class="code-l3" x="40" y="55" fill="#ea580c">coffee<tspan fill="#e2e8f0">.consume();</tspan></text>
+        <text class="code-l4" x="40" y="75" fill="#8b5cf6">ideas<tspan fill="#e2e8f0">.compile();</tspan></text>
+        <text class="code-l5" x="40" y="95" fill="#facc15">dreams<tspan fill="#e2e8f0">.deploy();</tspan></text>
         <text class="code-l6" x="20" y="115" fill="#e2e8f0">}</text>
         <text class="code-l7" x="0" y="135" fill="#e2e8f0">};</text>
       </g>
@@ -401,7 +401,7 @@ def main():
     <!-- Slogan Sign: STAY SHARP. KEEP BUILDING. -->
     <g transform="translate(780, 310)">
       <rect x="0" y="0" width="450" height="70" rx="8" fill="#09090b" stroke="#27272a" stroke-width="1.5" />
-      <text x="225" y="42" fill="#4ade80" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
+      <text x="225" y="42" fill="#f97316" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
     </g>
 
     <!-- Holographic Scan Character Container -->
@@ -411,14 +411,14 @@ def main():
     </g>
 
     <!-- One-time top-to-bottom scan line for hologram reveal -->
-    <line x1="780" y1="100" x2="1230" y2="100" stroke="#4ade80" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
+    <line x1="780" y1="100" x2="1230" y2="100" stroke="#8b5cf6" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
       <animate attributeName="y1" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
       <animate attributeName="y2" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
       <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" begin="0.5s" fill="freeze" />
     </line>
 
     <!-- Continuous Full-width Scanner Line Sweeping every 3.5s -->
-    <line x1="0" y1="0" x2="1280" y2="0" stroke="#4ade80" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 5px #4ade80);">
+    <line x1="0" y1="0" x2="1280" y2="0" stroke="#f97316" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 5px #f97316);">
       <animate attributeName="y1" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
       <animate attributeName="y2" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.1;0.9;1" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
@@ -431,35 +431,35 @@ def main():
       f.write(banner_dark_content)
     print("banner.svg generated.")
 
-    # 2. banner-light.svg (Light Mode - Premium Emerald Theme)
+    # 2. banner-light.svg (Light Mode - Premium Purple/Orange Theme)
     print("Generating banner-light.svg (light theme)...")
     banner_light_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
   <defs>
     <!-- Background Grid -->
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#22c55e" stroke-width="1" stroke-opacity="0.05"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.05"/>
     </pattern>
     
     <!-- Cybernetic Hexagon Pattern -->
     <pattern id="hex-pattern" width="120" height="104" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#4ade80" stroke-width="1" stroke-opacity="0.03"/>
+      <path d="M 60 0 L 120 34.6 L 120 104 L 60 138.6 L 0 104 L 0 34.6 Z" fill="none" stroke="#ea580c" stroke-width="1" stroke-opacity="0.03"/>
     </pattern>
 
     <!-- Radial Glow Gradients -->
     <radialGradient id="green-glow" cx="20%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.08"/>
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="mint-glow" cx="80%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#4ade80" stop-opacity="0.07"/>
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.07"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
     
     <!-- Linear Gradients for UI Elements -->
     <linearGradient id="signature-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e"/>
-      <stop offset="50%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#00a3ff"/>
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#facc15"/>
     </linearGradient>
 
     <!-- Glowing Filters -->
@@ -529,8 +529,8 @@ def main():
     }
     .tech-pill:hover {
       fill: #f1f5f9;
-      stroke: #4ade80;
-      filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.4));
+      stroke: #f97316;
+      filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.4));
     }
     
     /* Code typing animation line-by-line using opacity and keyframes */
@@ -564,10 +564,10 @@ def main():
     <circle cx="1000" cy="500" r="300" fill="url(#mint-glow)" />
 
     <!-- Circuit Lines & Geometric Tech Accents -->
-    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="8 8"/>
-    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
-    <circle cx="500" cy="150" r="4" fill="#22c55e" opacity="0.4"/>
-    <circle cx="700" cy="550" r="4" fill="#4ade80" opacity="0.3"/>
+    <path d="M 0 100 H 300 L 350 150 H 500" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="8 8"/>
+    <path d="M 1280 600 H 1000 L 950 550 H 700" fill="none" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 6"/>
+    <circle cx="500" cy="150" r="4" fill="#7c3aed" opacity="0.4"/>
+    <circle cx="700" cy="550" r="4" fill="#ea580c" opacity="0.3"/>
 
     <!-- LEFT COLUMN: Terminal & Dashboard Panel (x=50, y=50, width=700, height=640) -->
     <rect x="50" y="50" width="700" height="640" rx="16" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5" style="filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.05));" />
@@ -577,61 +577,61 @@ def main():
     <circle cx="75" cy="68" r="6" fill="#ff5f56"/>
     <circle cx="95" cy="68" r="6" fill="#ffbd2e"/>
     <circle cx="115" cy="68" r="6" fill="#27c93f"/>
-    <text x="365" y="73" fill="#22c55e" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
+    <text x="365" y="73" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle" opacity="0.8">HACKER_WORKSTATION // README.md</text>
 
     <!-- Terminal Content Area -->
     <!-- Line 1: user@dev:~$ cat README.md -->
     <g clip-path="url(#clip-terminal-line1)">
-      <text x="80" y="125" fill="#22c55e" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
+      <text x="80" y="125" fill="#7c3aed" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="0.5">
         <tspan fill="#737373">user@dev</tspan>:<tspan fill="#71717a">~$</tspan> cat README.md
       </text>
     </g>
     <!-- Blinking Terminal Cursor for Line 1 -->
-    <text x="80" y="125" fill="#22c55e" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
+    <text x="80" y="125" fill="#7c3aed" font-family="monospace" font-size="18" font-weight="bold" class="cursor-pipe">
       |
-      <animate attributeName="x" from="80" to="350" dur="1.2s" begin="0.8s" fill="freeze" />
-      <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="2.0s" fill="freeze" />
+      <animate attributeName="x" from="80" to="350" dur="1.2s" begin="0.8s" fill="freeze"/>
+      <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="2.0s" fill="freeze"/>
     </text>
 
     <!-- Bold Extended Name: CHARAN BS -->
     <g transform="translate(80, 192)" filter="url(#subtle-glow)">
       <text class="name-text" fill="url(#signature-grad)" opacity="0">
         CHARAN BS
-        <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.8s" fill="freeze" />
+        <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.8s" fill="freeze"/>
       </text>
     </g>
 
     <!-- Cycling Role Titles -->
     <g transform="translate(80, 220)">
-      <text x="0" y="20" fill="#22c55e" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
-        > ROLE: <tspan fill="#22c55e" class="cursor-pipe">|</tspan>
+      <text x="0" y="20" fill="#7c3aed" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1">
+        > ROLE: <tspan fill="#7c3aed" class="cursor-pipe">|</tspan>
       </text>
       
-      <text x="90" y="20" fill="#22c55e" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+      <text x="90" y="20" fill="#f97316" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
         Full-Stack Developer
-        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.22;0.25;1" dur="12s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.22;0.25;1" dur="12s" repeatCount="indefinite"/>
       </text>
 
-      <text x="90" y="20" fill="#16a34a" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+      <text x="90" y="20" fill="#8b5cf6" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
         Cyberpunk Coder
-        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.30;0.47;0.50;1" dur="12s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.30;0.47;0.50;1" dur="12s" repeatCount="indefinite"/>
       </text>
 
-      <text x="90" y="20" fill="#047857" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+      <text x="90" y="20" fill="#d97706" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
         UI/UX Engineer
-        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.55;0.72;0.75;1" dur="12s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.50;0.55;0.72;0.75;1" dur="12s" repeatCount="indefinite"/>
       </text>
 
-      <text x="90" y="20" fill="#22c55e" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
+      <text x="90" y="20" fill="#7c3aed" font-family="monospace" font-size="20" font-weight="bold" opacity="0">
         Systems Architect
-        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.75;0.80;0.97;1;1" dur="12s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.75;0.80;0.97;1;1" dur="12s" repeatCount="indefinite"/>
       </text>
     </g>
 
     <!-- Tagline Quote Box -->
     <g transform="translate(80, 270)">
-      <rect x="0" y="0" width="640" height="90" rx="8" fill="#f8fafc" stroke="#e4e4e7" stroke-width="1.5" />
-      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#22c55e" stroke-width="2" />
+      <rect x="0" y="0" width="640" height="90" rx="8" fill="#f8fafc" stroke="#e4e4e7" stroke-width="1.5"/>
+      <path d="M 0 15 V 0 H 15 M 625 0 H 640 V 15 M 640 75 V 90 H 625 M 15 90 H 0 V 75" fill="none" stroke="#ea580c" stroke-width="2"/>
       
       <g clip-path="url(#clip-quote-line)">
         <text x="25" y="50" fill="#18181b" font-family="monospace" font-size="14" font-style="italic" font-weight="bold">
@@ -639,16 +639,16 @@ def main():
         </text>
       </g>
       <!-- Blinking cursor for quote -->
-      <text x="25" y="50" fill="#22c55e" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
+      <text x="25" y="50" fill="#7c3aed" font-family="monospace" font-size="14" font-weight="bold" class="cursor-pipe">
         |
-        <animate attributeName="x" from="25" to="610" dur="2s" begin="3.2s" fill="freeze" />
-        <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="5.2s" fill="freeze" />
+        <animate attributeName="x" from="25" to="610" dur="2s" begin="3.2s" fill="freeze"/>
+        <animate attributeName="visibility" values="visible;hidden" keyTimes="0;0.99" dur="5.2s" fill="freeze"/>
       </text>
     </g>
 
     <!-- About Me Section -->
     <g transform="translate(80, 390)">
-      <text x="0" y="20" fill="#22c55e" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
+      <text x="0" y="20" fill="#7c3aed" font-family="monospace" font-size="16" font-weight="bold">> ABOUT_ME:</text>
       <text x="20" y="50" fill="#3f3f46" font-family="monospace" font-size="15" opacity="0">
         - Professional full-stack engineer and designer.
         <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="5.5s" fill="freeze"/>
@@ -665,43 +665,43 @@ def main():
 
     <!-- Tech Stack Pills -->
     <g transform="translate(80, 530)">
-      <text x="0" y="15" fill="#22c55e" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
+      <text x="0" y="15" fill="#ea580c" font-family="monospace" font-size="16" font-weight="bold">> TECH_STACK:</text>
       
       <!-- Pills -->
       <g transform="translate(20, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#f8fafc" stroke="#22c55e" stroke-width="1.5" />
-        <text x="37.5" y="19" fill="#22c55e" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">React</text>
+        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.5s" fill="freeze"/>
+        <rect class="tech-pill" x="0" y="0" width="75" height="30" rx="15" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="37.5" y="19" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">React</text>
       </g>
 
       <g transform="translate(105, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.7s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#f8fafc" stroke="#22c55e" stroke-width="1.5" />
-        <text x="42.5" y="19" fill="#22c55e" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Next.js</text>
+        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.7s" fill="freeze"/>
+        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="42.5" y="19" fill="#7c3aed" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Next.js</text>
       </g>
 
       <g transform="translate(200, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.9s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="105" height="30" rx="15" fill="#f8fafc" stroke="url(#signature-grad)" stroke-width="1.5" />
+        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.9s" fill="freeze"/>
+        <rect class="tech-pill" x="0" y="0" width="105" height="30" rx="15" fill="#f8fafc" stroke="url(#signature-grad)" stroke-width="1.5"/>
         <text x="52.5" y="19" fill="#18181b" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">TypeScript</text>
       </g>
 
       <g transform="translate(315, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.1s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#f8fafc" stroke="#16a34a" stroke-width="1.5" />
-        <text x="42.5" y="19" fill="#16a34a" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
+        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.1s" fill="freeze"/>
+        <rect class="tech-pill" x="0" y="0" width="85" height="30" rx="15" fill="#f8fafc" stroke="#ea580c" stroke-width="1.5"/>
+        <text x="42.5" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Node.js</text>
       </g>
 
       <g transform="translate(410, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.3s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#f8fafc" stroke="#16a34a" stroke-width="1.5" />
-        <text x="40" y="19" fill="#16a34a" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
+        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.3s" fill="freeze"/>
+        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#f8fafc" stroke="#ea580c" stroke-width="1.5"/>
+        <text x="40" y="19" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Python</text>
       </g>
 
       <g transform="translate(500, 35)" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.5s" fill="freeze" />
-        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#f8fafc" stroke="#00a3ff" stroke-width="1.5" />
-        <text x="40" y="19" fill="#00a3ff" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
+        <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.5s" fill="freeze"/>
+        <rect class="tech-pill" x="0" y="0" width="80" height="30" rx="15" fill="#f8fafc" stroke="#facc15" stroke-width="1.5"/>
+        <text x="40" y="19" fill="#facc15" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">Docker</text>
       </g>
     </g>
 
@@ -715,7 +715,7 @@ def main():
 
       <text x="380" y="15" fill="#27272a" font-family="monospace" font-size="12" font-weight="bold">NEURAL_LINK: 100%</text>
       <rect x="520" y="5" width="120" height="12" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
-      <rect x="522" y="7" width="0" height="8" rx="2" fill="#22c55e">
+      <rect x="522" y="7" width="0" height="8" rx="2" fill="#ea580c">
         <animate attributeName="width" from="0" to="116" dur="2s" begin="5.5s" fill="freeze" calcMode="spline" keySplines="0.1 0.8 0.2 1"/>
       </rect>
     </g>
@@ -732,11 +732,11 @@ def main():
 
       <!-- Code Snippet -->
       <g transform="translate(20, 60)" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="0.2">
-        <text class="code-l1" x="0" y="15" fill="#22c55e">const <tspan fill="#4ade80">buildDreams</tspan> = <tspan fill="#18181b">() => {</tspan></text>
-        <text class="code-l2" x="20" y="35" fill="#22c55e">while <tspan fill="#18181b">(coding) {</tspan></text>
-        <text class="code-l3" x="40" y="55" fill="#16a34a">coffee<tspan fill="#18181b">.consume();</tspan></text>
-        <text class="code-l4" x="40" y="75" fill="#22c55e">ideas<tspan fill="#18181b">.compile();</tspan></text>
-        <text class="code-l5" x="40" y="95" fill="#047857">dreams<tspan fill="#18181b">.deploy();</tspan></text>
+        <text class="code-l1" x="0" y="15" fill="#7c3aed">const <tspan fill="#ea580c">buildDreams</tspan> = <tspan fill="#18181b">() => {</tspan></text>
+        <text class="code-l2" x="20" y="35" fill="#7c3aed">while <tspan fill="#18181b">(coding) {</tspan></text>
+        <text class="code-l3" x="40" y="55" fill="#ea580c">coffee<tspan fill="#18181b">.consume();</tspan></text>
+        <text class="code-l4" x="40" y="75" fill="#7c3aed">ideas<tspan fill="#18181b">.compile();</tspan></text>
+        <text class="code-l5" x="40" y="95" fill="#facc15">dreams<tspan fill="#18181b">.deploy();</tspan></text>
         <text class="code-l6" x="20" y="115" fill="#18181b">}</text>
         <text class="code-l7" x="0" y="135" fill="#18181b">};</text>
       </g>
@@ -745,7 +745,7 @@ def main():
     <!-- Slogan Sign: STAY SHARP. KEEP BUILDING. -->
     <g transform="translate(780, 310)">
       <rect x="0" y="0" width="450" height="70" rx="8" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5" />
-      <text x="225" y="42" fill="#22c55e" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
+      <text x="225" y="42" fill="#ea580c" font-family="monospace" font-size="18" font-weight="bold" letter-spacing="3" text-anchor="middle">STAY SHARP. KEEP BUILDING.</text>
     </g>
 
     <!-- Character Container -->
@@ -755,17 +755,17 @@ def main():
     </g>
 
     <!-- Scan Line for hologram reveal -->
-    <line x1="780" y1="100" x2="1230" y2="100" stroke="#22c55e" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
+    <line x1="780" y1="100" x2="1230" y2="100" stroke="#7c3aed" stroke-width="3" opacity="0" filter="url(#neon-glow-filter)">
       <animate attributeName="y1" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
       <animate attributeName="y2" from="100" to="740" dur="2s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" begin="0.5s" fill="freeze" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="2s" begin="0.5s" fill="freeze"/>
     </line>
 
     <!-- Continuous Scanner Line -->
-    <line x1="0" y1="0" x2="1280" y2="0" stroke="#22c55e" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 4px #22c55e);">
+    <line x1="0" y1="0" x2="1280" y2="0" stroke="#ea580c" stroke-width="2" opacity="0" style="filter: drop-shadow(0 0 4px #ea580c);">
       <animate attributeName="y1" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
       <animate attributeName="y2" from="0" to="740" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.1;0.9;1" dur="3.5s" begin="2.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.1;0.9;1" dur="3.5s" begin="2.5s" repeatCount="indefinite"/>
     </line>
   </g>
 </svg>"""
@@ -775,7 +775,7 @@ def main():
       f.write(banner_light_content)
     print("banner-light.svg generated.")
 
-    # 3. lanyard.svg (React-Bits Lanyard style - Emerald Theme)
+    # 3. lanyard.svg (React-Bits Lanyard style - Purple/Orange Theme)
     print("Generating lanyard.svg...")
     lanyard_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%" style="max-height: 550px;">
   <defs>
@@ -794,10 +794,10 @@ def main():
       <stop offset="100%" stop-color="#64748b" />
     </linearGradient>
 
-    <!-- Emerald gradient -->
+    <!-- Purple/Orange gradient -->
     <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e" />
-      <stop offset="100%" stop-color="#4ade80" />
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#ea580c" />
     </linearGradient>
 
     <clipPath id="avatar-clip">
@@ -839,11 +839,11 @@ def main():
   <g class="swing-assembly">
     <!-- STRAP LEFT -->
     <path d="M 450 0 L 490 200" stroke="#09090b" stroke-width="26" stroke-linecap="round" />
-    <path d="M 450 0 L 490 200" stroke="#22c55e" stroke-width="12" stroke-linecap="round" stroke-dasharray="8 6" />
+    <path d="M 450 0 L 490 200" stroke="#7c3aed" stroke-width="12" stroke-linecap="round" stroke-dasharray="8 6" />
 
     <!-- STRAP RIGHT -->
     <path d="M 550 0 L 510 200" stroke="#09090b" stroke-width="26" stroke-linecap="round" />
-    <path d="M 550 0 L 510 200" stroke="#22c55e" stroke-width="12" stroke-linecap="round" stroke-dasharray="8 6" />
+    <path d="M 550 0 L 510 200" stroke="#7c3aed" stroke-width="12" stroke-linecap="round" stroke-dasharray="8 6" />
     
     <!-- Strap Texts -->
     <text x="450" y="80" fill="#a1a1aa" font-family="monospace" font-size="10" font-weight="bold" transform="rotate(78 450 80)" letter-spacing="1">{username_upper} // SECURE ACCESS</text>
@@ -857,28 +857,28 @@ def main():
 
     <!-- THE BADGE CARD (x=350, y=254, width=300, height=480) -->
     <g transform="translate(350, 254)">
-      <rect x="0" y="0" width="300" height="480" rx="18" fill="url(#card-grad)" stroke="url(#neon-cyan)" stroke-width="2" style="filter: drop-shadow(0 10px 25px rgba(74, 222, 128, 0.25));" />
+      <rect x="0" y="0" width="300" height="480" rx="18" fill="url(#card-grad)" stroke="url(#neon-cyan)" stroke-width="2" style="filter: drop-shadow(0 10px 25px rgba(139, 92, 246, 0.25));" />
       
       <path d="M 0 40 H 300" stroke="#27272a" stroke-width="1" />
       <path d="M 0 440 H 300" stroke="#27272a" stroke-width="1" />
-      <rect x="10" y="10" width="280" height="460" rx="12" fill="none" stroke="#4ade80" stroke-width="1" stroke-opacity="0.15" />
+      <rect x="10" y="10" width="280" height="460" rx="12" fill="none" stroke="#ea580c" stroke-width="1" stroke-opacity="0.15" />
 
       <!-- Top Text -->
-      <text x="150" y="28" fill="#4ade80" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="2" text-anchor="middle">WORKSPACE IDENTITY</text>
+      <text x="150" y="28" fill="#ea580c" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="2" text-anchor="middle">WORKSPACE IDENTITY</text>
 
       <!-- Glow Avatar Rings -->
-      <circle cx="150" cy="180" r="66" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.3" />
-      <circle cx="150" cy="180" r="63" fill="none" stroke="#4ade80" stroke-width="2" style="filter: drop-shadow(0 0 6px #4ade80);" />
+      <circle cx="150" cy="180" r="66" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.3" />
+      <circle cx="150" cy="180" r="63" fill="none" stroke="#ea580c" stroke-width="2" style="filter: drop-shadow(0 0 6px #ea580c);" />
 
       <!-- Cropped Avatar Image -->
       <image href="data:image/png;base64,{avatar_b64}" x="90" y="120" width="120" height="120" clip-path="url(#avatar-clip)" />
 
       <!-- Developer Info -->
       <text x="150" y="280" fill="#ffffff" font-family="monospace" font-size="20" font-weight="bold" letter-spacing="1" text-anchor="middle">{name}</text>
-      <text x="150" y="305" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">{role_upper}</text>
+      <text x="150" y="305" fill="#f97316" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="1" text-anchor="middle">{role_upper}</text>
       
       <rect x="50" y="325" width="200" height="24" rx="4" fill="#09090b" stroke="#27272a" stroke-width="1" />
-      <text x="150" y="341" fill="#4ade80" font-family="monospace" font-size="12" text-anchor="middle">ID: @{username}</text>
+      <text x="150" y="341" fill="#ea580c" font-family="monospace" font-size="12" text-anchor="middle">ID: @{username}</text>
 
       <!-- Barcode area at bottom -->
       <g transform="translate(40, 370)">
@@ -924,7 +924,7 @@ def main():
         <rect x="212" y="0" width="2" height="40" fill="#e4e4e7" />
         <rect x="216" y="0" width="4" height="40" fill="#e4e4e7" />
 
-        <text x="110" y="52" fill="#4ade80" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="2" text-anchor="middle">LEVEL_C_AUTHENTIC_ID</text>
+        <text x="110" y="52" fill="#7c3aed" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="2" text-anchor="middle">LEVEL_C_AUTHENTIC_ID</text>
       </g>
     </g>
   </g>
@@ -935,7 +935,7 @@ def main():
       f.write(lanyard_content)
     print("lanyard.svg generated.")
 
-    # 4. stats.svg (Local Stats Card - Emerald Theme)
+    # 4. stats.svg (Local Stats Card - Purple/Orange Theme)
     print("Generating stats.svg...")
     stats_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
   <defs>
@@ -944,8 +944,8 @@ def main():
       <stop offset="100%" stop-color="#18181b" />
     </linearGradient>
     <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e" />
-      <stop offset="100%" stop-color="#4ade80" />
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#ea580c" />
     </linearGradient>
   </defs>
 
@@ -966,8 +966,8 @@ def main():
     .row-anim { animation: slide-row 0.6s ease-out forwards; opacity: 0; }
     
     @keyframes pulse {
-      0%, 100% { filter: drop-shadow(0 0 2px #4ade80); }
-      50% { filter: drop-shadow(0 0 8px #4ade80); }
+      0%, 100% { filter: drop-shadow(0 0 2px #ea580c); }
+      50% { filter: drop-shadow(0 0 8px #ea580c); }
     }
     .glow-pulse {
       animation: pulse 3s infinite;
@@ -980,22 +980,22 @@ def main():
   
   <!-- Left Side: Power Ring -->
   <g class="glow-pulse">
-    <circle cx="75" cy="100" r="48" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6 6" class="rotating-ring" />
-    <circle cx="75" cy="100" r="42" fill="#0c0c0e" stroke="#4ade80" stroke-width="2" style="filter: drop-shadow(0 0 4px #4ade80);" />
-    <text x="75" y="108" fill="#4ade80" font-family="monospace" font-size="28" font-weight="bold" text-anchor="middle" style="filter: drop-shadow(0 0 3px #4ade80);">S</text>
+    <circle cx="75" cy="100" r="48" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 6" class="rotating-ring" />
+    <circle cx="75" cy="100" r="42" fill="#0c0c0e" stroke="#ea580c" stroke-width="2" style="filter: drop-shadow(0 0 4px #ea580c);" />
+    <text x="75" y="108" fill="#ea580c" font-family="monospace" font-size="28" font-weight="bold" text-anchor="middle" style="filter: drop-shadow(0 0 3px #ea580c);">S</text>
   </g>
-  <text x="75" y="165" fill="#4ade80" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">DEV RANK</text>
+  <text x="75" y="165" fill="#ea580c" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">DEV RANK</text>
 
   <!-- Right Side: Stats Rows -->
   <g transform="translate(150, 20)">
-    <text x="10" y="20" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM STATS</text>
+    <text x="10" y="20" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM STATS</text>
     <line x1="10" y1="28" x2="270" y2="28" stroke="#27272a" stroke-width="1" />
     
     <!-- Row 1 -->
     <g transform="translate(10, 45)">
       <g class="row-anim" style="animation-delay: 0.2s;">
         <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Total Commits</text>
-        <text x="260" y="12" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">1,420</text>
+        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">1,420</text>
         <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
         <rect x="0" y="20" width="230" height="4" rx="2" fill="url(#neon-cyan)" />
       </g>
@@ -1005,7 +1005,7 @@ def main():
     <g transform="translate(10, 80)">
       <g class="row-anim" style="animation-delay: 0.4s;">
         <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Pull Requests</text>
-        <text x="260" y="12" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">184</text>
+        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">184</text>
         <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
         <rect x="0" y="20" width="190" height="4" rx="2" fill="url(#neon-cyan)" />
       </g>
@@ -1015,7 +1015,7 @@ def main():
     <g transform="translate(10, 115)">
       <g class="row-anim" style="animation-delay: 0.6s;">
         <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Issues Closed</text>
-        <text x="260" y="12" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">56</text>
+        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">56</text>
         <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
         <rect x="0" y="20" width="150" height="4" rx="2" fill="url(#neon-cyan)" />
       </g>
@@ -1025,7 +1025,7 @@ def main():
     <g transform="translate(10, 150)">
       <g class="row-anim" style="animation-delay: 0.8s;">
         <text x="0" y="12" fill="#e2e8f0" font-family="monospace" font-size="12">Stars Earned</text>
-        <text x="260" y="12" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">92</text>
+        <text x="260" y="12" fill="#ea580c" font-family="monospace" font-size="13" font-weight="bold" text-anchor="end">92</text>
         <rect x="0" y="20" width="260" height="4" rx="2" fill="#18181b" />
         <rect x="0" y="20" width="175" height="4" rx="2" fill="url(#neon-cyan)" />
       </g>
@@ -1037,7 +1037,7 @@ def main():
       f.write(stats_content)
     print("stats.svg generated.")
 
-    # 5. langs.svg (Local Langs Card - Emerald Theme)
+    # 5. langs.svg (Local Langs Card - Purple/Orange Theme)
     print("Generating langs.svg...")
     langs_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
   <defs>
@@ -1046,20 +1046,20 @@ def main():
       <stop offset="100%" stop-color="#18181b" />
     </linearGradient>
     <linearGradient id="bar-ts" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e" />
-      <stop offset="100%" stop-color="#4ade80" />
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#c084fc" />
     </linearGradient>
     <linearGradient id="bar-js" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4ade80" />
-      <stop offset="100%" stop-color="#a7f3d0" />
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#ffedd5" />
     </linearGradient>
     <linearGradient id="bar-py" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#34d399" />
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fef3c7" />
     </linearGradient>
     <linearGradient id="bar-html" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#059669" />
-      <stop offset="100%" stop-color="#6ee7b7" />
+      <stop offset="0%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#fbcfe8" />
     </linearGradient>
   </defs>
 
@@ -1075,9 +1075,9 @@ def main():
   </style>
 
   <!-- Frame -->
-  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(74,222,128,0.08));" />
+  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(234,88,12,0.08));" />
   
-  <text x="25" y="30" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold">// LANGUAGE PROFILE</text>
+  <text x="25" y="30" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// LANGUAGE PROFILE</text>
   <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
 
   <g transform="translate(25, 50)" font-family="monospace" font-size="12" fill="#e2e8f0">
@@ -1085,14 +1085,14 @@ def main():
     <text x="0" y="15">TypeScript</text>
     <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
     <rect class="fill-bar" x="110" y="5" width="212" height="10" rx="5" fill="url(#bar-ts)" />
-    <text x="375" y="15" fill="#4ade80" font-weight="bold">85%</text>
+    <text x="375" y="15" fill="#7c3aed" font-weight="bold">85%</text>
 
     <!-- JS (React/Next) -->
     <g transform="translate(0, 32)">
       <text x="0" y="15">React/JS</text>
       <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
       <rect class="fill-bar" x="110" y="5" width="195" height="10" rx="5" fill="url(#bar-js)" />
-      <text x="375" y="15" fill="#a7f3d0" font-weight="bold">78%</text>
+      <text x="375" y="15" fill="#ea580c" font-weight="bold">78%</text>
     </g>
 
     <!-- Python -->
@@ -1100,7 +1100,7 @@ def main():
       <text x="0" y="15">Python</text>
       <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
       <rect class="fill-bar" x="110" y="5" width="175" height="10" rx="5" fill="url(#bar-py)" />
-      <text x="375" y="15" fill="#34d399" font-weight="bold">70%</text>
+      <text x="375" y="15" fill="#f59e0b" font-weight="bold">70%</text>
     </g>
 
     <!-- HTML/CSS -->
@@ -1108,7 +1108,7 @@ def main():
       <text x="0" y="15">UI/CSS/HTML</text>
       <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
       <rect class="fill-bar" x="110" y="5" width="187" height="10" rx="5" fill="url(#bar-html)" />
-      <text x="375" y="15" fill="#6ee7b7" font-weight="bold">75%</text>
+      <text x="375" y="15" fill="#db2777" font-weight="bold">75%</text>
     </g>
   </g>
 </svg>
@@ -1117,7 +1117,7 @@ def main():
       f.write(langs_content)
     print("langs.svg generated.")
 
-    # 6. trophies.svg (Local Trophies Card - Emerald Theme)
+    # 6. trophies.svg (Local Trophies Card - Purple/Orange Theme)
     print("Generating trophies.svg...")
     trophies_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
   <defs>
@@ -1138,20 +1138,20 @@ def main():
   </style>
 
   <!-- Frame -->
-  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(74,222,128,0.1));" />
+  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(234,88,12,0.1));" />
   
-  <text x="25" y="30" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM TROPHIES</text>
+  <text x="25" y="30" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM TROPHIES</text>
   <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
 
   <!-- Cell 1 -->
   <g transform="translate(20, 52)">
     <g class="trophy-anim" style="animation-delay: 0.2s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#22c55e" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#22c55e" stroke-width="1.5" />
+      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#7c3aed" stroke-width="1.2" stroke-opacity="0.4" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#7c3aed" stroke-width="1.5" />
       
       <!-- Trophy Icon -->
-      <path d="M 60 20 L 75 35 H 85 V 50 H 60 H 35 V 35 H 45 Z M 57 50 V 68 H 50 V 74 H 70 V 68 H 63 V 50 Z" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #22c55e);" />
-      <text x="60" y="92" fill="#22c55e" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CODE WARRIOR</text>
+      <path d="M 60 20 L 75 35 H 85 V 50 H 60 H 35 V 35 H 45 Z M 57 50 V 68 H 50 V 74 H 70 V 68 H 63 V 50 Z" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #7c3aed);" />
+      <text x="60" y="92" fill="#7c3aed" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CODE WARRIOR</text>
       <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
     </g>
   </g>
@@ -1159,11 +1159,11 @@ def main():
   <!-- Cell 2 -->
   <g transform="translate(165, 52)">
     <g class="trophy-anim" style="animation-delay: 0.4s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#4ade80" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#4ade80" stroke-width="1.5" />
+      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#ea580c" stroke-width="1.2" stroke-opacity="0.4" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#ea580c" stroke-width="1.5" />
       
-      <path d="M 50 25 H 70 L 75 42 L 60 52 L 45 42 Z M 60 52 V 68 H 50 V 74 H 70 V 68 H 60 Z" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #4ade80);" />
-      <text x="60" y="92" fill="#4ade80" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">PR CHAMPION</text>
+      <path d="M 50 25 H 70 L 75 42 L 60 52 L 45 42 Z M 60 52 V 68 H 50 V 74 H 70 V 68 H 60 Z" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #ea580c);" />
+      <text x="60" y="92" fill="#ea580c" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">PR CHAMPION</text>
       <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">S-RANK</text>
     </g>
   </g>
@@ -1171,12 +1171,12 @@ def main():
   <!-- Cell 3 -->
   <g transform="translate(310, 52)">
     <g class="trophy-anim" style="animation-delay: 0.6s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#a7f3d0" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#a7f3d0" stroke-width="1.5" />
+      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#facc15" stroke-width="1.2" stroke-opacity="0.4" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#facc15" stroke-width="1.5" />
       
-      <circle cx="60" cy="40" r="16" fill="none" stroke="#a7f3d0" stroke-width="2" style="filter: drop-shadow(0 0 3px #a7f3d0);" />
-      <path d="M 54 40 H 66 M 60 34 V 46" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round" />
-      <text x="60" y="92" fill="#a7f3d0" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">BUG HUNTER</text>
+      <circle cx="60" cy="40" r="16" fill="none" stroke="#facc15" stroke-width="2" style="filter: drop-shadow(0 0 3px #facc15);" />
+      <path d="M 54 40 H 66 M 60 34 V 46" stroke="#facc15" stroke-width="2" stroke-linecap="round" />
+      <text x="60" y="92" fill="#facc15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">BUG HUNTER</text>
       <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
     </g>
   </g>
@@ -1186,7 +1186,7 @@ def main():
       f.write(trophies_content)
     print("trophies.svg generated.")
 
-    # 7. github-snake.yml (GitHub Action Workflow)
+    # 7. github-snake.yml (GitHub Action Workflow with permissions fix and Halloween theme)
     print("Generating github-snake.yml...")
     os.makedirs(".github/workflows", exist_ok=True)
     snake_workflow_content = """name: Generate Contribution Snake
@@ -1205,6 +1205,9 @@ on:
     - main
     - master
 
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -1217,8 +1220,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg?palette=github-dark&color_snake=#4ade80&color_dots=#09090b,#065f46,#047857,#10b981,#a7f3d0
-            dist/github-contribution-grid-snake-light.svg?palette=github-light&color_snake=#22c55e&color_dots=#f8fafc,#d1fae5,#a7f3d0,#34d399,#065f46
+            dist/github-contribution-grid-snake.svg?color_snake=purple&color_dots=#161b22,#ffee4a,#ffc501,#fe9600,#03001c
+            dist/github-contribution-grid-snake-light.svg?color_snake=purple&color_dots=#f8fafc,#ffee4a,#ffc501,#fe9600,#03001c
         
       # Push the content of <build_dir> to a branch
       - name: Push github-contribution-grid-snake.svg to the output branch
@@ -1233,7 +1236,7 @@ jobs:
       f.write(snake_workflow_content)
     print(".github/workflows/github-snake.yml generated.")
 
-    # 8. README.md (Emerald themed)
+    # 8. README.md (Purple & Orange themed)
     print("Generating README.md...")
     readme_template = """<h1 align="center">ACCESS SYSTEM // {name_upper}</h1>
 
@@ -1261,7 +1264,7 @@ jobs:
       <p><b>&gt; COGNITIVE_ROLE:</b> {role}</p>
       <p><b>&gt; ACCESS_PORT:</b> <a href="mailto:{email}">{email}</a></p>
       <p><b>&gt; MISSION_TAGLINE:</b> <code>{tagline}</code></p>
-      <hr style="border-color: #4ade80; opacity: 0.3;">
+      <hr style="border-color: #ea580c; opacity: 0.3;">
       <h4>CORE_SKILLS:</h4>
       <p>
         {skills_html}
@@ -1289,33 +1292,33 @@ jobs:
 
 <h2 align="center">PROJECT NODES</h2>
 
-<table align="center" style="width: 100%; border-collapse: collapse; text-align: left; font-family: monospace; border: 1px solid #4ade80;">
+<table align="center" style="width: 100%; border-collapse: collapse; text-align: left; font-family: monospace; border: 1px solid #ea580c;">
   <thead>
-    <tr style="background-color: #0c0c0e; color: #4ade80; border-bottom: 2px solid #4ade80;">
-      <th style="padding: 12px; border: 1px solid #4ade80;">Node Name</th>
-      <th style="padding: 12px; border: 1px solid #4ade80;">Operational Parameters</th>
-      <th style="padding: 12px; border: 1px solid #4ade80;">Tech Spec</th>
-      <th style="padding: 12px; border: 1px solid #4ade80;">Status Link</th>
+    <tr style="background-color: #0c0c0e; color: #ea580c; border-bottom: 2px solid #ea580c;">
+      <th style="padding: 12px; border: 1px solid #ea580c;">Node Name</th>
+      <th style="padding: 12px; border: 1px solid #ea580c;">Operational Parameters</th>
+      <th style="padding: 12px; border: 1px solid #ea580c;">Tech Spec</th>
+      <th style="padding: 12px; border: 1px solid #ea580c;">Status Link</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid rgba(74, 222, 128, 0.2);">
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2); font-weight: bold;">🌌 cyber-dashboard</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);">Futuristic network operations center dashboard in the browser.</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><code>React</code> <code>Three.js</code> <code>Tailwind</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><a href="https://github.com/{username}/cyber-dashboard">Deploy Node &gt;</a></td>
+    <tr style="border-bottom: 1px solid rgba(234, 88, 12, 0.2);">
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🌌 cyber-dashboard</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Futuristic network operations center dashboard in the browser.</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>React</code> <code>Three.js</code> <code>Tailwind</code></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/{username}/cyber-dashboard">Deploy Node &gt;</a></td>
     </tr>
-    <tr style="border-bottom: 1px solid rgba(74, 222, 128, 0.2);">
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2); font-weight: bold;">🛡️ sentinel-auth</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);">Decentralized cryptographically secure authenticator system.</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><code>Node.js</code> <code>TypeScript</code> <code>ECDSA</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><a href="https://github.com/{username}/sentinel-auth">Deploy Node &gt;</a></td>
+    <tr style="border-bottom: 1px solid rgba(234, 88, 12, 0.2);">
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🛡️ sentinel-auth</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Decentralized cryptographically secure authenticator system.</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>Node.js</code> <code>TypeScript</code> <code>ECDSA</code></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/{username}/sentinel-auth">Deploy Node &gt;</a></td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2); font-weight: bold;">🔮 neural-mesh</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);">Serverless neural network text analyzer and content summarizer.</td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><code>Python</code> <code>Next.js</code> <code>PyTorch</code></td>
-      <td style="padding: 12px; border: 1px solid rgba(74, 222, 128, 0.2);"><a href="https://github.com/{username}/neural-mesh">Deploy Node &gt;</a></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2); font-weight: bold;">🔮 neural-mesh</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);">Serverless neural network text analyzer and content summarizer.</td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><code>Python</code> <code>Next.js</code> <code>PyTorch</code></td>
+      <td style="padding: 12px; border: 1px solid rgba(234, 88, 12, 0.2);"><a href="https://github.com/{username}/neural-mesh">Deploy Node &gt;</a></td>
     </tr>
   </tbody>
 </table>
@@ -1338,13 +1341,13 @@ jobs:
 <h3 align="center">CONNECT_PORTALS</h3>
 <p align="center">
   <a href="https://github.com/{username}">
-    <img src="https://img.shields.io/badge/GitHub-101000?style=for-the-badge&logo=github&logoColor=4ade80&labelColor=09090b&borderColor=4ade80" alt="GitHub Portal">
+    <img src="https://img.shields.io/badge/GitHub-101000?style=for-the-badge&logo=github&logoColor=a855f7&labelColor=09090b&borderColor=a855f7" alt="GitHub Portal">
   </a>
   <a href="mailto:{email}">
-    <img src="https://img.shields.io/badge/Email-101000?style=for-the-badge&logo=gmail&logoColor=22c55e&labelColor=09090b&borderColor=22c55e" alt="Email Direct">
+    <img src="https://img.shields.io/badge/Email-101000?style=for-the-badge&logo=gmail&logoColor=ea580c&labelColor=09090b&borderColor=ea580c" alt="Email Direct">
   </a>
   <a href="https://linkedin.com/in/{username}">
-    <img src="https://img.shields.io/badge/LinkedIn-101000?style=for-the-badge&logo=linkedin&logoColor=a7f3d0&labelColor=09090b&borderColor=a7f3d0" alt="LinkedIn Node">
+    <img src="https://img.shields.io/badge/LinkedIn-101000?style=for-the-badge&logo=linkedin&logoColor=facc15&labelColor=09090b&borderColor=facc15" alt="LinkedIn Node">
   </a>
 </p>
 

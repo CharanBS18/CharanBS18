@@ -5,20 +5,20 @@
       <stop offset="100%" stop-color="#18181b" />
     </linearGradient>
     <linearGradient id="bar-ts" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22c55e" />
-      <stop offset="100%" stop-color="#4ade80" />
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#c084fc" />
     </linearGradient>
     <linearGradient id="bar-js" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4ade80" />
-      <stop offset="100%" stop-color="#a7f3d0" />
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#ffedd5" />
     </linearGradient>
     <linearGradient id="bar-py" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#34d399" />
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fef3c7" />
     </linearGradient>
     <linearGradient id="bar-html" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#059669" />
-      <stop offset="100%" stop-color="#6ee7b7" />
+      <stop offset="0%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#fbcfe8" />
     </linearGradient>
   </defs>
 
@@ -34,9 +34,9 @@
   </style>
 
   <!-- Frame -->
-  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#4ade80" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(74,222,128,0.08));" />
+  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(234,88,12,0.08));" />
   
-  <text x="25" y="30" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold">// LANGUAGE PROFILE</text>
+  <text x="25" y="30" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// LANGUAGE PROFILE</text>
   <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
 
   <g transform="translate(25, 50)" font-family="monospace" font-size="12" fill="#e2e8f0">
@@ -44,14 +44,14 @@
     <text x="0" y="15">TypeScript</text>
     <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
     <rect class="fill-bar" x="110" y="5" width="212" height="10" rx="5" fill="url(#bar-ts)" />
-    <text x="375" y="15" fill="#4ade80" font-weight="bold">85%</text>
+    <text x="375" y="15" fill="#7c3aed" font-weight="bold">85%</text>
 
     <!-- JS (React/Next) -->
     <g transform="translate(0, 32)">
       <text x="0" y="15">React/JS</text>
       <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
       <rect class="fill-bar" x="110" y="5" width="195" height="10" rx="5" fill="url(#bar-js)" />
-      <text x="375" y="15" fill="#a7f3d0" font-weight="bold">78%</text>
+      <text x="375" y="15" fill="#ea580c" font-weight="bold">78%</text>
     </g>
 
     <!-- Python -->
@@ -59,7 +59,7 @@
       <text x="0" y="15">Python</text>
       <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
       <rect class="fill-bar" x="110" y="5" width="175" height="10" rx="5" fill="url(#bar-py)" />
-      <text x="375" y="15" fill="#34d399" font-weight="bold">70%</text>
+      <text x="375" y="15" fill="#f59e0b" font-weight="bold">70%</text>
     </g>
 
     <!-- HTML/CSS -->
@@ -67,7 +67,7 @@
       <text x="0" y="15">UI/CSS/HTML</text>
       <rect x="110" y="5" width="250" height="10" rx="5" fill="#18181b" />
       <rect class="fill-bar" x="110" y="5" width="187" height="10" rx="5" fill="url(#bar-html)" />
-      <text x="375" y="15" fill="#6ee7b7" font-weight="bold">75%</text>
+      <text x="375" y="15" fill="#db2777" font-weight="bold">75%</text>
     </g>
   </g>
 </svg>
