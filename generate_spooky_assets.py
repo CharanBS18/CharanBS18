@@ -294,6 +294,22 @@ def generate_animations():
         pumpkin_frames.append(img)
     save_transparent_gif(pumpkin_frames, "halloween/animations/pumpkin_glow.gif", duration=100)
 
+    # 5. Copy custom GIFs if they exist in root
+    import shutil
+    gif_mappings = {
+        "Spooky Pumpkin.gif": "halloween/animations/spooky_pumpkin_custom.gif",
+        "Halloween Potion.gif": "halloween/animations/halloween_potion_custom.gif",
+        "Ghost Halloween.gif": "halloween/animations/ghost_halloween_custom.gif",
+        "Halloween Pumpkin Black Cat.gif": "halloween/animations/pumpkin_black_cat_custom.gif"
+    }
+    for src, dst in gif_mappings.items():
+        if os.path.exists(src):
+            shutil.copy(src, dst)
+            print(f"Copied custom animation {src} to {dst}")
+        else:
+            print(f"Warning: {src} not found in root, skipping copy.")
+
+
 
 # Generate SVGs
 def generate_svgs():
@@ -920,7 +936,8 @@ def generate_readme():
       <div style="position: relative; display: inline-block; width: 240px; height: 280px;">
         <img src="halloween/stickers/user_avatar.png" alt="Spooky Avatar" width="160" style="position: absolute; top: 40px; left: 40px; z-index: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));">
         <img src="halloween/frames/profile_frame.svg" alt="Tombstone Frame" width="240" style="position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none;">
-        <img src="halloween/animations/floating_ghost.gif" alt="Animated Ghost" width="80" style="position: absolute; bottom: -5px; right: -5px; z-index: 3;">
+        <!-- Spooky Pumpkin custom GIF at bottom-right of tombstone -->
+        <img src="halloween/animations/spooky_pumpkin_custom.gif" alt="Spooky Pumpkin Animation" width="80" style="position: absolute; bottom: -5px; right: -5px; z-index: 3;">
       </div>
     </td>
     <!-- Bio Monospace Details -->
@@ -960,6 +977,10 @@ def generate_readme():
   <img src="halloween/skills/potion_ts.svg" width="85" alt="TypeScript">
   <img src="halloween/skills/potion_node.svg" width="85" alt="Node.js">
   <img src="halloween/skills/potion_python.svg" width="85" alt="Python">
+
+  <!-- Custom Potion GIF -->
+  <img src="halloween/animations/halloween_potion_custom.gif" width="90" style="vertical-align: middle; margin: 0 10px;" alt="Custom Bubbling Potion" title="Brewing Potion magic">
+
   <img src="halloween/skills/potion_docker.svg" width="85" alt="Docker">
   <img src="halloween/skills/potion_k8s.svg" width="85" alt="Kubernetes">
   <img src="halloween/skills/potion_rust.svg" width="85" alt="Rust">
@@ -1007,6 +1028,11 @@ def generate_readme():
       <p><b>&gt; STATUS:</b> Brewing spell-check algorithms</p>
       <p><b>&gt; OBJECTIVE:</b> Building lightweight, pixel-perfect layout nodes</p>
       <p><b>&gt; INGREDIENTS:</b> <code>TailwindCSS</code> <code>Next.js</code> <code>Pillow</code></p>
+      
+      <!-- Custom Lab Mascot (Sticker Pumpkin + Cat GIF) -->
+      <p align="center" style="margin-top: 15px; margin-bottom: 0;">
+        <img src="halloween/animations/pumpkin_black_cat_custom.gif" width="80" alt="Lab Mascot Pumpkin Cat" title="Lab Mascot Pumpkin & Cat">
+      </p>
     </td>
   </tr>
 </table>
@@ -1090,6 +1116,8 @@ def generate_readme():
 
 <!-- Graveyard Wrapped Contribution Graph -->
 <p align="center" style="margin-top: 40px; position: relative; max-width: 860px; margin-left: auto; margin-right: auto;">
+  <!-- Custom Ghost floating over graveyard (Ghost Halloween GIF) -->
+  <img src="halloween/animations/ghost_halloween_custom.gif" width="75" style="position: absolute; top: -35px; right: 20px; z-index: 10;" alt="Graveyard Ghost" title="Graveyard Guardian Ghost">
   <!-- Contribution Graveyard Arch frame -->
   <img src="halloween/stats/graveyard_frame.svg" alt="Graveyard Frame" width="100%" style="display: block;">
 </p>
