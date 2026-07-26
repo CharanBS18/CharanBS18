@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="240" height="280" fill="none">
   <path d="M 20 260 C 20 80, 220 80, 220 260 Z" fill="#0d1117" stroke="#ffd166" stroke-width="4"/>
-  <text x="120" y="100" fill="#ffd166" font-family="'Creepster', cursive" font-size="28" text-anchor="middle">RIP</text>
+  <text x="120" y="100" fill="#ffd166" font-family="'Creepster', cursive" font-size="28" text-anchor="middle">.</text>
   <path d="M 20 180 Q 40 170, 50 150 M 20 160 Q 32 155, 35 140" stroke="#ffd166" stroke-width="1.5" stroke-opacity="0.6"/>
   <path d="M 220 180 Q 200 170, 190 150 M 220 160 Q 208 155, 205 140" stroke="#ffd166" stroke-width="1.5" stroke-opacity="0.6"/>
 </svg>
