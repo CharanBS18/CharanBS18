@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115" width="115" height="115" fill="none">
+  <rect x="4" y="4" width="107" height="107" rx="10" fill="#0d1117" stroke="#ff2a55" stroke-width="1.8"/>
+  <path d="M 4 18 V 4 H 18 M 97 4 H 111 V 18 M 4 97 V 111 H 18 M 97 111 H 111 V 97" stroke="#f8f9fa" stroke-width="2" opacity="0.6"/>
+  <!-- Hex Core -->
+  <polygon points="57,18 76,29 76,51 57,62 38,51 38,29" fill="#ff2a55" fill-opacity="0.16" stroke="#ff2a55" stroke-width="2"/>
+  <circle cx="57" cy="40" r="6" fill="#ff2a55"/>
+  <text x="57" y="77" fill="#f8f9fa" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">Bash</text>
+  <text x="57" y="90" fill="#ff2a55" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">SHELL OPS</text>
+  <rect x="15" y="97" width="84" height="5" rx="2.5" fill="#1e293b"/>
+  <rect x="15" y="97" width="75" height="5" rx="2.5" fill="#ff2a55"/>
+</svg>

@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
   <defs>
     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#09090b" />
-      <stop offset="100%" stop-color="#18181b" />
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
     </linearGradient>
   </defs>
 
@@ -17,46 +17,42 @@
   </style>
 
   <!-- Frame -->
-  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#ea580c" stroke-width="1.5" stroke-opacity="0.6" style="filter: drop-shadow(0 4px 10px rgba(234,88,12,0.1));" />
-  
-  <text x="25" y="30" fill="#ea580c" font-family="monospace" font-size="14" font-weight="bold">// SYSTEM TROPHIES</text>
-  <line x1="20" y1="38" x2="430" y2="38" stroke="#27272a" stroke-width="1" />
+  <rect width="450" height="200" rx="12" fill="url(#grad)" stroke="#00f0ff" stroke-width="1.5" stroke-opacity="0.75"/>
+
+  <text x="25" y="30" fill="#ff2a55" font-family="monospace" font-size="14" font-weight="bold">// RED_TEAM ACHIEVEMENTS</text>
+  <line x1="20" y1="38" x2="430" y2="38" stroke="#1e293b" stroke-width="1" />
 
   <!-- Cell 1 -->
   <g transform="translate(20, 52)">
     <g class="trophy-anim" style="animation-delay: 0.2s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#7c3aed" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#7c3aed" stroke-width="1.5" />
-      
-      <!-- Trophy Icon -->
-      <path d="M 60 20 L 75 35 H 85 V 50 H 60 H 35 V 35 H 45 Z M 57 50 V 68 H 50 V 74 H 70 V 68 H 63 V 50 Z" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #7c3aed);" />
-      <text x="60" y="92" fill="#7c3aed" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CODE WARRIOR</text>
-      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
+      <rect width="120" height="115" rx="8" fill="#111827" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.55" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#00f0ff" stroke-width="1.5" />
+      <path d="M 60 20 L 75 35 H 85 V 50 H 60 H 35 V 35 H 45 Z M 57 50 V 68 H 50 V 74 H 70 V 68 H 63 V 50 Z" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="60" y="92" fill="#00f0ff" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">CTF OPERATOR</text>
+      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">TRYHACKME</text>
     </g>
   </g>
 
   <!-- Cell 2 -->
   <g transform="translate(165, 52)">
     <g class="trophy-anim" style="animation-delay: 0.4s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#ea580c" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#ea580c" stroke-width="1.5" />
-      
-      <path d="M 50 25 H 70 L 75 42 L 60 52 L 45 42 Z M 60 52 V 68 H 50 V 74 H 70 V 68 H 60 Z" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 3px #ea580c);" />
-      <text x="60" y="92" fill="#ea580c" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">PR CHAMPION</text>
-      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">S-RANK</text>
+      <rect width="120" height="115" rx="8" fill="#111827" stroke="#ff2a55" stroke-width="1.2" stroke-opacity="0.55" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#ff2a55" stroke-width="1.5" />
+      <path d="M 50 25 H 70 L 75 42 L 60 52 L 45 42 Z M 60 52 V 68 H 50 V 74 H 70 V 68 H 60 Z" fill="none" stroke="#ff2a55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="60" y="92" fill="#ff2a55" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">PENTEST PRO</text>
+      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">RED TEAM</text>
     </g>
   </g>
 
   <!-- Cell 3 -->
   <g transform="translate(310, 52)">
     <g class="trophy-anim" style="animation-delay: 0.6s; transform-origin: 60px 57px;">
-      <rect width="120" height="115" rx="8" fill="#18181b" stroke="#facc15" stroke-width="1.2" stroke-opacity="0.4" />
-      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#facc15" stroke-width="1.5" />
-      
-      <circle cx="60" cy="40" r="16" fill="none" stroke="#facc15" stroke-width="2" style="filter: drop-shadow(0 0 3px #facc15);" />
-      <path d="M 54 40 H 66 M 60 34 V 46" stroke="#facc15" stroke-width="2" stroke-linecap="round" />
-      <text x="60" y="92" fill="#facc15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">BUG HUNTER</text>
-      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">A-RANK</text>
+      <rect width="120" height="115" rx="8" fill="#111827" stroke="#ffb703" stroke-width="1.2" stroke-opacity="0.55" />
+      <path d="M 0 10 V 0 H 10 M 110 0 H 120 V 10 M 120 105 V 115 H 110 M 10 115 H 0 V 105" fill="none" stroke="#ffb703" stroke-width="1.5" />
+      <circle cx="60" cy="40" r="16" fill="none" stroke="#ffb703" stroke-width="2" />
+      <path d="M 54 40 H 66 M 60 34 V 46" stroke="#ffb703" stroke-width="2" stroke-linecap="round" />
+      <text x="60" y="92" fill="#ffb703" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">BUG HUNTER</text>
+      <text x="60" y="105" fill="#cbd5e1" font-family="monospace" font-size="9" text-anchor="middle">APPSEC</text>
     </g>
   </g>
 </svg>
