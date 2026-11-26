@@ -30,7 +30,7 @@
       <h3 style="color: #ff2a55; margin-top: 0;">&gt; OPERATOR_ID.conf</h3>
       <p><b>&gt; IDENTITY:</b> Charan BS / @CharanBS18</p>
       <p><b>&gt; CLEARANCE:</b> <code style="color: #00f0ff;">Ethical Hacker | Pentester | Bug Bounty | CTF Player</code></p>
-      <p><b>&gt; PLATFORM:</b> <a href="https://tryhackme.com/" style="color: #ff2a55;">TryHackMe</a> &bull; Kali Linux</p>
+      <p><b>&gt; PLATFORM:</b> <a href="https://tryhackme.com/p/charanbs" style="color: #ff2a55;">tryhackme.com/p/charanbs</a> &bull; Kali Linux</p>
       <p><b>&gt; COMMS_PORT:</b> <a href="mailto:charan201204@gmail.com" style="color: #00f0ff;">charan201204@gmail.com</a></p>
       <hr style="border: 1px solid #1e293b; margin: 15px 0;">
       <p style="line-height: 1.6; color: #e2e8f0; clear: both;">
@@ -197,7 +197,7 @@
   <a href="mailto:charan201204@gmail.com" style="display: inline-block; background-color: #161b22; color: #00f0ff; border: 2px solid #ff2a55; padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: monospace;">
     TRANSMIT ENCRYPTED PACKET
   </a>
-  <a href="https://tryhackme.com/" style="display: inline-block; background-color: #161b22; color: #ff2a55; border: 2px solid #00f0ff; padding: 14px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: monospace;">
+  <a href="https://tryhackme.com/p/charanbs" style="display: inline-block; background-color: #161b22; color: #ff2a55; border: 2px solid #00f0ff; padding: 14px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-family: monospace;">
     TRYHACKME PROFILE
   </a>
 </p>
